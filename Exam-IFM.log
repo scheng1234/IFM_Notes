@@ -1,0 +1,1479 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.22)  10 OCT 2021 15:25
+entering extended mode
+**./Exam-IFM.tex
+(Exam-IFM.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-05-15>
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\articl
+e.cls"
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10
+.clo"
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\lmodern.
+sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\am
+ssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\am
+sfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+math.sty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+text.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+gen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen135
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+bsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen136
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+opn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks17
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks18
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifx
+etex.sty"
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ift
+ex.sty"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifl
+uatex.sty"
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fonten
+c.sty"
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd
+"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inpute
+nc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textco
+mp.sty"
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/upquote\upq
+uote.sty"
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+icrotype.sty"
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\ke
+yval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+\MT@toks=\toks24
+\MT@count=\count187
+LaTeX Info: Redefining \textls on input line 790.
+\MT@outer@kern=\dimen144
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
+\MT@listname@count=\count188
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+icrotype-pdftex.def"
+File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 914.
+LaTeX Info: Redefining \lslig on input line 914.
+\MT@outer@space=\skip52
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+icrotype.cfg"
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/parskip\par
+skip.sty"
+Package: parskip 2020-05-19 v2.0e non-zero parskip adjustments
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\k
+voptions.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\l
+txcmds.sty"
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys
+\kvsetkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\et
+oolbox.sty"
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count189
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcol
+or.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cf
+g\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-de
+f\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xurl\xurl.s
+ty"
+Package: xurl 2020/01/24 v 0.09 modify URL breaks
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty
+"
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bookmark\bo
+okmark.sty"
+Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hy
+perref.sty"
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\
+pdftexcmds.sty"
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr
+\infwarerr.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinek
+eys\kvdefinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdfescape
+\pdfescape.sty"
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hycolor\hyc
+olor.sty"
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/letltxmacro
+\letltxmacro.sty"
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/auxhook\aux
+hook.sty"
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen145
+\Hy@linkcounter=\count190
+\Hy@pagecounter=\count191
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd
+1enc.def"
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/intcalc\i
+ntcalc.sty"
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/etexcmds\
+etexcmds.sty"
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count192
+Package hyperref Info: Option `unicode' set `true' on input line 4338.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pu
+enc.def"
+File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4717.
+\c@Hy@tempcnt=\count193
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen146
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bitset\bi
+tset.sty"
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bigintcal
+c\bigintcalc.sty"
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count194
+\Field@Width=\dimen147
+\Fld@charsize=\dimen148
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing OFF on input line 6362.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/atbegshi\
+atbegshi.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count195
+\c@Item=\count196
+\c@Hfootnote=\count197
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hp
+dftex.def"
+File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/atveryend\a
+tveryend.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+)
+\Fld@listcount=\count198
+\c@bookmark@seq@number=\count199
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/rerunfilech
+eck\rerunfilecheck.sty"
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/uniquecou
+nter\uniquecounter.sty"
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip53
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bookmark\bk
+m-pdftex.def"
+File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
+\BKM@id=\count266
+))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\ge
+ometry.sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifv
+tex.sty"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count267
+\Gm@cntv=\count268
+\c@Gm@tempcnt=\count269
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks25
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\ge
+ometry.cfg"))
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longt
+able.sty"
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip54
+\LTright=\skip55
+\LTpre=\skip56
+\LTpost=\skip57
+\LTchunksize=\count270
+\LTcapwidth=\dimen157
+\LT@head=\box47
+\LT@firsthead=\box48
+\LT@foot=\box49
+\LT@lastfoot=\box50
+\LT@cols=\count271
+\LT@rows=\count272
+\c@LT@tables=\count273
+\c@LT@chunks=\count274
+\LT@p@ftn=\toks26
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\bo
+oktabs.sty"
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen158
+\lightrulewidth=\dimen159
+\cmidrulewidth=\dimen160
+\belowrulesep=\dimen161
+\belowbottomsep=\dimen162
+\aboverulesep=\dimen163
+\abovetopsep=\dimen164
+\cmidrulesep=\dimen165
+\cmidrulekern=\dimen166
+\defaultaddspace=\dimen167
+\@cmidla=\count275
+\@cmidlb=\count276
+\@aboverulesep=\dimen168
+\@belowrulesep=\dimen169
+\@thisruleclass=\count277
+\@lastruleclass=\count278
+\@thisrulewidth=\dimen170
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/footnotehyp
+er\footnotehyper.sty"
+Package: footnotehyper 2019/11/07 v1.1a hyperref aware footnote.sty (JFB)
+\FNH@notes=\box51
+\FNH@width=\dimen171
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\gr
+aphicx.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\gr
+aphics.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\tr
+ig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cf
+g\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grffile\grf
+file.sty"
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
+y)
+Package grffile Info: This package is an empty stub for compatibility on input 
+line 40.
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array
+.sty"
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen174
+\ar@mcellbox=\box52
+\extrarowheight=\dimen175
+\NC@list=\toks27
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box53
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\mu
+ltirow.sty"
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip60
+\multirow@cntb=\count279
+\multirow@dima=\skip61
+\bigstrutjot=\dimen176
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wrapfig\wra
+pfig.sty"
+\wrapoverhang=\dimen177
+\WF@size=\dimen178
+\c@WF@wrappedlines=\count280
+\WF@box=\box54
+\WF@everypar=\toks28
+Package: wrapfig 2003/01/31  v 3.6
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float
+.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count281
+\float@exts=\toks29
+\float@box=\box55
+\@float@everytoks=\toks30
+\@floatcapt=\box56
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colortbl\co
+lortbl.sty"
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks31
+\minrowclearance=\skip62
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\p
+dflscape.sty"
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\ls
+cape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tabu\tabu.s
+ty"
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\va
+rwidth.sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box57
+\sift@deathcycles=\count282
+\@vwid@loff=\dimen179
+\@vwid@roff=\dimen180
+)
+\c@taburow=\count283
+\tabu@nbcols=\count284
+\tabu@cnt=\count285
+\tabu@Xcol=\count286
+\tabu@alloc=\count287
+\tabu@nested=\count288
+\tabu@target=\dimen181
+\tabu@spreadtarget=\dimen182
+\tabu@naturalX=\dimen183
+\tabucolX=\dimen184
+\tabu@Xsum=\dimen185
+\extrarowdepth=\dimen186
+\abovetabulinesep=\dimen187
+\belowtabulinesep=\dimen188
+\tabustrutrule=\dimen189
+\tabu@thebody=\toks32
+\tabu@footnotes=\toks33
+\tabu@box=\box58
+\tabu@arstrutbox=\box59
+\tabu@hleads=\box60
+\tabu@vleads=\box61
+\tabu@cellskip=\skip63
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/threepartta
+ble\threeparttable.sty"
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box62
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/threepartta
+blex\threeparttablex.sty"
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/environ\env
+iron.sty"
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/trimspaces\
+trimspaces.sty"
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip64
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ulem\ulem.s
+ty"
+\UL@box=\box63
+\UL@hyphenbox=\box64
+\UL@skip=\skip65
+\UL@hook=\toks34
+\UL@height=\dimen190
+\UL@pe=\count289
+\UL@pixel=\dimen191
+\ULC@box=\box65
+Package: ulem 2019/11/18
+\ULdepth=\dimen192
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/makecell\ma
+kecell.sty"
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen193
+\c@nlinenum=\count290
+\TeXr@lab=\toks35
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l
+3backend-pdfmode.def"
+File: l3backend-pdfmode.def 2020-05-05 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count291
+\l__pdf_internal_box=\box66
+) (Exam-IFM.aux
+
+LaTeX Warning: Label `tab:unnamed-chunk-7' multiply defined.
+
+)
+\openout1 = `Exam-IFM.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Info: Redefining \microtypecontext on input line 90.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+LaTeX Info: Redefining \showhyphens on input line 90.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+t-cmr.cfg"
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii
+\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count292
+\scratchdimen=\dimen194
+\scratchbox=\box67
+\nofMPsegments=\count293
+\nofMParguments=\count294
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count295
+\MPscratchDim=\dimen195
+\MPnumerator=\count296
+\makeMPintoPDFobject=\count297
+\everyMPtoPDFconversion=\toks37
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pk
+g\epstopdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+\AtBeginShipoutBox=\box68
+Package hyperref Info: Link coloring OFF on input line 90.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\na
+meref.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/refcount\re
+fcount.sty"
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitles
+tring\gettitlestring.sty"
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count298
+)
+LaTeX Info: Redefining \ref on input line 90.
+LaTeX Info: Redefining \pageref on input line 90.
+LaTeX Info: Redefining \nameref on input line 90.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
+2.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.f
+d"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
+2.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.f
+d"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+92.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy.
+fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+92.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex.
+fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 92.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 92.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 92.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
+
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\um
+sa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+t-msa.cfg"
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
+
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\um
+sb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+t-msb.cfg"
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) (Exam-IFM.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
+[1
+
+{C:/Users/Steven Cheng/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2])
+\tf@toc=\write3
+\openout3 = `Exam-IFM.toc'.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
+7.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.f
+d"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+99.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmtt.
+fd"
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+23.
+
+("C:\Users\Steven Cheng\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.f
+d"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [3] [4] [5]
+<S(T) Plot.png, id=258, 275.52937pt x 206.27063pt>
+File: S(T) Plot.png Graphic file (type png)
+<use S(T) Plot.png>
+Package pdftex.def Info: S(T) Plot.png  used on input line 375.
+(pdftex.def)             Requested size: 275.53288pt x 206.27325pt.
+<P(T) Plot.png, id=259, 270.51062pt x 187.70125pt>
+File: P(T) Plot.png Graphic file (type png)
+<use P(T) Plot.png>
+Package pdftex.def Info: P(T) Plot.png  used on input line 388.
+(pdftex.def)             Requested size: 270.5182pt x 187.70651pt.
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.415 ...it}_{bond} = V + (-Ve^{-rT})e^{rT} = 0 \]
+                                                   <./S(T) Plot.png>] [7pdfTeX 
+warning (ext4): destination with the same identifier (name{figure.2}) has been 
+already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.468 ...tock}\label{four-ways-of-buying-a-stock}}
+                                                   <./P(T) Plot.png>] [8] [9]
+<synth long forward.png, id=314, 479.29062pt x 192.72pt>
+File: synth long forward.png Graphic file (type png)
+<use synth long forward.png>
+Package pdftex.def Info: synth long forward.png  used on input line 664.
+(pdftex.def)             Requested size: 469.7601pt x 188.88782pt.
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.669 \newpage
+               <./synth long forward.png>] [11] [12]
+<Payoff Long Call.png, id=347, 294.60063pt x 214.30063pt>
+File: Payoff Long Call.png Graphic file (type png)
+<use Payoff Long Call.png>
+Package pdftex.def Info: Payoff Long Call.png  used on input line 869.
+(pdftex.def)             Requested size: 294.5999pt x 214.3001pt.
+<Payoff Short Call.png, id=348, 304.13625pt x 218.31563pt>
+File: Payoff Short Call.png Graphic file (type png)
+<use Payoff Short Call.png>
+Package pdftex.def Info: Payoff Short Call.png  used on input line 879.
+(pdftex.def)             Requested size: 304.1355pt x 218.31508pt.
+<P(T) Long Call.png, id=349, 309.65688pt x 195.22937pt>
+File: P(T) Long Call.png Graphic file (type png)
+<use P(T) Long Call.png>
+Package pdftex.def Info: P(T) Long Call.png  used on input line 894.
+(pdftex.def)             Requested size: 309.67027pt x 195.23781pt.
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.905 \end{aligned}\]
+                      <./Payoff Long Call.png>] [14pdfTeX warning (ext4): desti
+nation with the same identifier (name{figure.5}) has been already used, duplica
+te ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.905 \end{aligned}\]
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.905 \end{aligned}\]
+                      <./Payoff Short Call.png> <./P(T) Long Call.png>]
+<P(T) Short Call.png, id=366, 309.155pt x 207.77625pt>
+File: P(T) Short Call.png Graphic file (type png)
+<use P(T) Short Call.png>
+Package pdftex.def Info: P(T) Short Call.png  used on input line 909.
+(pdftex.def)             Requested size: 309.16838pt x 207.78523pt.
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.950 ...xt{long put}} = \text{max}[0, K - S(T)]\]
+                                                   <./P(T) Short Call.png>] [16
+]
+<Payoff Long Put.png, id=379, 301.62688pt x 211.28937pt>
+File: Payoff Long Put.png Graphic file (type png)
+<use Payoff Long Put.png>
+Package pdftex.def Info: Payoff Long Put.png  used on input line 956.
+(pdftex.def)             Requested size: 301.62613pt x 211.28885pt.
+<Payoff Short Put.png, id=380, 300.12125pt x 211.28937pt>
+File: Payoff Short Put.png Graphic file (type png)
+<use Payoff Short Put.png>
+Package pdftex.def Info: Payoff Short Put.png  used on input line 966.
+(pdftex.def)             Requested size: 300.12967pt x 211.29529pt.
+<P(T) Long Put.png, id=381, 327.72438pt x 203.25937pt>
+File: P(T) Long Put.png Graphic file (type png)
+<use P(T) Long Put.png>
+Package pdftex.def Info: P(T) Long Put.png  used on input line 981.
+(pdftex.def)             Requested size: 327.72357pt x 203.25887pt.
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.990 \end{aligned}\]
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.990 \end{aligned}\]
+                      <./Payoff Long Put.png> <./Payoff Short Put.png>]
+<P(T) Short Put.png, id=388, 340.27126pt x 208.78pt>
+File: P(T) Short Put.png Graphic file (type png)
+<use P(T) Short Put.png>
+Package pdftex.def Info: P(T) Short Put.png  used on input line 994.
+(pdftex.def)             Requested size: 340.28598pt x 208.78902pt.
+
+Overfull \vbox (172.65762pt too high) has occurred while \output is active []
+
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1045 ...abel{call-and-put-options-as-insurance}}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.11}) has been already used, duplica
+te ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1045 ...abel{call-and-put-options-as-insurance}}
+                                                   <./P(T) Long Put.png> <./P(T
+) Short Put.png>] [19]
+<Payoff Diagram.png, id=423, 406.01688pt x 291.58937pt>
+File: Payoff Diagram.png Graphic file (type png)
+<use Payoff Diagram.png>
+Package pdftex.def Info: Payoff Diagram.png  used on input line 1152.
+(pdftex.def)             Requested size: 375.81992pt x 269.9028pt.
+[20pdfTeX warning (ext4): destination with the same identifier (name{table.12})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1185 \end{longtable}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{figure.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1185 \end{longtable}
+                       <./Payoff Diagram.png>] [21]
+<Bull Spread Payoff.png, id=438, 520.94624pt x 411.5375pt>
+File: Bull Spread Payoff.png Graphic file (type png)
+<use Bull Spread Payoff.png>
+Package pdftex.def Info: Bull Spread Payoff.png  used on input line 1194.
+(pdftex.def)             Requested size: 469.76143pt x 371.10248pt.
+<Bear Spread Payoff.png, id=439, 519.44063pt x 413.545pt>
+File: Bear Spread Payoff.png Graphic file (type png)
+<use Bear Spread Payoff.png>
+Package pdftex.def Info: Bear Spread Payoff.png  used on input line 1203.
+(pdftex.def)             Requested size: 469.75116pt x 373.98544pt.
+<Box Spread Payoff.png, id=440, 516.42938pt x 236.38312pt>
+File: Box Spread Payoff.png Graphic file (type png)
+<use Box Spread Payoff.png>
+Package pdftex.def Info: Box Spread Payoff.png  used on input line 1212.
+(pdftex.def)             Requested size: 469.77023pt x 215.026pt.
+<Call Ratio Spread Payoff.png, id=441, 597.73312pt x 445.665pt>
+File: Call Ratio Spread Payoff.png Graphic file (type png)
+<use Call Ratio Spread Payoff.png>
+Package pdftex.def Info: Call Ratio Spread Payoff.png  used on input line 1221.
+
+(pdftex.def)             Requested size: 469.75966pt x 350.24901pt.
+<Put Ratio Spread Payoff.png, id=442, 592.2125pt x 458.21187pt>
+File: Put Ratio Spread Payoff.png Graphic file (type png)
+<use Put Ratio Spread Payoff.png>
+Package pdftex.def Info: Put Ratio Spread Payoff.png  used on input line 1227.
+(pdftex.def)             Requested size: 469.7675pt x 363.47266pt.
+<Collar Payoff.png, id=443, 508.39937pt x 181.17688pt>
+File: Collar Payoff.png Graphic file (type png)
+<use Collar Payoff.png>
+Package pdftex.def Info: Collar Payoff.png  used on input line 1240.
+(pdftex.def)             Requested size: 469.77333pt x 167.4118pt.
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1246 
+        <./Bull Spread Payoff.png>] [23pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1246 
+        <./Bear Spread Payoff.png>] [24pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1246 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1246 
+        <./Box Spread Payoff.png> <./Call Ratio Spread Payoff.png>] [25pdfTeX w
+arning (ext4): destination with the same identifier (name{figure.17}) has been 
+already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1246 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.18}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1246 
+        <./Put Ratio Spread Payoff.png> <./Collar Payoff.png>]
+<Straddle Payoff.png, id=467, 488.32437pt x 172.14313pt>
+File: Straddle Payoff.png Graphic file (type png)
+<use Straddle Payoff.png>
+Package pdftex.def Info: Straddle Payoff.png  used on input line 1249.
+(pdftex.def)             Requested size: 469.76216pt x 165.5996pt.
+<Strangle Payoff.png, id=468, 486.31688pt x 180.17313pt>
+File: Strangle Payoff.png Graphic file (type png)
+<use Strangle Payoff.png>
+Package pdftex.def Info: Strangle Payoff.png  used on input line 1258.
+(pdftex.def)             Requested size: 469.75293pt x 174.0364pt.
+<Sym Butterfly Spread Payoff.png, id=469, 514.42188pt x 289.58188pt>
+File: Sym Butterfly Spread Payoff.png Graphic file (type png)
+<use Sym Butterfly Spread Payoff.png>
+Package pdftex.def Info: Sym Butterfly Spread Payoff.png  used on input line 12
+72.
+(pdftex.def)             Requested size: 469.76517pt x 264.4434pt.
+<Sym Butterfly Spread Payoff 2.png, id=470, 393.47pt x 286.57062pt>
+File: Sym Butterfly Spread Payoff 2.png Graphic file (type png)
+<use Sym Butterfly Spread Payoff 2.png>
+Package pdftex.def Info: Sym Butterfly Spread Payoff 2.png  used on input line 
+1278.
+(pdftex.def)             Requested size: 393.46902pt x 286.56992pt.
+<ASym Butterfly Spread Payoff.png, id=471, 226.34563pt x 159.09438pt>
+File: ASym Butterfly Spread Payoff.png Graphic file (type png)
+<use ASym Butterfly Spread Payoff.png>
+Package pdftex.def Info: ASym Butterfly Spread Payoff.png  used on input line 1
+287.
+(pdftex.def)             Requested size: 226.34506pt x 159.09396pt.
+[26pdfTeX warning (ext4): destination with the same identifier (name{figure.19}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1295 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.20}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1295 
+        <./Straddle Payoff.png> <./Strangle Payoff.png>] [27pdfTeX warning (ext
+4): destination with the same identifier (name{figure.21}) has been already use
+d, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1295 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.22}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1295 
+        <./Sym Butterfly Spread Payoff.png> <./Sym Butterfly Spread Payoff 2.pn
+g>]
+<Put-Call Parity.png, id=485, 486.81876pt x 182.18062pt>
+File: Put-Call Parity.png Graphic file (type png)
+<use Put-Call Parity.png>
+Package pdftex.def Info: Put-Call Parity.png  used on input line 1300.
+(pdftex.def)             Requested size: 469.75488pt x 175.79485pt.
+[28pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1317 \textbf{Synthetic Call}
+                              pdfTeX warning (ext4): destination with the same 
+identifier (name{figure.24}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1317 \textbf{Synthetic Call}
+                               <./ASym Butterfly Spread Payoff.png> <./Put-Call
+ Parity.png>] [29] [30] [31] [32] [33] [34]
+<Call Convexity.png, id=551, 270.25969pt x 168.63pt>
+File: Call Convexity.png Graphic file (type png)
+<use Call Convexity.png>
+Package pdftex.def Info: Call Convexity.png  used on input line 1783.
+(pdftex.def)             Requested size: 270.26314pt x 168.63214pt.
+<Put Convexity.png, id=553, 271.76532pt x 156.585pt>
+File: Put Convexity.png Graphic file (type png)
+<use Put Convexity.png>
+Package pdftex.def Info: Put Convexity.png  used on input line 1791.
+(pdftex.def)             Requested size: 271.77293pt x 156.58939pt.
+[35pdfTeX warning (ext4): destination with the same identifier (name{figure.25}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1800 \[C(S,K,T_1) \leq C(S,K,T_2)\]
+                                      <./Call Convexity.png>] [36pdfTeX warning
+ (ext4): destination with the same identifier (name{figure.26}) has been alread
+y used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1843 \[
+         \Delta = e^{-\delta h} \cdot \frac{V_u - V_d}{S_0(u - d)}\] <./Put Con
+vexity.png>] [37]
+<Multiperiod Binomial.png, id=586, 385.44pt x 208.52907pt>
+File: Multiperiod Binomial.png Graphic file (type png)
+<use Multiperiod Binomial.png>
+Package pdftex.def Info: Multiperiod Binomial.png  used on input line 1937.
+(pdftex.def)             Requested size: 385.43906pt x 208.52855pt.
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.27}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1947 ...Direct Approach}\label{direct-approach}}
+                                                   <./Multiperiod Binomial.png>
+]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 1949.
+
+[39] [40] [41]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[42] [43pdfTeX warning (ext4): destination with the same identifier (name{table
+.17}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2252 ...a = \frac{\partial V}{\partial \sigma}\]
+                                                  ] [44] [45] [46] [47] [48] [4
+9] [50]
+<compound call.png, id=718, 298.86656pt x 124.21407pt>
+File: compound call.png Graphic file (type png)
+<use compound call.png>
+Package pdftex.def Info: compound call.png  used on input line 2668.
+(pdftex.def)             Requested size: 298.87036pt x 124.21564pt.
+[51pdfTeX warning (ext4): destination with the same identifier (name{figure.28}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2699 ...xt{Put on Call} = C_{Eur} - xe^{-rt_1}\]
+                                                   <./compound call.png>]
+<gap call.png, id=728, 459.96844pt x 143.03438pt>
+File: gap call.png Graphic file (type png)
+<use gap call.png>
+Package pdftex.def Info: gap call.png  used on input line 2725.
+(pdftex.def)             Requested size: 459.97432pt x 143.0362pt.
+<gap put.png, id=729, 450.18187pt x 150.5625pt>
+File: gap put.png Graphic file (type png)
+<use gap put.png>
+Package pdftex.def Info: gap put.png  used on input line 2744.
+(pdftex.def)             Requested size: 450.20137pt x 150.569pt.
+[52pdfTeX warning (ext4): destination with the same identifier (name{figure.29}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2751 ...dot N(d_1) - K_1 e^{-rT} \cdot N(d_2) \]
+                                                   <./gap call.png>] [53pdfTeX 
+warning (ext4): destination with the same identifier (name{figure.30}) has been
+ already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2787 ... \frac12 \sigma ^2 T}{\sigma \sqrt{T}}\]
+                                                   <./gap put.png>] [54] [55] [
+56] [57]
+<portfolio volatility with increasing stocks.png, id=792, 279.29344pt x 177.663
+76pt>
+File: portfolio volatility with increasing stocks.png Graphic file (type png)
+<use portfolio volatility with increasing stocks.png>
+Package pdftex.def Info: portfolio volatility with increasing stocks.png  used 
+on input line 3003.
+(pdftex.def)             Requested size: 279.30127pt x 177.66873pt.
+[58] [59pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.31}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3036 \[
+         \sum^n_{i=1} x_i\cdot  \sigma_i\cdot \rho_{i,P}\le\sum^n_{i=1} x_i\...
+ <./portfolio volatility with increasing stocks.png>]
+<Effect of Correlation.png, id=808, 440.39531pt x 219.06844pt>
+File: Effect of Correlation.png Graphic file (type png)
+<use Effect of Correlation.png>
+Package pdftex.def Info: Effect of Correlation.png  used on input line 3071.
+(pdftex.def)             Requested size: 440.40094pt x 219.07123pt.
+[60pdfTeX warning (ext4): destination with the same identifier (name{figure.32}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3077 I
+        nvestors with a higher risk tolerance can shortsell shares of one co...
+ <./Effect of Correlation.png>]
+<CAL.png, id=823, 407.27156pt x 195.73125pt>
+File: CAL.png Graphic file (type png)
+<use CAL.png>
+Package pdftex.def Info: CAL.png  used on input line 3101.
+(pdftex.def)             Requested size: 407.28918pt x 195.73972pt.
+<Tangent Portfolio.png, id=824, 350.05782pt x 211.54031pt>
+File: Tangent Portfolio.png Graphic file (type png)
+<use Tangent Portfolio.png>
+Package pdftex.def Info: Tangent Portfolio.png  used on input line 3114.
+(pdftex.def)             Requested size: 350.06763pt x 211.54623pt.
+[61pdfTeX warning (ext4): destination with the same identifier (name{figure.33}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3116 \end{figure}
+                    <./CAL.png>]
+<CML.png, id=834, 353.82187pt x 210.7875pt>
+File: CML.png Graphic file (type png)
+<use CML.png>
+Package pdftex.def Info: CML.png  used on input line 3135.
+(pdftex.def)             Requested size: 353.82639pt x 210.79019pt.
+[62pdfTeX warning (ext4): destination with the same identifier (name{figure.34}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3166 \[
+         \dfrac{E[R_{\text{New}}]-r_f}{\sigma_{\text{New}}}>\rho_{\text{New}...
+ <./Tangent Portfolio.png>] [63pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.35}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3197 \end{aligned}\]
+                       <./CML.png>]
+<Beta as a line.png, id=857, 256.70906pt x 167.87718pt>
+File: Beta as a line.png Graphic file (type png)
+<use Beta as a line.png>
+Package pdftex.def Info: Beta as a line.png  used on input line 3223.
+(pdftex.def)             Requested size: 256.70842pt x 167.87677pt.
+[64pdfTeX warning (ext4): destination with the same identifier (name{figure.36}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3243 ..._i] = r_f + \beta_i (E[R_{mkt}] - r_f)\]
+                                                   <./Beta as a line.png>]
+<SML.png, id=867, 280.79906pt x 167.12437pt>
+File: SML.png Graphic file (type png)
+<use SML.png>
+Package pdftex.def Info: SML.png  used on input line 3285.
+(pdftex.def)             Requested size: 280.81122pt x 167.13159pt.
+[65pdfTeX warning (ext4): destination with the same identifier (name{figure.37}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3300   I
+          f \(E[R_i] > r_i\), investors can improve upon the market portfoli...
+ <./SML.png>] [66] [67] [68] [69]
+<EMH Forms.png, id=901, 369.63094pt x 112.92188pt>
+File: EMH Forms.png Graphic file (type png)
+<use EMH Forms.png>
+Package pdftex.def Info: EMH Forms.png  used on input line 3499.
+(pdftex.def)             Requested size: 369.63002pt x 112.92159pt.
+[70]
+<Kendall.png, id=908, 228.10219pt x 169.38281pt>
+File: Kendall.png Graphic file (type png)
+<use Kendall.png>
+Package pdftex.def Info: Kendall.png  used on input line 3524.
+(pdftex.def)             Requested size: 228.10857pt x 169.38754pt.
+[71pdfTeX warning (ext4): destination with the same identifier (name{figure.38}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3530 R
+        eturns of consecutive days were studied on 4 stocks between 1991-201...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.39}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3530 R
+        eturns of consecutive days were studied on 4 stocks between 1991-201...
+ <./EMH Forms.png> <./Kendall.png>]
+<BMA.png, id=919, 307.1475pt x 207.02344pt>
+File: BMA.png Graphic file (type png)
+<use BMA.png>
+Package pdftex.def Info: BMA.png  used on input line 3534.
+(pdftex.def)             Requested size: 307.15611pt x 207.02924pt.
+<Semi-Strong EMH support.png, id=920, 339.51843pt x 237.88875pt>
+File: Semi-Strong EMH support.png Graphic file (type png)
+<use Semi-Strong EMH support.png>
+Package pdftex.def Info: Semi-Strong EMH support.png  used on input line 3563.
+(pdftex.def)             Requested size: 339.53313pt x 237.89903pt.
+[72pdfTeX warning (ext4): destination with the same identifier (name{figure.40}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3570 
+        <./BMA.png>] [73pdfTeX warning (ext4): destination with the same identi
+fier (name{figure.41}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3605   N
+          ew-Issue/IPO puzzle: Overreaction to new issues push up stock pric...
+ <./Semi-Strong EMH support.png>] [74]
+<Takeover Response.png, id=941, 313.17pt x 218.31563pt>
+File: Takeover Response.png Graphic file (type png)
+<use Takeover Response.png>
+Package pdftex.def Info: Takeover Response.png  used on input line 3654.
+(pdftex.def)             Requested size: 313.16922pt x 218.31508pt.
+<Stock Recommendation.png, id=942, 353.82187pt x 225.84375pt>
+File: Stock Recommendation.png Graphic file (type png)
+<use Stock Recommendation.png>
+Package pdftex.def Info: Stock Recommendation.png  used on input line 3664.
+(pdftex.def)             Requested size: 353.82639pt x 225.84662pt.
+[75pdfTeX warning (ext4): destination with the same identifier (name{figure.42}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3674 \newpage
+                <./Takeover Response.png>] [76pdfTeX warning (ext4): destinatio
+n with the same identifier (name{figure.43}) has been already used, duplicate i
+gnored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3707 
+        <./Stock Recommendation.png>] [77]
+<VaR.png, id=969, 312.41719pt x 130.23656pt>
+File: VaR.png Graphic file (type png)
+<use VaR.png>
+Package pdftex.def Info: VaR.png  used on input line 3771.
+(pdftex.def)             Requested size: 312.41641pt x 130.23624pt.
+[78pdfTeX warning (ext4): destination with the same identifier (name{figure.44}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3781 ...ha} x\cdot f_X(x)\,\, dx \end{aligned}\]
+                                                   <./VaR.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[79pdfTeX warning (ext4): destination with the same identifier (name{table.20})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3872 \textbf{Monte Carlo Simulation}
+                                      ] [80pdfTeX warning (ext4): destination w
+ith the same identifier (name{table.21}) has been already used, duplicate ignor
+ed
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3915 \end{enumerate}
+                      ] [81] [82] [83] [84] [85] [86] [87] [88]
+<Trade-Off Theory.png, id=1098, 347.79938pt x 197.98969pt>
+File: Trade-Off Theory.png Graphic file (type png)
+<use Trade-Off Theory.png>
+Package pdftex.def Info: Trade-Off Theory.png  used on input line 4423.
+(pdftex.def)             Requested size: 347.80382pt x 197.9922pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4429.
+[89pdfTeX warning (ext4): destination with the same identifier (name{figure.45}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.4429 \end{document}
+                      <./Trade-Off Theory.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4429.
+(Exam-IFM.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4429.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4429.
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 15867 strings out of 480799
+ 240917 string characters out of 2892513
+ 523388 words of memory out of 3000000
+ 30774 multiletter control sequences out of 15000+200000
+ 604536 words of font info for 132 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,14n,42p,876b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
+m-mathit.enc}{C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
+/dvips/lm/lm-rm.enc}{C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/enc/dvips/lm/lm-mathex.enc}{C:/Users/Steven Cheng/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Steven Cheng/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Steven Cheng/AppData
+/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Steven Cheng
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/S
+teven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb>
+<C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/
+lmbxi10.pfb><C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/lm/lmex10.pfb><C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Steven Cheng/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Steven Cheng/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Steven Cheng/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Steve
+n Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/U
+sers/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12
+.pfb><C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmr17.pfb><C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmr5.pfb><C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/lm/lmr6.pfb><C:/Users/Steven Cheng/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/Steven Cheng/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Steven Cheng/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Steven 
+Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Us
+ers/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.
+pfb><C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/lm/lmtt10.pfb><C:/Users/Steven Cheng/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/symbols/msam10.pfb><C:/Users/Steven Cheng/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam5.pfb>
+Output written on Exam-IFM.pdf (89 pages, 2483831 bytes).
+PDF statistics:
+ 1599 PDF objects out of 1728 (max. 8388607)
+ 632 named destinations out of 1000 (max. 500000)
+ 15322 words of extra memory for PDF output out of 17280 (max. 10000000)
+

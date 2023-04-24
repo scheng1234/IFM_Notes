@@ -1,0 +1,1768 @@
+---
+title: "Exam IFM Notes"
+author: "Steven Cheng"
+output:
+  bookdown::pdf_document2: default
+  html_document:
+    df_print: paged
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+
+```{r}
+
+library(tidyr)
+library(kableExtra)
+
+```
+
+# Introduction to Derivatives
+
+-   Section 1.1: Introduction to Derivatives. We define derivatives and
+    explain the process of buying and selling assets, including
+    short-selling.
+-   Section 1.2: Introduction to Forwards. We discuss a type of a
+    derivative called a forward contract.
+-   Section 1.3: Introduction to Futures. We explore the specifics of
+    another type of derivative called a futures contract.
+
+## Defining Derivatives
+
+Derivatives are a financial instrument whose value is determined by the
+price of something else.
+
+Uses:
+
+1.  To manage risk: Hedging
+2.  To speculate: Make a bet
+3.  To reduce transaction costs: achieve similar returns without owning
+    the underlying which can reduce costs.
+4.  To minimize taxes/avoid regulatory issues: defer taxes and eliminate
+    risk of owning asset while still benefiting from the asset.
+
+Who uses them?
+
+1.  End-users: people enter a derivative contract. corporations,
+    investment managers, and investors
+2.  Market-makers: intermediaries who make money selling derivatives to
+    and from end-users
+3.  Economic observers: Market observers, including regulators who
+    analyze and regulate the activities of the end-users and
+    market-makers.
+
+### Underlying Assets
+
+**Stocks** The most comment underlying asset. It provides the ownership
+of a company. The right to dividends. Voting rights.
+
+**Indices** An index is a statistic used to reflect changes in a
+collection of stocks it tracks. Each can have their own methodology.
+Common indices include S&P 500, DJI, and Nasdaq composite.
+
+**Commodities** Raw materials such as metals, grains, lumber, livestock
+etc... Often are traded in a standardized unit.
+
+**Currencies** Treated much like commodities, they are traded relative
+to other currencies.
+
+## Buying and Selling Assets
+
+**Market-Makers**
+
+-   Stock Exchange: an auction where stocks are bought and sold. i.e.
+    NYSE and Nasdaq. Similarly a commodities exchange is an auction for
+    commodities.
+
+-   Market-Maker: participants (broker dealers) in the stock exchange
+    that has a special arrangement with the exchange to facilitate the
+    buying and selling of an exchange's assets. They match buyers and
+    sellers within the market and charge a fee for this transaction.
+    Often times market makers will act as the seller or buyer in the
+    event there is no match which draws from their own inventory. This
+    is to keep market liquidity.
+
+-   Commissions: Often in the form of
+
+    1.  a flat amount (\$10 per trade)
+    2.  percentage of trannsaction (.2% of trade amount)
+
+-   Bid-ask spread = $\text{Ask Price} - \text{Bid Price}$ where
+    $\text{Ask Price} > \text{Bid Price}$
+
+    Bid Price: the price the market makers buy, the price investors are
+    selling
+
+    Ask Price: the price the market makers sell, the price investors are
+    buying
+
+### Round-trip transaction cost
+
+Total costs associated with opening and closing a financial position.
+
+$$ \text{Round-trip transaction cost}  = \text{total amount paid} - \text{total amount recieved}$$
+
+## Ways to Buy or Sell
+
+1.  Market order: Ask the market-maker to fulfill order immediately at
+    best available price.
+2.  Limit order: specify a certain price at which to buy or sell. Buy
+    limit order fulfilled at limit price or lower. Sell limit is
+    fulfilled at limit price or higher
+3.  Stop-Loss order: executed when the price of an asset falls to (or
+    below) a certain price.
+
+## Accounting vs. Economic Profits
+
+**Accounting Profit:** revenue - explicit costs (costs where actual
+payment is made)
+
+**Economic Profit:** revenue - explicit costs - implicit costs
+(associated opportunity costs)
+
+The "***risk-free***" rate can be something like US treasures as they
+have yet to ever default on a bond payment.
+
+## Short-Selling Assets
+
+**Long vs. Short:** A long position and short position describe how an
+investor benefits from price changes in an asset. Long positions benefit
+from price *increases*, short positions benefit from price *decreases*.
+
+### Short-Selling
+
+If you think the price of share will go down and you want to profit from
+it.
+
+1.  Borrow shares of stock now.
+2.  Immediately sell the borrowed stock.
+3.  Buy the shares back at a future time. This is covering/closing the
+    short position.
+
+Three primary reasons why investors short-sell:
+
+-   Speculating: If you think the price will go down and can profit from
+    this decrease
+-   Financing: Short-selling is a way to borrow money (common in bond
+    markets)
+-   Hedging: Investor can offset the risk of owning a stock. If the
+    investor holds a long position and then short-sells, the risk of the
+    long position is eliminated.
+
+**The Short-Sale Proceeds:** Lender or third party will hold on to
+proceeds from the sale of borrowed shares as collateral until
+short-seller successfully returns the borrowed shares back to lender.
+Then the proceeds are released to short-seller.
+
+**A Haircut:** Since there is a possibility that the short-seller would
+be unable to purchase the shares back on the market if prices rise, an
+additional collateral called "haircut" is set aside to compensate for
+this risk. This additional collateral will be returned to the
+short-seller once the shares are successfully returned back to lender.
+
+**Interest:** Both haircut and proceeds owned by the short-seller earn
+interest wile being held by lender.This is known as *short rebate*. For
+the bond market it is known as the *repo rate*. Short rebate and repo
+rate are usually lower than market interest rates and are based on
+supply and demand.
+
+**Dividends:** Dividends are payed to the owner. Since technically the
+shortseller doesn't own the stock and it is borrowed from the lender,
+the short-seller will need to pay back any dividends accrued during the
+short-sale period. Also known as *lease rate* of the asset.
+
+## Payoff and Profit
+
+**Payoff:** The amount that one party would have if he or she completely
+cashed out. Does not consider cash flows on other dates.
+
+**Profit:** Similar to payoff but includes cash flows.
+
+$$\text{Profit} = \text{Accumulated value of cash flows at the risk-free rate} $$
+
+> example: You bought a car in the beginning of the year 2000 for with a
+> cash payment. On Jan. 1, 2017, you walk into a car dealership and find
+> out that your car is worth \$2,500. Assume that you could have earned
+> a continuously compounded risk-free interest rate of from the year
+> 2000 to the year 2017.
+>
+> What is the payoff on Jan. 1, 2017
+>
+> $$ \text{Payoff} = 2500$$
+>
+> What about the profit on Jan. 1, 2017
+>
+> $$ \text{Profit} = \text{Accumulated value of cash flows}  
+> = 2500e^{0.04(0)} - 23750e^{0.04(17)}
+> = -44379.60$$
+
+Note that for a short position the AV(premium) would be a cash inflow
+
+### Payoff & Profit for a Nondividend-Paying Stock
+
+**Long Position**
+
+The payoff at time T for a long position in the stock is the amount of
+money you would get if you completely cashed out at time T. We denote
+this as the spot price $S(T)$:
+
+$$ \text{Payoff}_{text{long stock}} = S(T)$$
+
+This can be represented as a Payoff Diagram:
+
+![Payoff
+Diagram]("S(T) Plot.png")
+
+The profit at time T is the payoff plus the cash outflow to purchase the
+stock at time 0, accumulated to time T at the risk-free rate:
+
+$$ \text{Profit}_{text{long stock}} = S(T) + AV[-S(0)] \\
+= S(T) - S(0)e^{rT}$$
+
+![Profit
+Diagram]("P(T) Plot.png")
+
+#### Short Positions
+
+For short positions the payoff and profit are just inverse of the long
+position. Where
+
+$$ \text{Payoff}_{text{long stock}} = -S(T)$$
+
+$$ \text{Profit}_{text{long stock}} = -S(T) + AV[S(0)] \\
+= -S(T) + S(0)e^{rT}$$
+
+### Payoff & Profit for Zero-coupon Bond
+
+Investing at the risk-free rate gives you a payoff, but it **does not
+result in a profit**.
+
+$$ \text{Payoff}_{bond} = \text{Maturity Value}  =V $$
+
+where the bonds present value is $Ve^{-rT}$. Thus it's profit is the
+maturity value plus cash flows at time 0:
+
+$$ \text{Profit}_{bond} = V + (-Ve^{-rT})e^{rT} = 0 $$
+
+Short position of the bond is just the inverse of the long position.
+
+# Forward Contract Basics
+
+The purpose of a forward contract is to help reduce market risks for
+businesses. A business can enter a contract to acquire goods at a fixed
+price, and then sell the products that they make at an agreed upon
+price.
+
+**Forward contract:** An agreement between two parties, a buyer and
+seller, to exchange an asset (**underlying asset**) on a specified
+date(**expiration date**) and at a specified price (**forward price**).
+
+In a standard forward contract, money is only exchanged at expiration.
+The buyer is obligated to buy the underlying asset and the seller is
+obligated to sell at the forward price.
+
+### Long & Short (Forward Contracts)
+
+Entering a long forward means that the investor is obligated to buy the
+underlying. A short forward means the investor is obligated to sell the
+underlying.
+
+```{r echo=FALSE}
+
+a <- as.data.frame(c("Obligated to buy" ,"Obligated to sell"))
+rownames(a) <- c("Long Forward", "Short Forward")
+colnames(a) <- NULL
+
+print(a)
+
+```
+
+## Payoff & Profit (forward contracts)
+
+An investor is obligated to buy the underlying asset on the expiration
+date. If the long forward position completely cashes out than we can say
+it is sold at the spot price. Therefore, the payoff of a long forward
+is:
+
+$$ \text{Payoff}_{long \ forward} = \text{Spot price at expiration} - \text{Forward price}$$
+
+Since there are no real cash flows, the profit of a forward contract is
+equal to it's payoff
+
+$$ \text{Profit}_{forward} = \text{Payoff}_{forward} + AV(\text{Cash flows at time 0}) \\
+= \text{Payoff}_{forward} + 0$$
+
+Note that the short position would just be the negative opposite of the
+long payoff.
+
+## Four Ways of Buying a Stock
+
+1.  Outright purchase: Pay for the stock at time 0 and receive it at
+    time 0.
+2.  Forward contract: Pay for the stock at time T and receive it at
+    time T.
+3.  Prepaid forward contract: Pay for the stock at time 0 and receive it
+    at time T.
+4.  Fully leveraged purchase: Receive the stock at time 0 at pay for it
+    at time T.
+
+The table below summarizes these 4 methods:
+
+|                   Method | Payment Time | Time Stock is Received | Payment Amount |
+|-------------------------:|:------------:|:----------------------:|:--------------:|
+|        Outright Purchase |      0       |           0            |     $S_0$      |
+|                  Forward |      T       |           T            |   $F_{0,T}$    |
+|          Prepaid Forward |      0       |           T            |  $F_{0,T}^P$   |
+| Fully Leveraged Purchase |      T       |           0            |  $S(0)e^{rT}$  |
+
+## Pricing a Forward and Prepaid Forward Contract
+
+An argument to "correctly price" a forward contract using *law of one
+price*. The law states that **two portfolios with exactly the same
+return must have the same price**.
+
+### Pricing a Prepaid Forward Contract
+
+A prepaid forward, the investor can pay for the stock now and receive
+the stock at a later date. Lets use $F_{0,T}^P$ to denote the forward
+price. The only difference between this and a regular Forward Contract
+is the timing of the payment at time 0 rather than at time T.
+
+Since the only difference between the two is the time value of money,
+the forward price should equal the prepaid forward at the risk-free
+rate:
+
+$$F_{0,T} = F_{0,T}^P \cdot e^{rT}$$
+
+### A Nondividend-Paying Stock [^1]
+
+[^1]: Nondividend just means there's no dividend during duration of time
+    T.
+
+Two ways to own a share of stock at time T:
+
+-   Buy a share of stock at time 0 and hold until time T.
+-   Enter into a prepaid forward contract at time 0 on a share of stock
+    with expiration at time T.
+
+Since both outcomes are the same, the initial prices must be the same:
+
+$$F_{0,T}^P = S(0)$$
+
+### A Dividend-Paying Stock
+
+**Discrete Dividends**
+
+Since the investor of the contract does not own the stock until time T.
+They will not receive any dividends that are paid. Therefore we should
+reduce the price of the contract by the dividend payments.
+
+$$F_{0,T}^P = S(0) - PV(\text{Divs})$$
+
+**Continuous Dividends**
+
+To generalize stocks that frequently pay dividends, a continuous
+dividend model can be useful. We assume $\delta$ to represent the
+dividend amount as a certain percent of the price.
+
+Assume we own a one share of stock that pays continuous dividends. Then
+after time T, we would own $e^{\delta T}$ shares. On the flip side this
+can also represent the amount we lose out on for not owning the share.
+Thus the prepaid forward price of a stock that pays continuous dividends
+is:
+
+$$F_{0,T}^P = S(0) \cdot e^{-\delta T} $$
+
+> example: The following table shows four methods to buy the stock and
+> the total payment needed for each method. Payments that do not take
+> place immediately happen at time T, T\>0. The payment amounts are as
+> of the time of payment and have not been discounted to present date.
+>
+> |          Method          | Total Payment |
+> |:------------------------:|:-------------:|
+> |    Outright Purchase     |       A       |
+> | Fully Leveraged Purchase |       B       |
+> | Prepaid Forward Contract |       C       |
+> |     Forward Contract     |       D       |
+>
+> Rank the payments from smallest to largest.
+>
+> **Outright Purchase:** $$ A = S(0)$$
+>
+> **Fully Leveraged Purchase:** $$ B = S(0) \cdot e^{rT}$$
+>
+> **Prepaid Forward Contract:**
+> $$ C = F_{0,T}^P(S) = S(0) \cdot e^{-\delta T}$$
+>
+> **Forward Contract:** $$ D = F_{0,T}(S) = S(0) \cdot e^{r - \delta}T$$
+>
+> Conclude that C\<D\<A\<B
+
+### Pricing a Forward Contract
+
+Recall that the accumulated value of a prepaid forward price at the
+risk-free rate:
+
+$$F_{0,T} = F_{0,T}^P \cdot e^{rT}$$
+
+The following table can be derived by combining the dividend pricing
+above with the prepaid forward prices.
+
+|            Dividends |  Prepaid Forward Price   |         Forward Price          |
+|---------------------:|:------------------------:|:------------------------------:|
+|         No Dividends |          $S(0)$          |          $S(0)e^{rT}$          |
+| Continuous Dividends |      $S(0)e^{-rT}$       |    $S(0)e^{(r - \delta )T}$    |
+|    Discrete Divdends | $S(0) - PV(\text{Divs})$ | $S(0)e^{rT} - AV(\text{Divs})$ |
+
+### Forward Premium
+
+**Forward Premium:** The ratio between the forward price and the current
+stock price:
+
+$$\text{Forward premium} = \frac{F_{0,T}}{S(0)}$$
+
+$$\text{Annualized forward premium rate} = \frac{1}{T} ln{(\frac{F_{0,T}}{S(0)})}$$
+
+$$\text{Annualized forward premium rate} = \frac{1}{T} ln{(\frac{S(0)e^{(r - \delta)T}}{S(0)})} \\
+ = \frac{1}{T}(r - \delta)T \\
+ = r - \delta$$
+
+The difference between the risk-free rate and the dividend yield,
+$r - \delta$, is the **cost of carry**
+
+## Synthetic Forwards
+
+A synthetic forward replicates the payoff of a forward contract without
+the contract. Below is a table that summarizes the cash flows of
+different transactions:
+
+|    Transaction | Time-0 Cash Flows |    Time-T Cash Flows     |
+|---------------:|:-----------------:|:------------------------:|
+|    Buy a stock |      $-S(0)$      |         $+S(T)$          |
+|   Borrow Money |      $+S(0)$      | $-S(0)e^{rT} = -F_{0,T}$ |
+| Net cash flows |         0         |     $S(T) - F_{0,T}$     |
+
+A **synthetic long forward** can be created by buying a stock and
+borrowing money.
+
+$$\text{Synthetic long forward} = \text{Stock} - \text{Zero-coupon bond}$$
+
+Payoff Diagrams
+
+![Synthetic Long Forward
+Payoff]("synth long forward.png")
+
+\newpage
+
+## Exploiting Arbitrage
+
+**Arbitrage** generates a positive riskless cash flow at the time of an
+initial transaction or in the future by buying and selling assets
+without any net investment of funds. In order for a arbitrage to be
+possible the following criteria below must be satisfied:
+
+$\begin{array}{|c|} \hline \text{Cash Flows} \\ \hline \text{At time 0, is the net cash flow} \geq 0? \\ \text{Is every net future cash flow} \geq 0? \\ \text{Is at lesat one net future cash flow} > 0 \\ \hline \end{array}$
+
+> example: The current price of a stock index is 1,000. The continuously
+> compounded interest rate is 5% per annum, and the index does not pay
+> dividends.
+>
+> A 3-month forward contract on the index at a forward price of 1,020 is
+> available in the market.
+>
+> 1.  Identify if an arbitrage opportunity is available. If it is
+>     available, how would you exploit this opportunity
+>
+> 2.  What arbitrage profit can be made in 3 months on one contract
+>
+> The theoretical forward price for a stock that does not pay dividends
+> is: $$F_{0,T} = S(0)e^{rT}$$
+>
+> Thus we have: $$ F_{0,0.25} = 1000e^{0.05(0.25)} = 1012.58$$
+>
+> To exploit, we buy low by buying the synthetic forward with price of
+> 1012.58 and sell high by selling the actual forward with a forward
+> price of 1020.
+>
+> The synthetic long forward is created by longing the stock index and
+> shorting a bond with a maturity value of 1012.58.
+>
+> The arbitrage profit is the 1020 - 1012.58 = 7.42
+
+# Futures Contract Basics
+
+Forwards are **not traded** on standardized exchanges. They are arranged
+directly between parties or by investment firms on behalf of their
+clients. Forward contracts are relatively difficult to enter and exit.
+
+***Futures Contracts*** are accessible on exchanges, are more liquid,
+and are structured so as to reduce the risk for buyers and sellers. A
+futures contract is a standardized agreement, similar to a forward
+contract, where buyers and sellers post a margin and the contract is
+marked-to-market.
+
+**Forwards vs Futures**
+
+1.  **Customization:** Size, price, and expiration dat already predetermined. Thus, a futures contract is a standardized contract.
+
+2.  **Marked-to-Market:** Futures contract gains and losses are often settled daily in a proccess called "marking-to-market."
+
+3.  **Credit Risk:** Because of marking-to-market, where each party credits or debits its gains and losses frequently, often daily, credit risk is reduced.
+
+4.  **Liquidity:** Futures are exchange=traded and are readily bought and sold. It is easier to enter into a long position and take an opposite short position. To close out of a long position, you would short the exact same position.
+
+5. **Pricing Limits:** A price limit is a move in the price that causes a temporary stop in trading. Futures tend to have a price limit, for example 7%. If contracts drop more than the price limit within a trading day, then trading is halted.
+
+| Feature | Forwards | Futures |
+|-----|:-----:|:-----:|
+|Customization| Can be customized | Standardized|
+| Marked-to-Market | Settled on expiration date only | Settled daily|
+| Credit Risk | Riskier | Less risky |
+| Liquidity | Relatively illiquid and traded over-the-counter | Liquid and exchange traded |
+|Pricing Limits | Not applicable | Applicable |
+
+## Features of Futures Contracts
+
+**Notional Values**
+
+A futures contract may have a multiplier associated with it. For instance, the S&P 500 index as a multiplier of $250. The multiplier is used to determine the *notional value*, or size, of the futures contract.
+
+> example: The current futures price on the S&P 500 index is 2460.61. An investor takes a long psoition in 10 S&P 500 futures contracts, with each contract having a notional value equal to $250 times the futures price.
+>
+> \[\text{Notional Value of 10 Contracts} = 10 * 250 * 2460.61 = 615152.50\]
+>
+
+**Maintenance & Initial Margins**
+To protect against the risk of default, the futures contract requires both the buyer and seller to make a deposit into a margin account. The initial margin deposit required is called *initial margin*
+
+Gains and losses are added to and subtracted from the margin account as futures prices change. Because the margin account value fluctuates, a minimum margin level is required called a *maintenance margin*
+
+# Introduction to Options
+
+An investor may want to buy a stock at 1,500 in the future. Instead of committing to it using a forward contract, he can enter an option agreement to have the option of buying it for 1,500. 
+
+An option gives the investor the option to make a financial decision in the future. An option offers the owner the right, but not the obligation, to buy or sell an asset at an agreed-upon price during a certain period of time or on a specific date.
+
+|Position|Terminology|Premium|
+|:---:|:---:|:---:|
+|Option buyer| Option holder| Pays premium upfront|
+|Option seller| Option writer| Receives premium upfront|
+
+**Option Terminology**
+
+1. **Expiration:** The date the contract expires
+2. **Strike Price:** The price which the underlying asset can be exchnaged for. Denoted as "K".
+3. **Exercising:** Using the rights provided in the option contract.
+
+**Exercise Styles**
+
+1. **American** - can be exercised at any time during its term.
+2. **Bermudan** - can only be exercised at specific times during its term.
+3. **European** - can only be exercised at expiration.
+
+
+## Call Options
+A call option is an agreement in which the owner as the right, but not the obligation, to buy the underlying asset from the seller at the strike price.
+
+**To Exercise or Not to Exercise?**
+
+A call option will only be exercised if the underlying asset price is greater than the strike price.
+
+**Payoff of Call Options**
+
+
+\[  \text{Payoff}_{\text{long call}} = \begin{cases} 0 \text{ if } S(T) \leq K  \\ S(T) - K \text{ if } S(T)  > K \end{cases} \]
+
+or \[\text{Payoff}_{\text{long call}} = \text{max}[0, S(T)-K]\]
+
+
+![Long Call Payoff]("Payoff Long Call.png")
+
+**Payoff Short Call**
+
+\[\text{Payoff}_{\text{short call}} = -\text{max}[0, S(T)-K]\]
+
+![Short Call Payoff]("Payoff Short Call.png")
+
+
+**Profit of Call Options**
+
+\[\begin{aligned} 
+\text{Profit}_{\text{long call}} 
+  &= \text{Accumulated value of all cash flows} \\  
+  &= \text{Profit}_{\text{long call}} + \text{AV}(\text{Cash flows at time 0}) \\
+  &= \text{max}[0, S(T)-K] -AV(C)
+\end{aligned}\]
+
+![Long Call Profit]("P(T) Long Call.png")
+
+**Profit Short Call**
+
+\[\begin{aligned} 
+\text{Profit}_{\text{short call}} 
+  &= \text{Accumulated value of all cash flows} \\  
+  &= \text{Profit}_{\text{short call}} + \text{AV}(\text{Cash flows at time 0}) \\
+  &= \text{max}[0, S(T)-K] +AV(C)
+\end{aligned}\]
+
+![Short Call Profit]("P(T) Short Call.png")
+
+**Maximum Gain Loss**
+
+| Position | Maximum Loss | Maximum Gain |
+|:--------:|:--------:|:--------:|
+|Long Call| AV(C) | $\infty$ |
+|Short Call | $\infty$ | AV(C)|
+
+**Position in the Underlying**
+
+| Formal Term | Alternative Term | Position in Option | Position in Underlying |
+|:-----:|:-----:|:-----:|:-----:|
+|Long Call| Purchased Call | Long | Long| 
+|Short Call | Written Call | Short | Short
+
+## Put Options
+A put option is an agreement in which the owner has the option, but not the obligation, to **sell** the underlying asset to the option writer at the strike price.
+
+**To Exercise or Not to Exercise**
+
+A put option will only be exercised if the asset price is lower than the strike price.
+
+**Payoff of Put Option**
+
+\[  \text{Payoff}_{\text{long put}} = \begin{cases} K - S(T) \text{ if } S(T) \leq K  \\0 \text{ if } S(T)  > K \end{cases} \]
+
+or \[\text{Payoff}_{\text{long put}} = \text{max}[0, K - S(T)]\]
+
+
+\newpage
+
+
+![Long Put Payoff]("Payoff Long Put.png")
+
+**Payoff Short Put**
+
+\[\text{Payoff}_{\text{short put}} = -\text{max}[0, K - S(T)]\]
+
+![Short Put Payoff]("Payoff Short Put.png")
+
+**Profit of Put Options**
+
+\[\begin{aligned} 
+\text{Profit}_{\text{long put}} 
+  &= \text{Accumulated value of all cash flows} \\  
+  &= \text{Profit}_{\text{long put}} + \text{AV}(\text{Cash flows at time 0}) \\
+  &= \text{max}[0, K-S(T)] -AV(P)
+\end{aligned}\]
+
+![Long Put Profit]("P(T) Long Put.png")
+
+\[\begin{aligned} 
+\text{Profit}_{\text{short put}} 
+  &= \text{Accumulated value of all cash flows} \\  
+  &= \text{Profit}_{\text{short put}} + \text{AV}(\text{Cash flows at time 0}) \\
+  &= \text{max}[0, K-S(T)] +AV(P)
+\end{aligned}\]
+
+![Short Put Profit]("P(T) Short Put.png")
+
+**Maximum Gain Loss**
+
+| Position | Maximum Loss | Maximum Gain |
+|:--------:|:--------:|:--------:|
+|Long Put| AV(P) |  $K -\text{AV}(P)$ |
+|Short Put | $K -\text{AV}(P)$ | AV(P)|
+
+**Position in the Underlying**
+
+| Formal Term | Alternative Term | Position in Option | Position in Underlying |
+|:-----:|:-----:|:-----:|:-----:|
+|Long Put| Purchased Put | Long | Short| 
+|Short Put | Written Put | Short | Long |
+
+## Option Moneyness
+
+| Moneyness | Description |
+|:---:|:---:|
+| Out-of-the-money | If excrcised, option payoff is negative|
+| At-the-money | If exercised, option payoff is 0 |
+| In-the-money | If exercised, option payoff is positive|
+
+# Option Strategies 
+
+## Options as Insurance
+Various combinations of call and put options can be used as insurance for long and short positions. 
+
+### Call and Put Options as Insurance
+
+A call option is insurance against a stock price increasing, since the call guarantees the maximum price you will pay for the stock is the strike price K. Likeweise, a put option is insurance against a stock price decreasing.
+
+### Buying Insurance
+
+- You own a stock and purchase insurance to protect yourself from losses
+- You short a stock and purchase insurance to protect yourself from losses
+
+#### Floor
+Purchasing a Put sets a floor. The least payoff is at lesat K
+
+\[\text{Asset} + \text{Put} = \text{Floor}\]
+
+\[\text{Asset} + \text{Put} = \text{Call} + \text{Bond}\]
+
+#### Cap
+Assume you short-sell an asset. A call is an insurance against an asset increasing in price. 
+
+\[-\text{Asset} + \text{Call} = \text{Cap}\]
+
+\[-\text{Asset} + \text{Call} = \text{Put} - \text{Bond}\]
+
+### Selling Insurance
+Instead of buying options to insure a position, let's now consider the case where you sell a call or put to another investor.
+
+- A position is said to be **covered** when the option writer as an offsetting position in the underlying asset.
+- If there is no offsetting position, the option is said to be **naked**.
+
+#### Covered Call
+
+\[\text{Short call} + \text{Long asset} = \text{Write a covered call}\]
+
+#### Covered Put
+
+\[\text{Short put} + \text{Short asset} = \text{Write a covered put}\]
+
+## Graphing Payoff Diagrams
+
+### From First Principles
+
+Create a payoff table that's seperated by strike regions, and then graph the total payoff in each region accordingly.
+
+```{r echo=FALSE}
+
+Payoff_Table <- cbind(
+  c(
+    "Buy 3 calls (K = 20)",
+    "$\\text{Short 2 forwards } (F_{0,T} = 30)$",
+    "Buy 1 put (K = 40)",
+    "Sell 4 calls (K = 50)",
+    "Total Payoff"
+  ), c(0, "2[30 - S(T)]", "40 - S(T)", 0, "100 - 3S(T)"),
+  c("3[S(T) - 20]",
+    "2[30 - S(T)]",
+    "40 - S(T)",
+    0,
+    40),
+  c("3[S(T) - 20]",
+    "2[30 - S(T)]",
+    "40 - S(T)",
+    0,
+    40),
+  c("3[S(T) - 20]",
+    "2[30 - S(T)]",
+    0,
+    0,
+    "S(T)"),
+  c("3[S(T) - 20]",
+    "2[30 - S(T)]",
+    0,
+    "-4[S(T) - 50]",
+    "200 - 3S(T)")
+)
+
+colnames(Payoff_Table) <- c("Position",
+    "$\\text{S(T)} \\leq 20$",
+    "$20 < \\text{S(T)} \\leq 30$",
+    "$30 < \\text{S(T)} \\leq 40$",
+    "$40 < \\\text{S(T)} \\leq 50$",
+    "$\\text{S(T)} > 50$"
+  )
+
+
+```
+
+
+> example: An investor enters into the following positions, all on the same underlying asset and time to expiration:
+>
+> * Long 3 call options with a strike price of $20
+> * Short 2 forwards with a forward price of $30
+> * Long 1 put option with a strike price of $40
+> * Short 4 call options with a strike price of $50
+>
+> Sketch the investor's payoff graph at expiration.
+> 
+
+```{r echo=FALSE} 
+
+d_Payoff_Table <- knitr::kable(Payoff_Table, "pipe" , escape = FALSE, format = "latex", caption = "Payoff Table")
+
+kableExtra::kable_styling(d_Payoff_Table, latex_options = c("scale_down", "hold_position"))
+
+```
+> ![Payoff Diagram]("Payoff Diagram.png"){width=80%}
+>
+
+### Graphing all Calls and Puts (Shortcut)
+
+Consider that a in-the-money call option \(\text{Payoff} = S(T)-K\). and that a short in-the-money call option \(\text{Payoff} = -S(T) + K\). We see that both payoffs are similar to linear equations in the form of \(y = mx +b\).
+
+For calls we go from left to right. Each additional call option increases/decreases the slope by 1. 
+
+For puts we go from right to left. Each additional put option increases/decreases the slope by 1. K gives us the strike price for when the slope changes as well as adds up to the intercept. 
+
+## Combining Options
+
+There are 8 following strategies that combine the payoffs of calls and puts to hedge or speculate against various outcomes.
+
+```{r echo=FALSE}
+
+Strategies <- c("1. Bull Spread",
+                "2. Bear Spread",
+                "3. Box Spread",
+                "4. Ratio Spread",
+                "5. Collar",
+                "6. Straddle",
+                "7. Strangle",
+                "8. Butterfly Spread"
+                )
+
+kable(Strategies, "pipe", col.names = c("Type"), align = "c")
+
+```
+
+**1. Bull Spread**
+A bull spread is created by buying a call and selling a higher-strike call, or buying a put and selling a higher strike put. The payoff increases when the asset price increases by a small amount.
+
+\newpage
+
+![Bull Spread Payoff]("Bull Spread Payoff.png")
+
+**2. Bear Spread**
+A bear spread is created by selling a call and buying a higher-strike call, or selling a put and buying a higher-strike put. Notice that this is the inverse of a bull spread.
+
+![Bear Spread Payoff]("Bear Spread Payoff.png")
+
+**3. Box Spread**
+A box spread is a four-option strategy consisting of buying a bull spread and buying a bear spread, where one spread uses calls and the other uses otherwise identical puts. The payoff of a box spread is a **long risk-free zero-coupond bond.** In this case the investor is essentially lending money.
+
+![Box Spread Payoff]("Box Spread Payoff.png")
+
+**4. Ratio Spread**
+A ratio spread is created by buyin gm options at one strike price and then selling n options with a different strike price where  $m \neq n$. The advantage of ratio spreads is that you can have higher payoffs at the expense of increased risk if the asset moves against your position. Using the premium collected from selling one position to acquire more of the opposite position at a further out strike price.
+
+![Call Ratio Spread Payoff]("Call Ratio Spread Payoff.png")
+
+![Put Ratio Spread Payoff]("Put Ratio Spread Payoff.png")
+
+**5. Collar**
+A collar is created by purchasing a put a lower strike price and selling a call at a higher strike price.A collar different from a put in that the investor insures against losses only if the underlying moves above the second strike price.
+
+The difference between the two strike prices are referred to as the **collar width**. It is also possible to create a **zero-cost collar** when the premiums of the call and put options are equal.
+
+In combination with a long stock, we get a **collared stock** which has 0 payoff outside the two strike prices, but positive payoff between the strike prices.
+
+![Collar Payoff]("Collar Payoff.png")
+
+**6. Straddle**
+A straddle is created by purchasing both a call and a put with the same strike and time of expiration. These are used when the investor believes the underlying asset will experience large moves.
+
+![Straddle Payoff]("Straddle Payoff.png")
+
+**7. Strangle**
+A strangle is created by purchasing a put and a higher-strike call with the same time to expiration. Like a straddle, it is used if the investor believes the assets will be volatile but with a lower initial cost.
+
+![Strangle Payoff]("Strangle Payoff.png")
+
+**8. Butterfly Spread**
+A butterfly spread is used when an investor believes the underlying asset's price will stay close to its current price but also wants to be protected against potentially large losses.
+
+**i)  Symmetric Butterfly Spread**
+A combination of option positions with equidistant strike prices. Has flat payoffs at the ends and a peak in the middle.
+
+Has long options on K1 and K3, and two short options K2. Where K1 < K2 < K3. Or combine a bull spread with a bear spread. Or Combine a written straddle with a long strangle.
+
+![Symmetric Butterfly Spread Payoff]("Sym Butterfly Spread Payoff.png")
+
+![Symmetric Butterfly Spread Payoff 2]("Sym Butterfly Spread Payoff 2.png")
+
+
+**ii) Asymmetric Butterfly Spread**
+Similar to a symmetric butterfly spread but that the distances between K2 - K1 $\neq$ K3 - K2. We can also see that the number of options purchased at K1 and K3 must equal K2.
+
+![Asymmetric Butterfly Spread Payoff 2]("ASym Butterfly Spread Payoff.png")
+
+## Put-Call Parity Equation
+
+Put-call parity is a relationship which equates the difference of a European call premium and an equivalent European put premium to the difference of the underlying asset's prepaid forward price and the strike prices present value.
+
+\[\text{Payoff}_{\text{long K-strike European call}} + \text{Payoff}_{\text{short K-strike European put}} = \text{Payoff}_{\text{long forward}} \]
+
+![Put-Call Parity]("Put-Call Parity.png")
+
+Let $C(S,K)$ and $P(S,K)$ denote the cost of a long and short put. 
+
+We can represent this put call parity as:
+
+\[C(S,K) - P(S,K) = F_{0,T}^P - Ke^{-rT}\]
+
+This does not apply to American options.
+
+## Synthetic Positions
+
+Using put-call parity, we can replicate the payoff of calls, puts, stocks, or bonds. These are known as synthetic positions.
+
+
+
+**Synthetic Call**
+The cash flow to enter a long call option:
+
+\[-C(S,K) = - P(S,K) - F_{0,T}^P(S) + Ke^{-rT}\]
+
+Since the stock does not pay dividends
+
+\[-C(S,K) = - P(S,K) - S(0) + Ke^{-rT}\]
+
+Thus, to synthetically create a long call:
+
+* buy an equivalent put option
+* buy a share of stock
+* borrow \(Ke^{-rT}\) at the risk-free rate.
+
+**Synthetic Put**
+The cash flow to enter a long put option:
+
+\[P(S,K) = -C(S,K) + F_{0,T}^P(S) - Ke^{-rT}\]
+
+Assuming the stock does not pay dividends so \(\delta = 0\). Then:
+
+\[-P(S,K) = -C(S,K) +S(0) - Ke^{-rT}\]
+
+Thus, to synthetically create a long put:
+
+* buy an equivalent call option
+* sell a share of stock
+* lend \(Ke^{-rT}\) at the risk-free rate
+
+
+**Synthetic Stock**
+The cash flow needed to purchase a share of stock at time 0 is:
+
+\[-F^P(S) = P(S,K) - C(S,K) - Ke^{-rT}\]
+
+Because the stock pays continuous dividends \(F^P(S) = S(0)e^{-\delta T|}\). Then: 
+
+\[\begin{aligned} 
+-S(0)e^{-\delta T} \cdot  e^{-\delta T}
+  &= e^{-\delta T} [P(S,K)-C(S,K)-Ke^{-rT}] \\  
+-S(0)  &=  e^{-\delta T} P(S,K)-e^{-\delta T}C(S,K)-Ke^{-(r-\delta)T}
+\end{aligned}\]
+
+Thus, to synthetically create a stock:
+
+* sell \(e^{\delta T}\)
+* buy \(e^{\delta T}\) call options
+* lend K\(e^{-(r-\delta) T}\) at the risk-free rate
+
+
+**Synthetic Treasury Bond**
+The cash flow to purchase a T-year risk-free zero-coupon bond, i.e., a treasury, maturing for K is:
+
+\[-Ke^{-rT} = C(S,K) - P(S,K) - S(0)e^{-\delta T}\]
+
+Thus to create a synthetic treasury:
+
+* sell a call option
+* buy a put option
+* buy \(e^{-\delta T}\) shares of stock
+
+### Exploiting Arbitrage
+
+If the theoretical price of an asset as implied by the put-call parity does not equal the actual market price of the asset, than an arbitrage opportunity is available.
+
+1. Using an inequality, write down what you observe
+2. Move all the terms from the less-than side to the greater-than side of the inequality. This gives you the appropriate signs of the cash flows needed.
+
+Let V represent the theoretical price of the asset and V' represent the actual price. If $V' \neq V$, then arbitrage is possible.
+
+1. $V' > V$
+2. $V'-V >0$
+
+positive sign represents cash inflow, and negative sign represents cash outflow.
+
+> example: 
+>
+>* A stock as a price of $50 and pays dividends of $1 in 3 months and another dividend of $1 in 9 months
+>* A $50-strike European put on the stock expiring 1 year has a price of $3
+>* The interest rate is 5% compounded continuously
+>
+> **Part 1**
+>
+>Price of prepaid forward stocK:
+> \[\begin{aligned}
+F^P(S) &= S(0) - \text{PV}(Divs) \\
+       &= 50 - [1e^{-0.05(3/12)} + 1e^{-0.05(9/12)} \\
+       &= 48.0492
+\end{aligned}
+\]
+>
+>Price using put-call parity:
+> \[\begin{aligned}
+C(S,K) - P(S,K) &= F^P(S) - Ke^{-rT} \\
+C(S,50) - 3 &= 48.0492 - 50e^{-0.05(1)} \\
+C(S,50) &= 3.49
+\end{aligned}
+\]
+>
+> **Part 2**
+>
+> From above, we see that the actual price C' = 3.25, where the theoretical price C = 3.49
+>
+>1. $C' < C$
+>2. $C - C'>0$
+>
+> To short a theoretical call, we can create a synthetic short call by rearranging the put-call parity equation:
+>
+> \[P(S,50) + S(0) - \text{PV}(Divs) - Ke^{-rT} - C' > 0\]
+>
+> Thus, in order to exploit the arbitrage:
+>
+>* Sell 1 put
+>* Sell 1 share of stock
+>* Lend money in the amount of $[\text{PV}(Divs)+Ke^{-rT}]$
+>* Buy 1 call
+>
+
+## Put-Call Parity on Other Assets
+
+A futures price can be thought of as a forward price. Thus, the prepaid forward price of a futures contract is the present value of the futures price:
+
+\[F_{0,T}^P(F) = F e^{-rT}\]
+
+Substitute prepaid forward inot the put-call parity results in the put-call parity equation for a futures contract:
+
+\[C(F,K), - P(F,K) = Fe^{-rT} - Ke^{-rT}\]
+
+
+### Put-Call Parity for Bonds
+
+Since options owners don't recieve coupons, the value of the coupons must be subtracted from the bond.Let $B_0$ represent the current price of a coupon-paying bond. The prepaid forward pirce of the bond is:
+
+\[F_{0,T}^P(B) = B_0 - \text{PV}(\text{Coupons})\]
+
+Thus, the put-call parity equation for a bond is:
+
+\[C(B,K) - P(B,K) = B_0 - \text{PV}(\text{Coupons})- Ke^{-rT}\]
+
+### Generalized Put-Call Parity for Exchange Options
+
+We can generalize any option as an option to exchange assets, specifically the underlying asset and the strike asset. These are called **exchange options**.
+
+Recall that:
+
+* C(S,K) allows the call owner to buy S by paying K. It's payoff is max[0, S-K]
+* P(S,K) allows the put owner to sell S and receive K. It's payoff is max[0, K-S]
+
+We can generalize both of these options by stating that
+
+* C(S,K) allows the call owner to receive S by giving up K.
+* P(S,K) allows the put owner to receive K by giving up S.
+
+#### Exchange Option Duality
+
+Consider two assets A and B.
+
+we know that \(C(A,B) = max [0, A-B]\) and that \(P(B,A) = max(0, A-B)\)
+
+Since the payoffs are exactly the same, these options must cost the same. This is known as *exchange option duality*
+
+\[C(A,B)=P(B,A)\]
+
+#### Put-Call Parity for Exchange Options
+
+For European options:
+
+\[C(S,K)- P(S,K) = F^P(S) - F^P(K)\]
+
+We can generalize and develop the put-call parity equation for exchange options as:
+
+\[C(A,B) - P(A,B) = F^P(A) - F^P(B)\]
+
+
+#### Scaling Exchange Options
+
+An important aspect of exchange assets is that tthey can be scaled.
+
+Consider two assets, A and B. If you have a call option that allows you to recieve two shares of asset A for giving up 4 shares of asset B, C(2A,4B). This option is equivalent to purchasing 2 options that allow you to receive 1 share of assset A and give up two shares of asset B. In other words:
+
+\[C(2A,4B) = 2C(A,2B)\]
+
+#### Put-Call Parity for Currency Options
+
+International businesses are exposed to currency risk. This can be hedged by using currency options.
+
+**domestic currency:** is the base currency an investor uses.
+
+**foreign currency:** is the other currency the investor wishes to transact in.
+
+**exchange rate:** the ratio between domestic currency to foreign currency.
+
+\[x_t = \frac{\text{Units of Domestic Currency}}{\text{1 Unit of Foreign Currency}}\]
+
+* \(r_f\) is the continuously compounded risk-free rate for the foreign currency.
+
+* \(r_d\) is the continuously compounded risk-free rate for the domestic currency.
+
+* \(x_0\) is the exchange rate of the domestic currency per one unit of the foreign currency.
+
+To obatin the prepaid forward price on 1 unit of foreign currency, denominated in the domestic currency, we first discount 1 unit of the foreign currency at the foreign risk-free rate. Then, we multiply that amount by the exchange rate to convert to the prepaid forward price to the domestic currency:
+
+\[\begin{aligned}
+F_{0,T}^P(1f) &= (1f \cdot e^{-r_fT})(x_0 \frac{d}{f}) \\
+&=x_0 \cdot e^{-r_fT}
+\end{aligned} \]
+To obtain the ofrward price on 1 unit of a foreign currency, denominated in the domestic currency, we accumulate the prepaid forward price at the domestic risk-free rate:
+
+\[\begin{aligned}
+F_{0,T}(1f) &= F_{0,T}^P(1f) \cdot e^{r_dT} \\
+&= (x_0 \cdot e^{-r_fT}) \cdot e^{r_dT} \\
+&= x_0 \cdot e^{(r_d - r_f)T}
+\end{aligned}\]
+
+## Comparing Options
+
+American and European options are bounded by no-arbitrage arguments. With S as stock, K as strike price, and T as time until expiration. We will denote \(C_{Eur}(S,K,T)\) as the European call option and \(C_{Amer}(S,K,T)\) as the American call option.
+
+An Americcan or European call or put option must be worth at lesat $0. That is because an option owner would never exercise an option if it resulted in a negative payoff. An optoin writer, facing the risk of a loss, will always demand a positive premium to accept this risk.
+
+\[C(S,K,T) \geq 0\]
+\[P(S,K,T) \geq 0\]
+
+Because American options can do everything that european options can and more, we know that American options will be worth at least as much as their European counterparts.
+
+\[C_{Amer}(S,K,T) \geq C_{Eur}(S,K,T)\]
+\[P_{Amer}(S,K,T) \geq P_{Eur}(S,K,T)\]
+
+### Lower Bound of Option Prices
+
+We can find the lower bound by applying put-call parity. Recall that the put and option must be worth at least 0.
+
+\[\begin{aligned}
+C_{Eur}(S,K,T)  - P_{Eur}(S,K,T) &= F_{0,T}^P(S) -Ke^{-rT} \\
+C_{Eur}(S,K,T) &\geq \max[F_{0,T}^P(S) -Ke^{-rT},0] \\
+or\\
+P_{Eur}(S,K,T) &\geq \max[Ke^{-rT} - F_{0,T}^P(S),0]  \\
+\end{aligned}
+\]
+
+Since American options can be excercised at any time, it must be worth at least its immediate exercise value as well:
+
+\[C_{Amer}(S,K,T) \geq S- K\]
+\[P_{Amer}(S,K,T) \geq K -S\]
+
+### Upper bound of Option Prices
+
+A call option when excercised allows you to receive the underlying asset. If an option were to cost more than the underlying asset's price, you would simply just buy the asset instead. Thus, the upper bound of an American call option is the asset's spot price. For a European call option, the maximum payoff is S(T) at time T. Thus the maximum cost of a European call option would just be its T-year prepaid forward price.
+
+For an American put option, the maximum price is the strike price K. Otherwise the investor would simply just sell his assets on the market. For a European put option, the most you could recieve is K at time T, thus the most you would pay would be the discounted strike price \(Ke^{-rT}\).
+
+
+### Summary of Option Prices
+
+| Option | Boundary Conditions                                                                  |
+|:------:|:-----------------------------------------------------------------------------------------:|
+| Calls  |  \(S \geq C_{Amer}(S,K,T) \geq C_{Eur}(S,K,T) \geq \max[F_{0,T}^P(S) -Ke^{-rT},0]\)  |
+| Puts   |  \(K \geq P_{Amer}(S,K,T) \geq P_{Eur}(S,K,T) \geq \max[Ke^{-rT} - F_{0,T}^P(S),0]\)  |
+
+| Option Excercise | Boundary Conditions |
+|:--------------:|:----------------------------------------------------------------------------------:|
+|American Call | \(  S \geq C_{Amer}(S,K,T) \geq \max[S-K,0] \) |
+|European Call | \( F_{0,T}^P \geq C_{Eur}(S,K,T) \geq \max[F_{0,T}^P(S) -Ke^{-rT},0] \) |
+|American Put  |  \(K \geq P_{Amer}(S,K,T) \geq \max[K-S]\) |
+|European Put  | \( Ke^{-rT} \geq  P_{Eur}(S,K,T) \geq \max[Ke^{-rT} - F_{0,T}^P(S)] \) |
+
+## Early Excercising American Options
+
+The following will show when it is rational for investors to excercise their American options early.
+
+**Present Value of Interest**
+
+The interest is the amount the strike price would accumulate at the risk free rate discounted to the day the option is bought.
+
+\[PV(\text{Interest on Strike}) = K(1-e^{-rT})\]
+
+**Present Value of Dividends**
+
+The present value of dividends is the difference between the stock price and the forward price:
+
+\[PV_{0,T}(Divs) = S(0) - F^P_{0,T}(S)\]
+
+Substitute the forward price for discrete divdeneds to get:
+
+\[\begin{aligned}
+PV_{0,T}(Divs) &= S(0) - [S(0) - PV_{0,T}(Divs)] \\
+               &= \sum^n_{i=1}\text{Div}_i \cdot e^{-rt_i}
+\end{aligned}               
+\]
+
+This formula should be intuitive at is simply all dividends paid between 0 and time T discounted to present day at the risk free rate. Thus for continuous divdends the formula is:
+
+\[PV(\text{Dividends}) = S(0)[1-e^{\delta T}]\]
+
+**Early Excercising American Call Options**
+
+We are trying to figure out when it is more beneficial to own the stock now rather than delay owner ship. If you own the stock now you get it's dividends.If you delay excercising, you are protected from an immediate decline in stock price. Specifically with a put option since a put protects against a stock price decline. You gain intrest on the strike K.
+
+***Takeaway***
+
+When the Present Value of Dividends > Present Value of Strike and Insurance, than it is rational to excercise early.
+
+It is never rational to early exercise a nondividend-paying stock. This is because there is no point to owning the stock now vs owning the stock later. You still collect on premiums and you have insurance against a drop in stock price. Thus, a non dividend paying stock American call option is otherwise equivalent to a European call option.
+
+**Early Excercising American Put Options**
+
+We excercise an American put when the Benefit of Receiving Strike Price Now > Benefit of Delaying Strike Price. By not excercising you earn dividends on stock you otherwise would've sold.
+
+***Takeaway***
+
+It is rational to early exercise an American put option when the present value of interest on the strike price is greater than the dividends and insurance earned.
+
+Unlike a call option, it may be rational to early exercise an American put option on a nondividend-paying stock. This means that American puts and European puts on nondividend-payng stocks do not have to have the same price.
+
+## Strike Price Effects
+
+3 no-arbitrage propoistions for calls nad puts regarding how option prices MUST change according to varying strike prices.
+
+**Proposition 1**
+
+Relates option prices to their strike prices. For calls, payoffs must decrease as strike prices increase. For puts, payoffs increase as prices increase.
+
+\[ C(K_1) \geq C(K_2) \geq C(K_3) \newline 
+ P(K_1) \leq P(K_2) \leq P(K_3)\]
+ 
+**Proposition 2**
+
+Difference in option prices must be less than or equal to the difference in strike prices.
+
+\[C_{Amer}(K_1) - C_{Amer}(K_2) \leq K_2 - K_1 \]
+ \[C_{Eur}(K_1) - C_{Eur}(K_2) \leq (K_2-K_1)e^{-rT}\]
+ 
+ for Puts
+ 
+ \[P_{Amer}(K_2) - P_{Amer}(K_1) \leq K_2-K_1 \]
+  \[P_{Eur}(K_2) - P_{Eur}(K_1) \ leq (K_2-K_1)e^{-rT}\]
+
+**Proposition 3**
+
+Known as the *convexity* argument. For call options, premiums decrease slowly as strike price increases. For put options, premiums increase more quickly as strikek prices increase.
+
+\[\frac{C(K_1) - C(K_2)}{K_2-K_1} \geq \frac{C(K_2) - C(K_3)}{K_3 - K_2}\]
+
+![Call Convexity]("Call Convexity.png")
+
+\[\frac{P(K_2) - P(K_1)}{K_2-K_1} \leq \frac{P(K_3) - P(K_2)}{K_3 - K_2}\]
+
+![Put Convexity]("Put Convexity.png")
+
+
+## Time Until Expiration
+
+If \(T_1 < T_2\):
+
+\[C(S,K,T_1) \leq C(S,K,T_2)\]
+\[P(S,K,T_1) \leq P(S,K,T_2)\]
+
+Although this is also generally true for European options there are two exceptions
+
+1. A European call option with a liquidating dividend may expire worthless. Where liquidatiing dividend means that a company will sell all of its assets and close business.
+
+2. When a company declares bankruptcy, its stock becomes worthless. A European put option on the stock will have a payoff equal to the strike price K. However for European puts since we discount with respect to time, the longer payoff option will be discounted more heavily.
+
+# Binomial Option Pricing
+
+The Binomial Option Pricing model is the idea that the price of the underlying asset at the beginning of a period will change to one of two new prices at the end of the period. There are two methods:
+
+1. Replicating Portfolio
+2. Risk-Neutral Valuation
+
+### Replicating Portfolios
+
+**Replicating Portfolios** replicate the payoff of an option. 
+
+\(S_0 = \text{Intitial Price}\) and $u = \text{the up factor}$ and $d = \text{the down factor}$ 
+
+let \(u > d\) so that the Value at the upper node is \(S_0 * u \) and the lower node is \(S_0 * d\)
+
+We create a replicating portfolio by purchasing $\Delta$ shares and lending amount B at the risk-free rate. Dividends are reinvested for h years, and will grow to $\Delta e^{\delta h}$. B is the amount of cash to lend at the risk free rate. B also grows to be $Be^{rh}$. $V_u$ and $V_d$ are the Values at their respective nodes.
+
+\[\Delta e^{\delta h} \cdot (S_0u) + Be^{rh} = V_u\]
+\[\Delta e^{\delta h} \cdot (S_0d) + Be^{rh} = V_d\]
+
+combining the equations and solving for $\Delta$
+
+\[\Delta = e^{-\delta h} \cdot \frac{V_u - V_d}{S_0(u - d)}\]
+
+Solving for B, the amount to lend at the risk free rate by substituting above into one of the initial equations:
+
+\[B = e^{-rh} \frac{V_du-V_ud}{u-d}\]
+
+
+Combining $\Delta$ and B together to get the value of a replicating portfolio at time 0.
+
+\[V_0 = \Delta S_0 +B\]
+
+In Summary: 
+
+* If $\Delta$ is positive, we sell stock. If negative, we sell stock
+* IF B is positive, we lend money. If negative, we borrow money
+
+|     | Call | Put  |
+|:---:|:----:|:----:|
+| $\Delta$| +| -|
+| B | - | + |
+
+### Risk-Neutral Valuation
+
+The Risk-Neutral Valuation is a pricing technique that weights option payoffs using risk-neutral probabilities, and then discounts the payoffs at the risk-free rate. Risk neutral valuations result in the exact same price as replicating portfolios.
+
+Let $p^*$ and $1- p^*$ be the probabilities the stock will go up or down respectively.
+
+\[\begin{aligned}
+  S_0 &= e^{-rh}E^*[\text{Payoff}] \\
+  &= e^{-rh}[p^*(S_0u)e^{\delta h} + (1-p^*)(S_0d)e^{-\delta h}]
+  \end{aligned}\]
+  
+Solving for $p^*$ gives uts the risk-neutral probabilityof an up move in a binomial tree.
+  
+\[p^* = \frac{e^{(r-\delta)h} - d}{u-d}\]  
+
+Thus solving for the price of an option would be
+
+\[\begin{aligned}
+V_0 &= e^{-rh}E^*[\text{Payoff}] \\ 
+&= e^{-rh}[p^* V_u + (1-p^*)V_d]
+\end{aligned}\]
+
+#### No-Arbitrage Condition
+
+Given \(0 < p^* < 1\) and substituting the formula for $p^*$, we get: \(d < e^{(r - \delta)h} < u\)
+
+## Constructing a Binomial Tree
+
+the u and d factors are necessary for creating binomial trees. There are two methods to determining the value of u and d.
+
+### General Method
+Simply choose some factor for the upper and lower node such that:
+
+\[ u = \frac{S_u}{S_0}\] 
+
+\[ d = \frac{S_d}{S_0}\]
+
+### Standard Binomial Tree
+Picking u and d based on forward prices. where $\sigma$ is the annual volatility. $\sigma^2 h$ is the variance over a period of length h.
+
+\[S_tu = F_{t,t+h}e^{\sigma \sqrt{h}} = S_te^{r -\sigma \sqrt{h}}e^{\sigma \sqrt{h}}\]
+
+\[S_tu = F_{t,t+h} \color{red}{e^{-\sigma \sqrt{h}}}\color{black} = S_te^{r -\sigma \sqrt{h}} \color{red}{e^{-\sigma \sqrt{h}}}\]
+
+\[ u  = e^{(r - \delta)h + \sigma \sqrt{h}}\]
+
+\[ d  = e^{(r - \delta)h - \sigma \sqrt{h}}\]
+
+and
+
+\[p^* = \frac{1}{1 + e^{\sigma \sqrt{h}}}\]
+
+
+## Multiple-Period Binomial Option Pricing
+
+![Multiperiod Binomial Tree]("Multiperiod Binomial.png")
+
+### Node by Node
+
+Start with $V_{uu}$, $V_{ud/du}$, and $V_{dd}$ to solve for $V_u$ and $V_d$, then solve for $V_0$
+
+### Direct Approach
+
+\[\text{Pr(reaching node with k up jumps)} = {n \choose k}(p^*)^k(1-p^*)^{n-k} \]
+
+the lower node is represented by k = 0 and the upper node is k = n
+
+### Replicating Portfolio Approach
+
+Calculate $V_u$ and $V_d$, use that to solve for $V_0$
+
+# Black-Scholes Option Pricing Model
+When the number of steps in the binomial model becomes large, the continuously compounded returns become normal and stock prices become lognormal. Thus, our focus in this section is the lognormal distribution and how it is used to model stock prices.
+
+- Section 7.1: Modeling Stock Prices with the Lognormal Distribution
+- Section 7.2: Fitting Stock Prices to a Lognormal Distribution.
+- Section 7.3: The Black-Scholes Formula.
+
+## Modeling Stock Prices with the Lognormal Distribution
+
+There are two assumptions used to model a stock price using lognormal distributions
+
+1. A stock's continuously compounded returns follow a normal distribution
+
+2. Stock returns are independent over time.
+
+Stock returns without dividends will look like:
+
+\[S(0)e^{R(0,t)} = e^{\delta t} S(t) \rightarrow R(0,t) = \ln \frac{S(t)}{S(0T)}\]
+
+With continuous dividends:
+
+\[S(0)e^{R(0,t)} = e^{\delta t} S(t) \rightarrow R(0,t) = \ln \frac{S(t)}{S(0T)} + \delta t\]
+
+
+**Distribution**
+
+The stock's continuously compounded capital gain is normally distributed as follows:
+
+$\alpha$ is the continuously compounded expected return on the stock.
+$\delta$ is the continuously compounded dividend yield on the stock.
+$\sigma$ is the volatility of stock.
+
+\[\ln \frac{S(t)}{S(0)} \text{~} N[m = (\alpha - \delta - \frac{1}{2} \sigma ^2)t, v^2 = \sigma ^2 t]\]
+
+The mean of S(t) is: 
+
+\[E[S(t)] = S(0)e^{(\alpha - \delta)t}\]
+
+The variance of S(t) is:
+
+\[Var[S(t)] = (E[S(t)])^2(e^{\sigma ^2 t}-1)\]
+
+The covariance is:
+
+\[E[\frac{S(T)}{S(t)}] \cdot Var[S(t)]\]
+
+where:
+
+\[E[\frac{S(T)}{S(t)}] = e^{(\alpha - \delta)(T-t)}\]
+
+\[Var[S(t)] = (E[S(t)])^2(e^{\sigma^2 t}-1)\]
+
+**Percentiles**
+
+1. Determine the corresponding pth percentile of the standard normal random variable Z.
+
+2. Substitute the resulting value of Z into the expression for S(t).
+
+## Pricing Options for Lognormal Stock
+
+We want the probability that a stock price S(t) will be less than some arbitrary number K. 
+
+\[Pr(S(t) < K = Pr[\frac{S(t)}{S(0)} < \frac{K}{S(0)}] = Pr[\ln \frac{S(t)}{S(0)} < \ln \frac{K}{S(0)}]\]
+
+Recall that $ln \frac{S(t)}{S(0)}$ is normall distributed with mean $m = (\alpha - \delta - \frac{1}{2} \sigma ^2)$ and variance $v^2 = \sigma ^2 t$
+
+let's define $\hat d _2$ as:
+
+\[\hat d_2 = \frac{\ln \frac{S(0)}{K}+ (\alpha - \delta - \frac{1}{2} \sigma ^2)}{\sigma \sqrt{t}}\]
+
+
+Thus:
+
+\[Pr[S(t) < K] = Pr[Z < - \hat d_2]= N(- \hat d_2)\]
+
+and 
+
+\[Pr[S(t) > K] = Pr[Z <  \hat d_2]= N( \hat d_2)\]
+
+**Conditional Expectations**
+
+\[\hat d_1 = \frac{\ln \frac{S(0)}{K}+(\alpha - \delta + \frac{1}{2} \sigma ^2)}{\sigma \sqrt{t}}\]
+
+\[\hat d_2 = \frac{\ln \frac{S(0)}{K}+(\alpha - \delta - \frac{1}{2} \sigma ^2)}{\sigma \sqrt{t}} = \hat d_1 - \sigma \sqrt{t}\]
+
+
+\[E[S(t)| S(t)<K] = \frac{PE[S(t) | S(t) <K]}{Pr[S(t)| S(t)<K]} = \frac{S(0)e^{(\alpha - \delta)t}N(-\hat d_1)}{N(-\hat d_2)} \]
+
+\[E[S(t)| S(t)>K] = \frac{PE[S(t) | S(t) >K]}{Pr[S(t)| S(t)>K]} = \frac{S(0)e^{(\alpha - \delta)t}N(+\hat d_1)}{N(+\hat d_2)} \]^[PE is the partial expectation]
+
+**True Pricing**
+
+The expected payoff of a European call option:
+
+\[E[\text{Call Payoff}] = S(0)e^{(\alpha - \delta)t}N(\hat d_1) - KN(\hat d_2)\]
+
+The expected payoff of a European put opton:
+
+\[E[\text{Put Payoff}] = KN(- \hat d_2) - S(0)e^{(\alpha - \delta)t}N(-\hat d_1)\]
+
+The prices of the calls and puts today can be represented as:
+
+\[C = e^{-\gamma t}E[\text{Call Payoff}]\]
+\[P = e^{-\gamma t}E[\text{Put Payoff}]\]^[$\gamma$ is the continuously compounded expected return on the option and is usually not known.] 
+
+**Risk-Neutral Pricing**
+
+Under the risk-neutral measure, the expected return of the stock and options is the risk-free rate $\alpha = \gamma = r$. For $\hat d_1$ and $\hat d_2$, substitute $\alpha$ for r.
+
+Risk-neutral expected payoff for call and put options:
+
+\[C = S(0)e^{-\delta t}N(d_1) - Ke^{-rt}N(d_2)\]
+
+\[P = Ke^{-rt}N(-d_2) - S(0)e^{-\delta t}N(-d_1)\]
+
+## Estimating Return and Volatility
+
+Assuming that stock returns are normally distributed, we can use historical stock prices to estimate the parameters of the lognormal distribution
+
+1. Calculate teh continuously compounded returns
+
+\[r_i = \ln \frac{S(i)}{S(i-1)} \text{ for } i = 1,2,...n\]
+
+2. Calculate the sample mean of the returns
+
+\[\bar r = \frac{\sum_{i=1}^n r_i}{n}\]
+
+3. Estimate the standard deviation of returns by taking the square root fo the sample variance.
+
+\[\hat \sigma_h = \sqrt{\frac{\sum_{i=1}^n (r_i - \bar r)^2}{n-1}}\]
+
+4. Annualize the estimate of the standard deviation
+
+\[Var[\ln{\frac{S(t+h)}{S(t)}} = \hat \sigma_h^2 \rightarrow \hat \sigma = \frac{\sigma_h}{\sqrt{h}}  \]
+
+5. Annualize the estimate of the expected return.
+
+\[\begin{aligned}
+E[\ln{\frac{S(t+h)}{S(t)}}] &= \bar r \\ 
+(\hat \alpha - \delta - \frac{1}{2}\hat \sigma^2)h &= \bar r \\
+\therefore \hat \alpha &= \frac{\bar r}{h}
+\end{aligned}\]
+
+## Black Scholes
+
+recall from risk-neutral pricing that:
+
+\[C = F^P(S)N(d_1)-F^P(K)N(d_2)\]
+\[P = F^P(K)N(-d_2) - F^P(S)N(-d_1)\]
+
+where:
+
+\[d_1 = \frac{\ln \frac{F^P(S)}{F^P(K)} + \frac{1}{2}\sigma ^2 }{\sigma \sqrt{T}}\]
+\[d_2 = \frac{\ln \frac{F^P(S)}{F^P(K)} - \frac{1}{2}\sigma ^2 }{\sigma \sqrt{T}} = d_1 - \sigma \sqrt{t}\]
+
+for continuous dividends, we can rewrite $d_1$ as:
+
+\[d_1 = \frac{\ln \frac{S(0)}{K}+(\alpha - \delta + \frac{1}{2} \sigma ^2)}{\sigma \sqrt{t}}\]
+
+We can also express the volatility parameter, $\sigma$, as the annualized standard deviation of the natural log of the prepaid forward price:
+
+\[\sigma = \sqrt{\frac{Var[\ln F^P_{t,T}(S)]}{t}} = \sqrt{\frac{Var[\ln S_t]}{t}} \text{ for } 0 < t \leq T\]
+
+## Options on Currencies
+
+\[\$ F^P(\yen1) = (x_0 \frac{\$}{\yen})(\yen1 e^{-r_\yen T})  = \$ x_0e^{-r_\yen T}\]
+
+# Option Greeks and Risk Management
+
+## Greeks
+
+```{r echo=FALSE}
+
+Greeks <- cbind(
+  c("Delta","Gamma","Theta","Vega","Rho","Psi"),
+  c("$\\Delta$","$\\Gamma$","$\\theta$","N/A","$\\rho$","$\\psi$"),
+  c("Change in option price per increase in stock price", "Change in delta per increase in stock price", "Change in option price per increase in the passage of time","Change in option price per increase in volatility","Change in option price per increase in the risk-free rate", "Change in option price per increase in the dividend yield")
+  
+)
+
+colnames(Greeks) <- c("Greek","Symbol","Description"
+  )
+
+
+
+d_Greeks <- knitr::kable(Greeks, "pipe" , escape = FALSE, format = "latex", caption = "Greeks")
+
+kableExtra::kable_styling(d_Greeks, latex_options = c("scale_down", "hold_position"))
+
+```
+
+### Delta
+
+Measures the change in the option's value corresponding to an increase in the stock price.
+
+\[\Delta = \frac{\partial V}{\partial S}\]
+
+* stock increase correlates to increase in call option payoff, likewise stock increase correlates to put option decrease making puts delta negative. Therefore delta must increase when prices increase.
+
+* $0 \leq \Delta_C \leq 1$ and
+ $-1 \leq \Delta_P \leq 0$
+ 
+* Delta can be interpreted as the number of shares of stock that must be purchased to replicate an option. 
+
+### Gamma
+
+Measures the change in the option's delta corresponding to an increase in the stock price.
+
+\[\Gamma = \frac{\partial  \Delta}{\partial S} = \frac{\partial^2 V}{\partial S^2}\]
+
+* The gamma of a call is equal to that of an otherwise equivalent put.
+
+* Since delta for both calls and puts increases as the stock price increases, and gamma measures the change in delta as the stock price increases, it follows that gamma is positive for both calls and puts.
+
+### Theta
+
+The derivative of the option's value corresponding to the passage of time.
+
+\[\theta = \frac{\partial V}{\partial t}\]
+
+* Theta is usually negative. This is because as the time to expiration decreases, options become less valuable.
+
+* Theta can be positive in some special cases. This includes a deep ITM European put or call option on a stock with high dividend yield.
+
+### Vega
+
+Measures the change in the option's value corresponding to an increase in volatility.
+
+\[Vega = \frac{\partial V}{\partial \sigma}\]
+
+* Vega is the only option Greek tat isn't a Greek letter
+
+* The vega of a call is equal to that of an otherwise equivalent put
+
+* Vega is positive for both calls and puts because options increase in value when volatility increases.
+
+### Rho
+
+Measures the change in the option's value corresponding to an increase in the risk-free interest rate.
+
+\[\rho = \frac{\partial V}{\partial r}\]
+
+* Rho is positive for calls and negative for puts. This is because as the risk-free rate increase, the present value of the strike price (i.e., $Ke^{-rT}$) decreases.Based on the Black-Scholes formula, decreasing $Ke^{-rT}$ will increase the value of a call option but decrease the value of a put option.
+
+### Psi
+
+Measures the change in the option's value corresponding to an increase in the dividend yield.
+
+\[\psi = \frac{\partial V}{\partial \delta}\]
+
+* Psi is negative for calls and positive for puts. This is because as the dividend yield increases, the present value of the stock (i.e., $Se^{-\delta T}$) decreases. Based on the Black-Scholes formula, decreasing $Se^{-\delta T}$ will decrease the value of a call option but increase the value of
+
+### Greek Measures for a portfolio
+
+Greeks are additive. For a portfolio with N options on the same stock, where the quantity of each option is $n_i$, we have:
+
+\[\text{Greek}_{Portfolio} = \sum^N_{i=1} n_i \text{Greek}_i\]
+
+## Elasticity and Related Concepts
+
+elasticity is the percentage chagne int he option price per percentage change in the underlying stock price.
+
+\[\Omega = \frac{ \text{\% change in option price}}{ \text{\% change in stock price}} = \frac{ \Delta S}{V}\]
+
+the elasticity for a call must always be greater than one, and for a put must always be less than 0.
+
+\[\Omega_C \geq 1\] \[\Omega_P \leq 0\]
+
+### Expected Return on Option
+
+Consider that \[\text{\% of portfolio in stock} = \Omega \]
+
+and
+
+\[\text{\% in risk free assets} = 1 - \Omega\]
+
+The instantaneous expected return of the option $\gamma$ is the weighted average of the instantaneous expected return of the stock $\alpha$ and the instantaneous expected return of the risk-free assets $r$.
+
+\[\gamma = \Omega \alpha + (1-\Omega)r \]
+
+### Risk Premium
+
+the risk premium is defined as the excess of the expected return of th asset of the risk-free return.
+
+\[\text{Stock's risk premium} = \alpha - r\]
+
+Likewise, the option risk premium would be:
+
+\[\text{Option's risk premium} = \gamma -r\].
+
+We can rewrite the expected return as:
+
+\[\begin{aligned}
+\gamma - r &= \Omega \alpha + (1- \Omega)r -r \\
+\gamma - r &= \Omega(\alpha - r)
+\end{aligned}\]
+
+
+### Volatility
+
+The volatility of an option is the absolute value of the elasticity times the volatility of the underlying stock:
+
+\[\sigma_{Option} = |\Omega| \cdot \sigma_{Stock}\]
+
+### Sharpe Ratio
+
+The Sharpe ratio $\phi$ of an asset is the ratio of its risk premium to its volatility.
+
+\[\phi_{Stock} = \frac{\alpha -r}{\sigma_{Stock}}\]
+
+and 
+
+\[\phi_{Option} = \frac{\gamma -r}{\sigma_{Option}}\]
+
+We can combine the results of the rewritten Risk premium and option sharpe ratio to derive:
+
+\[\phi_{Option} = \frac{\Omega(\alpha - r)}{|\Omega|\sigma_{Stock}} = \frac{\Omega}{|\Omega|}\phi_{Stock}\]
+
+Since $\Omega$ is positive for a call and negative for a put, we have:
+
+\[\phi_C = \phi_{Stock}\] \[\phi_P = -\phi_{Stock}\]
+
+### Portfolio Elasticity and Risk Premium
+
+For a portfolio of options, the elasticity is the percentage change in the portfolio's value divided by the percentage change inthe price of the underlying stock. It can also be the weighted average of the elasticity of the instruments in it:
+
+\[\Omega_{Port} =\frac{\Delta_{Port}S}{V_{Port}} = \sum^n_{i=1}w_i\Omega_i \]
+
+$w_i$ is the percentage of portfolio invested in option i and $\Omega_i$ is the Elasticity of option i.
+
+The risk premium of the portfolio can be calculated as:
+\[\gamma_{Port} - r = \Omega_{Port}(\alpha -r)\]
+
+## The Delta-Gamma_Theta Approximation
+
+let $\epsilon$ be the price change in the underlying stock between time t to t+h.
+
+\[\epsilon = S(t+h) - S(t)\]
+
+the delta-gamma approximation for the new option price is:
+
+\[V(t+h) \approx V(t) + \Delta_t \epsilon + \frac{1}{2}\Gamma_t\epsilon^2\]
+
+The delta-gamma-theta apprximation is more accurate but requires an additional term:
+
+\[V(t+h) \approx V(t) + \Delta_t \epsilon + \frac{1}{2}\Gamma_t\epsilon^2 + \theta_t h\]
+
+## Delta-Gamma Hedging
+
+**Delta-Hedging:** the easiest way is through buying or selling some stock. The delta of a share of stock is 1 because:
+
+\[\Delta_{Stock} = \frac{\partial S}{\partial S} = 1\]
+
+To calculate the profit on a delta-hedged portfolio, we consider the profit of each component:
+
+* Profit on the options
+* Profit on the stock
+* Profit on the bond
+
+The profit on stocks and options are marked-to-market.
+
+One problem with delta-hedging is tht delta itself changes as the stock price changes. Thus the portfolio would constantly need to be rebalanced or re-hedged so it remains delta neutral.
+
+**Break-Even Delta-Hedged Portfolio**
+
+According to the McDonald text, if the price of the underlying stock chnages by one standard deviation over a short period of time, then a delta-hedged portfolio does not produce profits or losses. Assuming the Black-Scholes framework, given the current stock price, S, the two stock prices after a period h for which the market-maker would break even are:
+
+\[S \pm S \sigma \sqrt{h}\]
+
+**Market-Maker Profit for an Option Writer**
+
+\[\text{Profit} = \underbrace{[+V(t)e^{rh} - V(t+h)]}_\text{Profit on Option} + \underbrace{[-\Delta_tS(t)e^{rh} + \Delta_t S(t+h)]}_\text{Profit on Stock}\]
+
+Using the delta-gamma-theta approximation
+
+\[\text{Profit} \approx -\frac{1}{2}\Gamma_t\epsilon^2 - \theta_th + (e^{rh} -1)[V(t) - \Delta_tS(t)] \]

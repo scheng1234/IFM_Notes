@@ -1,0 +1,3302 @@
+---
+title: "Exam IFM Notes"
+author: "Steven Cheng"
+output:
+  bookdown::pdf_document2: default
+  html_document:
+    df_print: paged
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+
+```{r echo = FALSE}
+
+library(tidyr)
+library(kableExtra)
+
+```
+
+# Introduction to Derivatives
+
+-   Section 1.1: Introduction to Derivatives. We define derivatives and
+    explain the process of buying and selling assets, including
+    short-selling.
+-   Section 1.2: Introduction to Forwards. We discuss a type of a
+    derivative called a forward contract.
+-   Section 1.3: Introduction to Futures. We explore the specifics of
+    another type of derivative called a futures contract.
+
+## Defining Derivatives
+
+Derivatives are a financial instrument whose value is determined by the
+price of something else.
+
+Uses:
+
+1.  To manage risk: Hedging
+2.  To speculate: Make a bet
+3.  To reduce transaction costs: achieve similar returns without owning
+    the underlying which can reduce costs.
+4.  To minimize taxes/avoid regulatory issues: defer taxes and eliminate
+    risk of owning asset while still benefiting from the asset.
+
+Who uses them?
+
+1.  End-users: people enter a derivative contract. corporations,
+    investment managers, and investors
+2.  Market-makers: intermediaries who make money selling derivatives to
+    and from end-users
+3.  Economic observers: Market observers, including regulators who
+    analyze and regulate the activities of the end-users and
+    market-makers.
+
+### Underlying Assets
+
+**Stocks** The most comment underlying asset. It provides the ownership
+of a company. The right to dividends. Voting rights.
+
+**Indices** An index is a statistic used to reflect changes in a
+collection of stocks it tracks. Each can have their own methodology.
+Common indices include S&P 500, DJI, and Nasdaq composite.
+
+**Commodities** Raw materials such as metals, grains, lumber, livestock
+etc... Often are traded in a standardized unit.
+
+**Currencies** Treated much like commodities, they are traded relative
+to other currencies.
+
+## Buying and Selling Assets
+
+**Market-Makers**
+
+-   Stock Exchange: an auction where stocks are bought and sold. i.e.
+    NYSE and Nasdaq. Similarly a commodities exchange is an auction for
+    commodities.
+
+-   Market-Maker: participants (broker dealers) in the stock exchange
+    that has a special arrangement with the exchange to facilitate the
+    buying and selling of an exchange's assets. They match buyers and
+    sellers within the market and charge a fee for this transaction.
+    Often times market makers will act as the seller or buyer in the
+    event there is no match which draws from their own inventory. This
+    is to keep market liquidity.
+
+-   Commissions: Often in the form of
+
+    1.  a flat amount (\$10 per trade)
+    2.  percentage of trannsaction (.2% of trade amount)
+
+-   Bid-ask spread = $\text{Ask Price} - \text{Bid Price}$ where
+    $\text{Ask Price} > \text{Bid Price}$
+
+    Bid Price: the price the market makers buy, the price investors are
+    selling
+
+    Ask Price: the price the market makers sell, the price investors are
+    buying
+
+### Round-trip transaction cost
+
+Total costs associated with opening and closing a financial position.
+
+$$ \text{Round-trip transaction cost}  = \text{total amount paid} - \text{total amount recieved}$$
+
+## Ways to Buy or Sell
+
+1.  Market order: Ask the market-maker to fulfill order immediately at
+    best available price.
+2.  Limit order: specify a certain price at which to buy or sell. Buy
+    limit order fulfilled at limit price or lower. Sell limit is
+    fulfilled at limit price or higher
+3.  Stop-Loss order: executed when the price of an asset falls to (or
+    below) a certain price.
+
+## Accounting vs. Economic Profits
+
+**Accounting Profit:** revenue - explicit costs (costs where actual
+payment is made)
+
+**Economic Profit:** revenue - explicit costs - implicit costs
+(associated opportunity costs)
+
+The "***risk-free***" rate can be something like US treasures as they
+have yet to ever default on a bond payment.
+
+## Short-Selling Assets
+
+**Long vs. Short:** A long position and short position describe how an
+investor benefits from price changes in an asset. Long positions benefit
+from price *increases*, short positions benefit from price *decreases*.
+
+### Short-Selling
+
+If you think the price of share will go down and you want to profit from
+it.
+
+1.  Borrow shares of stock now.
+2.  Immediately sell the borrowed stock.
+3.  Buy the shares back at a future time. This is covering/closing the
+    short position.
+
+Three primary reasons why investors short-sell:
+
+-   Speculating: If you think the price will go down and can profit from
+    this decrease
+-   Financing: Short-selling is a way to borrow money (common in bond
+    markets)
+-   Hedging: Investor can offset the risk of owning a stock. If the
+    investor holds a long position and then short-sells, the risk of the
+    long position is eliminated.
+
+**The Short-Sale Proceeds:** Lender or third party will hold on to
+proceeds from the sale of borrowed shares as collateral until
+short-seller successfully returns the borrowed shares back to lender.
+Then the proceeds are released to short-seller.
+
+**A Haircut:** Since there is a possibility that the short-seller would
+be unable to purchase the shares back on the market if prices rise, an
+additional collateral called "haircut" is set aside to compensate for
+this risk. This additional collateral will be returned to the
+short-seller once the shares are successfully returned back to lender.
+
+**Interest:** Both haircut and proceeds owned by the short-seller earn
+interest wile being held by lender.This is known as *short rebate*. For
+the bond market it is known as the *repo rate*. Short rebate and repo
+rate are usually lower than market interest rates and are based on
+supply and demand.
+
+**Dividends:** Dividends are payed to the owner. Since technically the
+shortseller doesn't own the stock and it is borrowed from the lender,
+the short-seller will need to pay back any dividends accrued during the
+short-sale period. Also known as *lease rate* of the asset.
+
+## Payoff and Profit
+
+**Payoff:** The amount that one party would have if he or she completely
+cashed out. Does not consider cash flows on other dates.
+
+**Profit:** Similar to payoff but includes cash flows.
+
+$$\text{Profit} = \text{Accumulated value of cash flows at the risk-free rate} $$
+
+> example: You bought a car in the beginning of the year 2000 for with a
+> cash payment. On Jan. 1, 2017, you walk into a car dealership and find
+> out that your car is worth \$2,500. Assume that you could have earned
+> a continuously compounded risk-free interest rate of from the year
+> 2000 to the year 2017.
+>
+> What is the payoff on Jan. 1, 2017
+>
+> $$ \text{Payoff} = 2500$$
+>
+> What about the profit on Jan. 1, 2017
+>
+> $$ \text{Profit} = \text{Accumulated value of cash flows}  
+> = 2500e^{0.04(0)} - 23750e^{0.04(17)}
+> = -44379.60$$
+
+Note that for a short position the AV(premium) would be a cash inflow
+
+### Payoff & Profit for a Nondividend-Paying Stock
+
+**Long Position**
+
+The payoff at time T for a long position in the stock is the amount of
+money you would get if you completely cashed out at time T. We denote
+this as the spot price $S(T)$:
+
+$$ \text{Payoff}_{text{long stock}} = S(T)$$
+
+This can be represented as a Payoff Diagram:
+
+![Payoff
+Diagram]("S(T) Plot.png")
+
+The profit at time T is the payoff plus the cash outflow to purchase the
+stock at time 0, accumulated to time T at the risk-free rate:
+
+$$ \text{Profit}_{text{long stock}} = S(T) + AV[-S(0)] \\
+= S(T) - S(0)e^{rT}$$
+
+![Profit
+Diagram]("P(T) Plot.png")
+
+#### Short Positions
+
+For short positions the payoff and profit are just inverse of the long
+position. Where
+
+$$ \text{Payoff}_{text{long stock}} = -S(T)$$
+
+$$ \text{Profit}_{text{long stock}} = -S(T) + AV[S(0)] \\
+= -S(T) + S(0)e^{rT}$$
+
+### Payoff & Profit for Zero-coupon Bond
+
+Investing at the risk-free rate gives you a payoff, but it **does not
+result in a profit**.
+
+$$ \text{Payoff}_{bond} = \text{Maturity Value}  =V $$
+
+where the bonds present value is $Ve^{-rT}$. Thus it's profit is the
+maturity value plus cash flows at time 0:
+
+$$ \text{Profit}_{bond} = V + (-Ve^{-rT})e^{rT} = 0 $$
+
+Short position of the bond is just the inverse of the long position.
+
+# Forward Contract Basics
+
+The purpose of a forward contract is to help reduce market risks for
+businesses. A business can enter a contract to acquire goods at a fixed
+price, and then sell the products that they make at an agreed upon
+price.
+
+**Forward contract:** An agreement between two parties, a buyer and
+seller, to exchange an asset (**underlying asset**) on a specified
+date(**expiration date**) and at a specified price (**forward price**).
+
+In a standard forward contract, money is only exchanged at expiration.
+The buyer is obligated to buy the underlying asset and the seller is
+obligated to sell at the forward price.
+
+### Long & Short (Forward Contracts)
+
+Entering a long forward means that the investor is obligated to buy the
+underlying. A short forward means the investor is obligated to sell the
+underlying.
+
+```{r echo=FALSE}
+
+a <- as.data.frame(c("Obligated to buy" ,"Obligated to sell"))
+rownames(a) <- c("Long Forward", "Short Forward")
+colnames(a) <- NULL
+
+print(a)
+
+```
+
+## Payoff & Profit (forward contracts)
+
+An investor is obligated to buy the underlying asset on the expiration
+date. If the long forward position completely cashes out than we can say
+it is sold at the spot price. Therefore, the payoff of a long forward
+is:
+
+$$ \text{Payoff}_{long \ forward} = \text{Spot price at expiration} - \text{Forward price}$$
+
+Since there are no real cash flows, the profit of a forward contract is
+equal to it's payoff
+
+$$ \text{Profit}_{forward} = \text{Payoff}_{forward} + AV(\text{Cash flows at time 0}) \\
+= \text{Payoff}_{forward} + 0$$
+
+Note that the short position would just be the negative opposite of the
+long payoff.
+
+## Four Ways of Buying a Stock
+
+1.  Outright purchase: Pay for the stock at time 0 and receive it at
+    time 0.
+2.  Forward contract: Pay for the stock at time T and receive it at
+    time T.
+3.  Prepaid forward contract: Pay for the stock at time 0 and receive it
+    at time T.
+4.  Fully leveraged purchase: Receive the stock at time 0 at pay for it
+    at time T.
+
+The table below summarizes these 4 methods:
+
+|                   Method | Payment Time | Time Stock is Received | Payment Amount |
+|-------------------------:|:------------:|:----------------------:|:--------------:|
+|        Outright Purchase |      0       |           0            |     $S_0$      |
+|                  Forward |      T       |           T            |   $F_{0,T}$    |
+|          Prepaid Forward |      0       |           T            |  $F_{0,T}^P$   |
+| Fully Leveraged Purchase |      T       |           0            |  $S(0)e^{rT}$  |
+
+## Pricing a Forward and Prepaid Forward Contract
+
+An argument to "correctly price" a forward contract using *law of one
+price*. The law states that **two portfolios with exactly the same
+return must have the same price**.
+
+### Pricing a Prepaid Forward Contract
+
+A prepaid forward, the investor can pay for the stock now and receive
+the stock at a later date. Lets use $F_{0,T}^P$ to denote the forward
+price. The only difference between this and a regular Forward Contract
+is the timing of the payment at time 0 rather than at time T.
+
+Since the only difference between the two is the time value of money,
+the forward price should equal the prepaid forward at the risk-free
+rate:
+
+$$F_{0,T} = F_{0,T}^P \cdot e^{rT}$$
+
+### A Nondividend-Paying Stock [^1]
+
+[^1]: Nondividend just means there's no dividend during duration of time
+    T.
+
+Two ways to own a share of stock at time T:
+
+-   Buy a share of stock at time 0 and hold until time T.
+-   Enter into a prepaid forward contract at time 0 on a share of stock
+    with expiration at time T.
+
+Since both outcomes are the same, the initial prices must be the same:
+
+$$F_{0,T}^P = S(0)$$
+
+### A Dividend-Paying Stock
+
+**Discrete Dividends**
+
+Since the investor of the contract does not own the stock until time T.
+They will not receive any dividends that are paid. Therefore we should
+reduce the price of the contract by the dividend payments.
+
+$$F_{0,T}^P = S(0) - PV(\text{Divs})$$
+
+**Continuous Dividends**
+
+To generalize stocks that frequently pay dividends, a continuous
+dividend model can be useful. We assume $\delta$ to represent the
+dividend amount as a certain percent of the price.
+
+Assume we own a one share of stock that pays continuous dividends. Then
+after time T, we would own $e^{\delta T}$ shares. On the flip side this
+can also represent the amount we lose out on for not owning the share.
+Thus the prepaid forward price of a stock that pays continuous dividends
+is:
+
+$$F_{0,T}^P = S(0) \cdot e^{-\delta T} $$
+
+> example: The following table shows four methods to buy the stock and
+> the total payment needed for each method. Payments that do not take
+> place immediately happen at time T, T\>0. The payment amounts are as
+> of the time of payment and have not been discounted to present date.
+>
+> |          Method          | Total Payment |
+> |:------------------------:|:-------------:|
+> |    Outright Purchase     |       A       |
+> | Fully Leveraged Purchase |       B       |
+> | Prepaid Forward Contract |       C       |
+> |     Forward Contract     |       D       |
+>
+> Rank the payments from smallest to largest.
+>
+> **Outright Purchase:** $$ A = S(0)$$
+>
+> **Fully Leveraged Purchase:** $$ B = S(0) \cdot e^{rT}$$
+>
+> **Prepaid Forward Contract:**
+> $$ C = F_{0,T}^P(S) = S(0) \cdot e^{-\delta T}$$
+>
+> **Forward Contract:** $$ D = F_{0,T}(S) = S(0) \cdot e^{r - \delta}T$$
+>
+> Conclude that C\<D\<A\<B
+
+### Pricing a Forward Contract
+
+Recall that the accumulated value of a prepaid forward price at the
+risk-free rate:
+
+$$F_{0,T} = F_{0,T}^P \cdot e^{rT}$$
+
+The following table can be derived by combining the dividend pricing
+above with the prepaid forward prices.
+
+|            Dividends |  Prepaid Forward Price   |         Forward Price          |
+|---------------------:|:------------------------:|:------------------------------:|
+|         No Dividends |          $S(0)$          |          $S(0)e^{rT}$          |
+| Continuous Dividends |      $S(0)e^{-rT}$       |    $S(0)e^{(r - \delta )T}$    |
+|    Discrete Divdends | $S(0) - PV(\text{Divs})$ | $S(0)e^{rT} - AV(\text{Divs})$ |
+
+### Forward Premium
+
+**Forward Premium:** The ratio between the forward price and the current
+stock price:
+
+$$\text{Forward premium} = \frac{F_{0,T}}{S(0)}$$
+
+$$\text{Annualized forward premium rate} = \frac{1}{T} ln{(\frac{F_{0,T}}{S(0)})}$$
+
+$$\text{Annualized forward premium rate} = \frac{1}{T} ln{(\frac{S(0)e^{(r - \delta)T}}{S(0)})} \\
+ = \frac{1}{T}(r - \delta)T \\
+ = r - \delta$$
+
+The difference between the risk-free rate and the dividend yield,
+$r - \delta$, is the **cost of carry**
+
+## Synthetic Forwards
+
+A synthetic forward replicates the payoff of a forward contract without
+the contract. Below is a table that summarizes the cash flows of
+different transactions:
+
+|    Transaction | Time-0 Cash Flows |    Time-T Cash Flows     |
+|---------------:|:-----------------:|:------------------------:|
+|    Buy a stock |      $-S(0)$      |         $+S(T)$          |
+|   Borrow Money |      $+S(0)$      | $-S(0)e^{rT} = -F_{0,T}$ |
+| Net cash flows |         0         |     $S(T) - F_{0,T}$     |
+
+A **synthetic long forward** can be created by buying a stock and
+borrowing money.
+
+$$\text{Synthetic long forward} = \text{Stock} - \text{Zero-coupon bond}$$
+
+Payoff Diagrams
+
+![Synthetic Long Forward
+Payoff]("synth long forward.png")
+
+\newpage
+
+## Exploiting Arbitrage
+
+**Arbitrage** generates a positive riskless cash flow at the time of an
+initial transaction or in the future by buying and selling assets
+without any net investment of funds. In order for a arbitrage to be
+possible the following criteria below must be satisfied:
+
+$\begin{array}{|c|} \hline \text{Cash Flows} \\ \hline \text{At time 0, is the net cash flow} \geq 0? \\ \text{Is every net future cash flow} \geq 0? \\ \text{Is at lesat one net future cash flow} > 0 \\ \hline \end{array}$
+
+> example: The current price of a stock index is 1,000. The continuously
+> compounded interest rate is 5% per annum, and the index does not pay
+> dividends.
+>
+> A 3-month forward contract on the index at a forward price of 1,020 is
+> available in the market.
+>
+> 1.  Identify if an arbitrage opportunity is available. If it is
+>     available, how would you exploit this opportunity
+>
+> 2.  What arbitrage profit can be made in 3 months on one contract
+>
+> The theoretical forward price for a stock that does not pay dividends
+> is: $$F_{0,T} = S(0)e^{rT}$$
+>
+> Thus we have: $$ F_{0,0.25} = 1000e^{0.05(0.25)} = 1012.58$$
+>
+> To exploit, we buy low by buying the synthetic forward with price of
+> 1012.58 and sell high by selling the actual forward with a forward
+> price of 1020.
+>
+> The synthetic long forward is created by longing the stock index and
+> shorting a bond with a maturity value of 1012.58.
+>
+> The arbitrage profit is the 1020 - 1012.58 = 7.42
+
+# Futures Contract Basics
+
+Forwards are **not traded** on standardized exchanges. They are arranged
+directly between parties or by investment firms on behalf of their
+clients. Forward contracts are relatively difficult to enter and exit.
+
+***Futures Contracts*** are accessible on exchanges, are more liquid,
+and are structured so as to reduce the risk for buyers and sellers. A
+futures contract is a standardized agreement, similar to a forward
+contract, where buyers and sellers post a margin and the contract is
+marked-to-market.
+
+**Forwards vs Futures**
+
+1.  **Customization:** Size, price, and expiration dat already predetermined. Thus, a futures contract is a standardized contract.
+
+2.  **Marked-to-Market:** Futures contract gains and losses are often settled daily in a proccess called "marking-to-market."
+
+3.  **Credit Risk:** Because of marking-to-market, where each party credits or debits its gains and losses frequently, often daily, credit risk is reduced.
+
+4.  **Liquidity:** Futures are exchange=traded and are readily bought and sold. It is easier to enter into a long position and take an opposite short position. To close out of a long position, you would short the exact same position.
+
+5. **Pricing Limits:** A price limit is a move in the price that causes a temporary stop in trading. Futures tend to have a price limit, for example 7%. If contracts drop more than the price limit within a trading day, then trading is halted.
+
+| Feature | Forwards | Futures |
+|-----|:-----:|:-----:|
+|Customization| Can be customized | Standardized|
+| Marked-to-Market | Settled on expiration date only | Settled daily|
+| Credit Risk | Riskier | Less risky |
+| Liquidity | Relatively illiquid and traded over-the-counter | Liquid and exchange traded |
+|Pricing Limits | Not applicable | Applicable |
+
+## Features of Futures Contracts
+
+**Notional Values**
+
+A futures contract may have a multiplier associated with it. For instance, the S&P 500 index as a multiplier of $250. The multiplier is used to determine the *notional value*, or size, of the futures contract.
+
+> example: The current futures price on the S&P 500 index is 2460.61. An investor takes a long psoition in 10 S&P 500 futures contracts, with each contract having a notional value equal to $250 times the futures price.
+>
+> \[\text{Notional Value of 10 Contracts} = 10 * 250 * 2460.61 = 615152.50\]
+>
+
+**Maintenance & Initial Margins**
+To protect against the risk of default, the futures contract requires both the buyer and seller to make a deposit into a margin account. The initial margin deposit required is called *initial margin*
+
+Gains and losses are added to and subtracted from the margin account as futures prices change. Because the margin account value fluctuates, a minimum margin level is required called a *maintenance margin*
+
+# Introduction to Options
+
+An investor may want to buy a stock at 1,500 in the future. Instead of committing to it using a forward contract, he can enter an option agreement to have the option of buying it for 1,500. 
+
+An option gives the investor the option to make a financial decision in the future. An option offers the owner the right, but not the obligation, to buy or sell an asset at an agreed-upon price during a certain period of time or on a specific date.
+
+|Position|Terminology|Premium|
+|:---:|:---:|:---:|
+|Option buyer| Option holder| Pays premium upfront|
+|Option seller| Option writer| Receives premium upfront|
+
+**Option Terminology**
+
+1. **Expiration:** The date the contract expires
+2. **Strike Price:** The price which the underlying asset can be exchnaged for. Denoted as "K".
+3. **Exercising:** Using the rights provided in the option contract.
+
+**Exercise Styles**
+
+1. **American** - can be exercised at any time during its term.
+2. **Bermudan** - can only be exercised at specific times during its term.
+3. **European** - can only be exercised at expiration.
+
+
+## Call Options
+A call option is an agreement in which the owner as the right, but not the obligation, to buy the underlying asset from the seller at the strike price.
+
+**To Exercise or Not to Exercise?**
+
+A call option will only be exercised if the underlying asset price is greater than the strike price.
+
+**Payoff of Call Options**
+
+
+\[  \text{Payoff}_{\text{long call}} = \begin{cases} 0 \text{ if } S(T) \leq K  \\ S(T) - K \text{ if } S(T)  > K \end{cases} \]
+
+or \[\text{Payoff}_{\text{long call}} = \text{max}[0, S(T)-K]\]
+
+
+![Long Call Payoff]("Payoff Long Call.png")
+
+**Payoff Short Call**
+
+\[\text{Payoff}_{\text{short call}} = -\text{max}[0, S(T)-K]\]
+
+![Short Call Payoff]("Payoff Short Call.png")
+
+
+**Profit of Call Options**
+
+\[\begin{aligned} 
+\text{Profit}_{\text{long call}} 
+  &= \text{Accumulated value of all cash flows} \\  
+  &= \text{Profit}_{\text{long call}} + \text{AV}(\text{Cash flows at time 0}) \\
+  &= \text{max}[0, S(T)-K] -AV(C)
+\end{aligned}\]
+
+![Long Call Profit]("P(T) Long Call.png")
+
+**Profit Short Call**
+
+\[\begin{aligned} 
+\text{Profit}_{\text{short call}} 
+  &= \text{Accumulated value of all cash flows} \\  
+  &= \text{Profit}_{\text{short call}} + \text{AV}(\text{Cash flows at time 0}) \\
+  &= \text{max}[0, S(T)-K] +AV(C)
+\end{aligned}\]
+
+![Short Call Profit]("P(T) Short Call.png")
+
+**Maximum Gain Loss**
+
+| Position | Maximum Loss | Maximum Gain |
+|:--------:|:--------:|:--------:|
+|Long Call| AV(C) | $\infty$ |
+|Short Call | $\infty$ | AV(C)|
+
+**Position in the Underlying**
+
+| Formal Term | Alternative Term | Position in Option | Position in Underlying |
+|:-----:|:-----:|:-----:|:-----:|
+|Long Call| Purchased Call | Long | Long| 
+|Short Call | Written Call | Short | Short
+
+## Put Options
+A put option is an agreement in which the owner has the option, but not the obligation, to **sell** the underlying asset to the option writer at the strike price.
+
+**To Exercise or Not to Exercise**
+
+A put option will only be exercised if the asset price is lower than the strike price.
+
+**Payoff of Put Option**
+
+\[  \text{Payoff}_{\text{long put}} = \begin{cases} K - S(T) \text{ if } S(T) \leq K  \\0 \text{ if } S(T)  > K \end{cases} \]
+
+or \[\text{Payoff}_{\text{long put}} = \text{max}[0, K - S(T)]\]
+
+
+\newpage
+
+
+![Long Put Payoff]("Payoff Long Put.png")
+
+**Payoff Short Put**
+
+\[\text{Payoff}_{\text{short put}} = -\text{max}[0, K - S(T)]\]
+
+![Short Put Payoff]("Payoff Short Put.png")
+
+**Profit of Put Options**
+
+\[\begin{aligned} 
+\text{Profit}_{\text{long put}} 
+  &= \text{Accumulated value of all cash flows} \\  
+  &= \text{Profit}_{\text{long put}} + \text{AV}(\text{Cash flows at time 0}) \\
+  &= \text{max}[0, K-S(T)] -AV(P)
+\end{aligned}\]
+
+![Long Put Profit]("P(T) Long Put.png")
+
+\[\begin{aligned} 
+\text{Profit}_{\text{short put}} 
+  &= \text{Accumulated value of all cash flows} \\  
+  &= \text{Profit}_{\text{short put}} + \text{AV}(\text{Cash flows at time 0}) \\
+  &= \text{max}[0, K-S(T)] +AV(P)
+\end{aligned}\]
+
+![Short Put Profit]("P(T) Short Put.png")
+
+**Maximum Gain Loss**
+
+| Position | Maximum Loss | Maximum Gain |
+|:--------:|:--------:|:--------:|
+|Long Put| AV(P) |  $K -\text{AV}(P)$ |
+|Short Put | $K -\text{AV}(P)$ | AV(P)|
+
+**Position in the Underlying**
+
+| Formal Term | Alternative Term | Position in Option | Position in Underlying |
+|:-----:|:-----:|:-----:|:-----:|
+|Long Put| Purchased Put | Long | Short| 
+|Short Put | Written Put | Short | Long |
+
+## Option Moneyness
+
+| Moneyness | Description |
+|:---:|:---:|
+| Out-of-the-money | If excrcised, option payoff is negative|
+| At-the-money | If exercised, option payoff is 0 |
+| In-the-money | If exercised, option payoff is positive|
+
+# Option Strategies 
+
+## Options as Insurance
+Various combinations of call and put options can be used as insurance for long and short positions. 
+
+### Call and Put Options as Insurance
+
+A call option is insurance against a stock price increasing, since the call guarantees the maximum price you will pay for the stock is the strike price K. Likeweise, a put option is insurance against a stock price decreasing.
+
+### Buying Insurance
+
+- You own a stock and purchase insurance to protect yourself from losses
+- You short a stock and purchase insurance to protect yourself from losses
+
+#### Floor
+Purchasing a Put sets a floor. The least payoff is at lesat K
+
+\[\text{Asset} + \text{Put} = \text{Floor}\]
+
+\[\text{Asset} + \text{Put} = \text{Call} + \text{Bond}\]
+
+#### Cap
+Assume you short-sell an asset. A call is an insurance against an asset increasing in price. 
+
+\[-\text{Asset} + \text{Call} = \text{Cap}\]
+
+\[-\text{Asset} + \text{Call} = \text{Put} - \text{Bond}\]
+
+### Selling Insurance
+Instead of buying options to insure a position, let's now consider the case where you sell a call or put to another investor.
+
+- A position is said to be **covered** when the option writer as an offsetting position in the underlying asset.
+- If there is no offsetting position, the option is said to be **naked**.
+
+#### Covered Call
+
+\[\text{Short call} + \text{Long asset} = \text{Write a covered call}\]
+
+#### Covered Put
+
+\[\text{Short put} + \text{Short asset} = \text{Write a covered put}\]
+
+## Graphing Payoff Diagrams
+
+### From First Principles
+
+Create a payoff table that's seperated by strike regions, and then graph the total payoff in each region accordingly.
+
+```{r echo=FALSE}
+
+Payoff_Table <- cbind(
+  c(
+    "Buy 3 calls (K = 20)",
+    "$\\text{Short 2 forwards } (F_{0,T} = 30)$",
+    "Buy 1 put (K = 40)",
+    "Sell 4 calls (K = 50)",
+    "Total Payoff"
+  ), c(0, "2[30 - S(T)]", "40 - S(T)", 0, "100 - 3S(T)"),
+  c("3[S(T) - 20]",
+    "2[30 - S(T)]",
+    "40 - S(T)",
+    0,
+    40),
+  c("3[S(T) - 20]",
+    "2[30 - S(T)]",
+    "40 - S(T)",
+    0,
+    40),
+  c("3[S(T) - 20]",
+    "2[30 - S(T)]",
+    0,
+    0,
+    "S(T)"),
+  c("3[S(T) - 20]",
+    "2[30 - S(T)]",
+    0,
+    "-4[S(T) - 50]",
+    "200 - 3S(T)")
+)
+
+colnames(Payoff_Table) <- c("Position",
+    "$\\text{S(T)} \\leq 20$",
+    "$20 < \\text{S(T)} \\leq 30$",
+    "$30 < \\text{S(T)} \\leq 40$",
+    "$40 < \\\text{S(T)} \\leq 50$",
+    "$\\text{S(T)} > 50$"
+  )
+
+
+```
+
+
+> example: An investor enters into the following positions, all on the same underlying asset and time to expiration:
+>
+> * Long 3 call options with a strike price of $20
+> * Short 2 forwards with a forward price of $30
+> * Long 1 put option with a strike price of $40
+> * Short 4 call options with a strike price of $50
+>
+> Sketch the investor's payoff graph at expiration.
+> 
+
+```{r echo=FALSE} 
+
+d_Payoff_Table <- knitr::kable(Payoff_Table, "pipe" , escape = FALSE, format = "latex", caption = "Payoff Table")
+
+kableExtra::kable_styling(d_Payoff_Table, latex_options = c("scale_down", "hold_position"))
+
+```
+> ![Payoff Diagram]("Payoff Diagram.png"){width=80%}
+>
+
+### Graphing all Calls and Puts (Shortcut)
+
+Consider that a in-the-money call option \(\text{Payoff} = S(T)-K\). and that a short in-the-money call option \(\text{Payoff} = -S(T) + K\). We see that both payoffs are similar to linear equations in the form of \(y = mx +b\).
+
+For calls we go from left to right. Each additional call option increases/decreases the slope by 1. 
+
+For puts we go from right to left. Each additional put option increases/decreases the slope by 1. K gives us the strike price for when the slope changes as well as adds up to the intercept. 
+
+## Combining Options
+
+There are 8 following strategies that combine the payoffs of calls and puts to hedge or speculate against various outcomes.
+
+```{r echo=FALSE}
+
+Strategies <- c("1. Bull Spread",
+                "2. Bear Spread",
+                "3. Box Spread",
+                "4. Ratio Spread",
+                "5. Collar",
+                "6. Straddle",
+                "7. Strangle",
+                "8. Butterfly Spread"
+                )
+
+kable(Strategies, "pipe", col.names = c("Type"), align = "c")
+
+```
+
+**1. Bull Spread**
+A bull spread is created by buying a call and selling a higher-strike call, or buying a put and selling a higher strike put. The payoff increases when the asset price increases by a small amount.
+
+\newpage
+
+![Bull Spread Payoff]("Bull Spread Payoff.png")
+
+**2. Bear Spread**
+A bear spread is created by selling a call and buying a higher-strike call, or selling a put and buying a higher-strike put. Notice that this is the inverse of a bull spread.
+
+![Bear Spread Payoff]("Bear Spread Payoff.png")
+
+**3. Box Spread**
+A box spread is a four-option strategy consisting of buying a bull spread and buying a bear spread, where one spread uses calls and the other uses otherwise identical puts. The payoff of a box spread is a **long risk-free zero-coupond bond.** In this case the investor is essentially lending money.
+
+![Box Spread Payoff]("Box Spread Payoff.png")
+
+**4. Ratio Spread**
+A ratio spread is created by buyin gm options at one strike price and then selling n options with a different strike price where  $m \neq n$. The advantage of ratio spreads is that you can have higher payoffs at the expense of increased risk if the asset moves against your position. Using the premium collected from selling one position to acquire more of the opposite position at a further out strike price.
+
+![Call Ratio Spread Payoff]("Call Ratio Spread Payoff.png")
+
+![Put Ratio Spread Payoff]("Put Ratio Spread Payoff.png")
+
+**5. Collar**
+A collar is created by purchasing a put a lower strike price and selling a call at a higher strike price.A collar different from a put in that the investor insures against losses only if the underlying moves above the second strike price.
+
+The difference between the two strike prices are referred to as the **collar width**. It is also possible to create a **zero-cost collar** when the premiums of the call and put options are equal.
+
+In combination with a long stock, we get a **collared stock** which has 0 payoff outside the two strike prices, but positive payoff between the strike prices.
+
+![Collar Payoff]("Collar Payoff.png")
+
+**6. Straddle**
+A straddle is created by purchasing both a call and a put with the same strike and time of expiration. These are used when the investor believes the underlying asset will experience large moves.
+
+![Straddle Payoff]("Straddle Payoff.png")
+
+**7. Strangle**
+A strangle is created by purchasing a put and a higher-strike call with the same time to expiration. Like a straddle, it is used if the investor believes the assets will be volatile but with a lower initial cost.
+
+![Strangle Payoff]("Strangle Payoff.png")
+
+**8. Butterfly Spread**
+A butterfly spread is used when an investor believes the underlying asset's price will stay close to its current price but also wants to be protected against potentially large losses.
+
+**i)  Symmetric Butterfly Spread**
+A combination of option positions with equidistant strike prices. Has flat payoffs at the ends and a peak in the middle.
+
+Has long options on K1 and K3, and two short options K2. Where K1 < K2 < K3. Or combine a bull spread with a bear spread. Or Combine a written straddle with a long strangle.
+
+![Symmetric Butterfly Spread Payoff]("Sym Butterfly Spread Payoff.png")
+
+![Symmetric Butterfly Spread Payoff 2]("Sym Butterfly Spread Payoff 2.png")
+
+
+**ii) Asymmetric Butterfly Spread**
+Similar to a symmetric butterfly spread but that the distances between K2 - K1 $\neq$ K3 - K2. We can also see that the number of options purchased at K1 and K3 must equal K2.
+
+![Asymmetric Butterfly Spread Payoff 2]("ASym Butterfly Spread Payoff.png")
+
+## Put-Call Parity Equation
+
+Put-call parity is a relationship which equates the difference of a European call premium and an equivalent European put premium to the difference of the underlying asset's prepaid forward price and the strike prices present value.
+
+\[\text{Payoff}_{\text{long K-strike European call}} + \text{Payoff}_{\text{short K-strike European put}} = \text{Payoff}_{\text{long forward}} \]
+
+![Put-Call Parity]("Put-Call Parity.png")
+
+Let $C(S,K)$ and $P(S,K)$ denote the cost of a long and short put. 
+
+We can represent this put call parity as:
+
+\[C(S,K) - P(S,K) = F_{0,T}^P - Ke^{-rT}\]
+
+This does not apply to American options.
+
+## Synthetic Positions
+
+Using put-call parity, we can replicate the payoff of calls, puts, stocks, or bonds. These are known as synthetic positions.
+
+
+
+**Synthetic Call**
+The cash flow to enter a long call option:
+
+\[-C(S,K) = - P(S,K) - F_{0,T}^P(S) + Ke^{-rT}\]
+
+Since the stock does not pay dividends
+
+\[-C(S,K) = - P(S,K) - S(0) + Ke^{-rT}\]
+
+Thus, to synthetically create a long call:
+
+* buy an equivalent put option
+* buy a share of stock
+* borrow \(Ke^{-rT}\) at the risk-free rate.
+
+**Synthetic Put**
+The cash flow to enter a long put option:
+
+\[P(S,K) = -C(S,K) + F_{0,T}^P(S) - Ke^{-rT}\]
+
+Assuming the stock does not pay dividends so \(\delta = 0\). Then:
+
+\[-P(S,K) = -C(S,K) +S(0) - Ke^{-rT}\]
+
+Thus, to synthetically create a long put:
+
+* buy an equivalent call option
+* sell a share of stock
+* lend \(Ke^{-rT}\) at the risk-free rate
+
+
+**Synthetic Stock**
+The cash flow needed to purchase a share of stock at time 0 is:
+
+\[-F^P(S) = P(S,K) - C(S,K) - Ke^{-rT}\]
+
+Because the stock pays continuous dividends \(F^P(S) = S(0)e^{-\delta T|}\). Then: 
+
+\[\begin{aligned} 
+-S(0)e^{-\delta T} \cdot  e^{-\delta T}
+  &= e^{-\delta T} [P(S,K)-C(S,K)-Ke^{-rT}] \\  
+-S(0)  &=  e^{-\delta T} P(S,K)-e^{-\delta T}C(S,K)-Ke^{-(r-\delta)T}
+\end{aligned}\]
+
+Thus, to synthetically create a stock:
+
+* sell \(e^{\delta T}\)
+* buy \(e^{\delta T}\) call options
+* lend K\(e^{-(r-\delta) T}\) at the risk-free rate
+
+
+**Synthetic Treasury Bond**
+The cash flow to purchase a T-year risk-free zero-coupon bond, i.e., a treasury, maturing for K is:
+
+\[-Ke^{-rT} = C(S,K) - P(S,K) - S(0)e^{-\delta T}\]
+
+Thus to create a synthetic treasury:
+
+* sell a call option
+* buy a put option
+* buy \(e^{-\delta T}\) shares of stock
+
+### Exploiting Arbitrage
+
+If the theoretical price of an asset as implied by the put-call parity does not equal the actual market price of the asset, than an arbitrage opportunity is available.
+
+1. Using an inequality, write down what you observe
+2. Move all the terms from the less-than side to the greater-than side of the inequality. This gives you the appropriate signs of the cash flows needed.
+
+Let V represent the theoretical price of the asset and V' represent the actual price. If $V' \neq V$, then arbitrage is possible.
+
+1. $V' > V$
+2. $V'-V >0$
+
+positive sign represents cash inflow, and negative sign represents cash outflow.
+
+> example: 
+>
+>* A stock as a price of $50 and pays dividends of $1 in 3 months and another dividend of $1 in 9 months
+>* A $50-strike European put on the stock expiring 1 year has a price of $3
+>* The interest rate is 5% compounded continuously
+>
+> **Part 1**
+>
+>Price of prepaid forward stocK:
+> \[\begin{aligned}
+F^P(S) &= S(0) - \text{PV}(Divs) \\
+       &= 50 - [1e^{-0.05(3/12)} + 1e^{-0.05(9/12)} \\
+       &= 48.0492
+\end{aligned}
+\]
+>
+>Price using put-call parity:
+> \[\begin{aligned}
+C(S,K) - P(S,K) &= F^P(S) - Ke^{-rT} \\
+C(S,50) - 3 &= 48.0492 - 50e^{-0.05(1)} \\
+C(S,50) &= 3.49
+\end{aligned}
+\]
+>
+> **Part 2**
+>
+> From above, we see that the actual price C' = 3.25, where the theoretical price C = 3.49
+>
+>1. $C' < C$
+>2. $C - C'>0$
+>
+> To short a theoretical call, we can create a synthetic short call by rearranging the put-call parity equation:
+>
+> \[P(S,50) + S(0) - \text{PV}(Divs) - Ke^{-rT} - C' > 0\]
+>
+> Thus, in order to exploit the arbitrage:
+>
+>* Sell 1 put
+>* Sell 1 share of stock
+>* Lend money in the amount of $[\text{PV}(Divs)+Ke^{-rT}]$
+>* Buy 1 call
+>
+
+## Put-Call Parity on Other Assets
+
+A futures price can be thought of as a forward price. Thus, the prepaid forward price of a futures contract is the present value of the futures price:
+
+\[F_{0,T}^P(F) = F e^{-rT}\]
+
+Substitute prepaid forward inot the put-call parity results in the put-call parity equation for a futures contract:
+
+\[C(F,K), - P(F,K) = Fe^{-rT} - Ke^{-rT}\]
+
+
+### Put-Call Parity for Bonds
+
+Since options owners don't recieve coupons, the value of the coupons must be subtracted from the bond.Let $B_0$ represent the current price of a coupon-paying bond. The prepaid forward pirce of the bond is:
+
+\[F_{0,T}^P(B) = B_0 - \text{PV}(\text{Coupons})\]
+
+Thus, the put-call parity equation for a bond is:
+
+\[C(B,K) - P(B,K) = B_0 - \text{PV}(\text{Coupons})- Ke^{-rT}\]
+
+### Generalized Put-Call Parity for Exchange Options
+
+We can generalize any option as an option to exchange assets, specifically the underlying asset and the strike asset. These are called **exchange options**.
+
+Recall that:
+
+* C(S,K) allows the call owner to buy S by paying K. It's payoff is max[0, S-K]
+* P(S,K) allows the put owner to sell S and receive K. It's payoff is max[0, K-S]
+
+We can generalize both of these options by stating that
+
+* C(S,K) allows the call owner to receive S by giving up K.
+* P(S,K) allows the put owner to receive K by giving up S.
+
+#### Exchange Option Duality
+
+Consider two assets A and B.
+
+we know that \(C(A,B) = \max[0, A-B]\) and that \(P(B,A) = \max(0, A-B)\)
+
+Since the payoffs are exactly the same, these options must cost the same. This is known as *exchange option duality*
+
+\[C(A,B)=P(B,A)\]
+
+#### Put-Call Parity for Exchange Options
+
+For European options:
+
+\[C(S,K)- P(S,K) = F^P(S) - F^P(K)\]
+
+We can generalize and develop the put-call parity equation for exchange options as:
+
+\[C(A,B) - P(A,B) = F^P(A) - F^P(B)\]
+
+
+#### Scaling Exchange Options
+
+An important aspect of exchange assets is that tthey can be scaled.
+
+Consider two assets, A and B. If you have a call option that allows you to recieve two shares of asset A for giving up 4 shares of asset B, C(2A,4B). This option is equivalent to purchasing 2 options that allow you to receive 1 share of assset A and give up two shares of asset B. In other words:
+
+\[C(2A,4B) = 2C(A,2B)\]
+
+#### Put-Call Parity for Currency Options
+
+International businesses are exposed to currency risk. This can be hedged by using currency options.
+
+**domestic currency:** is the base currency an investor uses.
+
+**foreign currency:** is the other currency the investor wishes to transact in.
+
+**exchange rate:** the ratio between domestic currency to foreign currency.
+
+\[x_t = \frac{\text{Units of Domestic Currency}}{\text{1 Unit of Foreign Currency}}\]
+
+* \(r_f\) is the continuously compounded risk-free rate for the foreign currency.
+
+* \(r_d\) is the continuously compounded risk-free rate for the domestic currency.
+
+* \(x_0\) is the exchange rate of the domestic currency per one unit of the foreign currency.
+
+To obatin the prepaid forward price on 1 unit of foreign currency, denominated in the domestic currency, we first discount 1 unit of the foreign currency at the foreign risk-free rate. Then, we multiply that amount by the exchange rate to convert to the prepaid forward price to the domestic currency:
+
+\[\begin{aligned}
+F_{0,T}^P(1f) &= (1f \cdot e^{-r_fT})(x_0 \frac{d}{f}) \\
+&=x_0 \cdot e^{-r_fT}
+\end{aligned} \]
+To obtain the ofrward price on 1 unit of a foreign currency, denominated in the domestic currency, we accumulate the prepaid forward price at the domestic risk-free rate:
+
+\[\begin{aligned}
+F_{0,T}(1f) &= F_{0,T}^P(1f) \cdot e^{r_dT} \\
+&= (x_0 \cdot e^{-r_fT}) \cdot e^{r_dT} \\
+&= x_0 \cdot e^{(r_d - r_f)T}
+\end{aligned}\]
+
+## Comparing Options
+
+American and European options are bounded by no-arbitrage arguments. With S as stock, K as strike price, and T as time until expiration. We will denote \(C_{Eur}(S,K,T)\) as the European call option and \(C_{Amer}(S,K,T)\) as the American call option.
+
+An Americcan or European call or put option must be worth at lesat $0. That is because an option owner would never exercise an option if it resulted in a negative payoff. An optoin writer, facing the risk of a loss, will always demand a positive premium to accept this risk.
+
+\[C(S,K,T) \geq 0\]
+\[P(S,K,T) \geq 0\]
+
+Because American options can do everything that european options can and more, we know that American options will be worth at least as much as their European counterparts.
+
+\[C_{Amer}(S,K,T) \geq C_{Eur}(S,K,T)\]
+\[P_{Amer}(S,K,T) \geq P_{Eur}(S,K,T)\]
+
+### Lower Bound of Option Prices
+
+We can find the lower bound by applying put-call parity. Recall that the put and option must be worth at least 0.
+
+\[\begin{aligned}
+C_{Eur}(S,K,T)  - P_{Eur}(S,K,T) &= F_{0,T}^P(S) -Ke^{-rT} \\
+C_{Eur}(S,K,T) &\geq \max[F_{0,T}^P(S) -Ke^{-rT},0] \\
+or\\
+P_{Eur}(S,K,T) &\geq \max[Ke^{-rT} - F_{0,T}^P(S),0]  \\
+\end{aligned}
+\]
+
+Since American options can be excercised at any time, it must be worth at least its immediate exercise value as well:
+
+\[C_{Amer}(S,K,T) \geq S- K\]
+\[P_{Amer}(S,K,T) \geq K -S\]
+
+### Upper bound of Option Prices
+
+A call option when excercised allows you to receive the underlying asset. If an option were to cost more than the underlying asset's price, you would simply just buy the asset instead. Thus, the upper bound of an American call option is the asset's spot price. For a European call option, the maximum payoff is S(T) at time T. Thus the maximum cost of a European call option would just be its T-year prepaid forward price.
+
+For an American put option, the maximum price is the strike price K. Otherwise the investor would simply just sell his assets on the market. For a European put option, the most you could recieve is K at time T, thus the most you would pay would be the discounted strike price \(Ke^{-rT}\).
+
+
+### Summary of Option Prices
+
+| Option | Boundary Conditions                                                                  |
+|:------:|:-----------------------------------------------------------------------------------------:|
+| Calls  |  \(S \geq C_{Amer}(S,K,T) \geq C_{Eur}(S,K,T) \geq \max[F_{0,T}^P(S) -Ke^{-rT},0]\)  |
+| Puts   |  \(K \geq P_{Amer}(S,K,T) \geq P_{Eur}(S,K,T) \geq \max[Ke^{-rT} - F_{0,T}^P(S),0]\)  |
+
+| Option Excercise | Boundary Conditions |
+|:--------------:|:----------------------------------------------------------------------------------:|
+|American Call | \(  S \geq C_{Amer}(S,K,T) \geq \max[S-K,0] \) |
+|European Call | \( F_{0,T}^P \geq C_{Eur}(S,K,T) \geq \max[F_{0,T}^P(S) -Ke^{-rT},0] \) |
+|American Put  |  \(K \geq P_{Amer}(S,K,T) \geq \max[K-S]\) |
+|European Put  | \( Ke^{-rT} \geq  P_{Eur}(S,K,T) \geq \max[Ke^{-rT} - F_{0,T}^P(S)] \) |
+
+## Early Excercising American Options
+
+The following will show when it is rational for investors to excercise their American options early.
+
+**Present Value of Interest**
+
+The interest is the amount the strike price would accumulate at the risk free rate discounted to the day the option is bought.
+
+\[PV(\text{Interest on Strike}) = K(1-e^{-rT})\]
+
+**Present Value of Dividends**
+
+The present value of dividends is the difference between the stock price and the forward price:
+
+\[PV_{0,T}(Divs) = S(0) - F^P_{0,T}(S)\]
+
+Substitute the forward price for discrete divdeneds to get:
+
+\[\begin{aligned}
+PV_{0,T}(Divs) &= S(0) - [S(0) - PV_{0,T}(Divs)] \\
+               &= \sum^n_{i=1}\text{Div}_i \cdot e^{-rt_i}
+\end{aligned}               
+\]
+
+This formula should be intuitive at is simply all dividends paid between 0 and time T discounted to present day at the risk free rate. Thus for continuous divdends the formula is:
+
+\[PV(\text{Dividends}) = S(0)[1-e^{\delta T}]\]
+
+**Early Excercising American Call Options**
+
+We are trying to figure out when it is more beneficial to own the stock now rather than delay owner ship. If you own the stock now you get it's dividends.If you delay excercising, you are protected from an immediate decline in stock price. Specifically with a put option since a put protects against a stock price decline. You gain intrest on the strike K.
+
+***Takeaway***
+
+When the Present Value of Dividends > Present Value of Strike and Insurance, than it is rational to excercise early.
+
+It is never rational to early exercise a nondividend-paying stock. This is because there is no point to owning the stock now vs owning the stock later. You still collect on premiums and you have insurance against a drop in stock price. Thus, a non dividend paying stock American call option is otherwise equivalent to a European call option.
+
+**Early Excercising American Put Options**
+
+We excercise an American put when the Benefit of Receiving Strike Price Now > Benefit of Delaying Strike Price. By not excercising you earn dividends on stock you otherwise would've sold.
+
+***Takeaway***
+
+It is rational to early exercise an American put option when the present value of interest on the strike price is greater than the dividends and insurance earned.
+
+Unlike a call option, it may be rational to early exercise an American put option on a nondividend-paying stock. This means that American puts and European puts on nondividend-payng stocks do not have to have the same price.
+
+## Strike Price Effects
+
+3 no-arbitrage propoistions for calls nad puts regarding how option prices MUST change according to varying strike prices.
+
+**Proposition 1**
+
+Relates option prices to their strike prices. For calls, payoffs must decrease as strike prices increase. For puts, payoffs increase as prices increase.
+
+\[ C(K_1) \geq C(K_2) \geq C(K_3) \newline 
+ P(K_1) \leq P(K_2) \leq P(K_3)\]
+ 
+**Proposition 2**
+
+Difference in option prices must be less than or equal to the difference in strike prices.
+
+\[C_{Amer}(K_1) - C_{Amer}(K_2) \leq K_2 - K_1 \]
+ \[C_{Eur}(K_1) - C_{Eur}(K_2) \leq (K_2-K_1)e^{-rT}\]
+ 
+ for Puts
+ 
+ \[P_{Amer}(K_2) - P_{Amer}(K_1) \leq K_2-K_1 \]
+  \[P_{Eur}(K_2) - P_{Eur}(K_1) \ leq (K_2-K_1)e^{-rT}\]
+
+**Proposition 3**
+
+Known as the *convexity* argument. For call options, premiums decrease slowly as strike price increases. For put options, premiums increase more quickly as strikek prices increase.
+
+\[\frac{C(K_1) - C(K_2)}{K_2-K_1} \geq \frac{C(K_2) - C(K_3)}{K_3 - K_2}\]
+
+![Call Convexity]("Call Convexity.png")
+
+\[\frac{P(K_2) - P(K_1)}{K_2-K_1} \leq \frac{P(K_3) - P(K_2)}{K_3 - K_2}\]
+
+![Put Convexity]("Put Convexity.png")
+
+
+## Time Until Expiration
+
+If \(T_1 < T_2\):
+
+\[C(S,K,T_1) \leq C(S,K,T_2)\]
+\[P(S,K,T_1) \leq P(S,K,T_2)\]
+
+Although this is also generally true for European options there are two exceptions
+
+1. A European call option with a liquidating dividend may expire worthless. Where liquidatiing dividend means that a company will sell all of its assets and close business.
+
+2. When a company declares bankruptcy, its stock becomes worthless. A European put option on the stock will have a payoff equal to the strike price K. However for European puts since we discount with respect to time, the longer payoff option will be discounted more heavily.
+
+# Binomial Option Pricing
+
+The Binomial Option Pricing model is the idea that the price of the underlying asset at the beginning of a period will change to one of two new prices at the end of the period. There are two methods:
+
+1. Replicating Portfolio
+2. Risk-Neutral Valuation
+
+### Replicating Portfolios
+
+**Replicating Portfolios** replicate the payoff of an option. 
+
+\(S_0 = \text{Intitial Price}\) and $u = \text{the up factor}$ and $d = \text{the down factor}$ 
+
+let \(u > d\) so that the Value at the upper node is \(S_0 * u \) and the lower node is \(S_0 * d\)
+
+We create a replicating portfolio by purchasing $\Delta$ shares and lending amount B at the risk-free rate. Dividends are reinvested for h years, and will grow to $\Delta e^{\delta h}$. B is the amount of cash to lend at the risk free rate. B also grows to be $Be^{rh}$. $V_u$ and $V_d$ are the Values at their respective nodes.
+
+\[\Delta e^{\delta h} \cdot (S_0u) + Be^{rh} = V_u\]
+\[\Delta e^{\delta h} \cdot (S_0d) + Be^{rh} = V_d\]
+
+combining the equations and solving for $\Delta$
+
+\[\Delta = e^{-\delta h} \cdot \frac{V_u - V_d}{S_0(u - d)}\]
+
+Solving for B, the amount to lend at the risk free rate by substituting above into one of the initial equations:
+
+\[B = e^{-rh} \frac{V_du-V_ud}{u-d}\]
+
+
+Combining $\Delta$ and B together to get the value of a replicating portfolio at time 0.
+
+\[V_0 = \Delta S_0 +B\]
+
+In Summary: 
+
+* If $\Delta$ is positive, we sell stock. If negative, we sell stock
+* IF B is positive, we lend money. If negative, we borrow money
+
+|     | Call | Put  |
+|:---:|:----:|:----:|
+| $\Delta$| +| -|
+| B | - | + |
+
+### Risk-Neutral Valuation
+
+The Risk-Neutral Valuation is a pricing technique that weights option payoffs using risk-neutral probabilities, and then discounts the payoffs at the risk-free rate. Risk neutral valuations result in the exact same price as replicating portfolios.
+
+Let $p^*$ and $1- p^*$ be the probabilities the stock will go up or down respectively.
+
+\[\begin{aligned}
+  S_0 &= e^{-rh}E^*[\text{Payoff}] \\
+  &= e^{-rh}[p^*(S_0u)e^{\delta h} + (1-p^*)(S_0d)e^{-\delta h}]
+  \end{aligned}\]
+  
+Solving for $p^*$ gives uts the risk-neutral probabilityof an up move in a binomial tree.
+  
+\[p^* = \frac{e^{(r-\delta)h} - d}{u-d}\]  
+
+Thus solving for the price of an option would be
+
+\[\begin{aligned}
+V_0 &= e^{-rh}E^*[\text{Payoff}] \\ 
+&= e^{-rh}[p^* V_u + (1-p^*)V_d]
+\end{aligned}\]
+
+#### No-Arbitrage Condition
+
+Given \(0 < p^* < 1\) and substituting the formula for $p^*$, we get: \(d < e^{(r - \delta)h} < u\)
+
+## Constructing a Binomial Tree
+
+the u and d factors are necessary for creating binomial trees. There are two methods to determining the value of u and d.
+
+### General Method
+Simply choose some factor for the upper and lower node such that:
+
+\[ u = \frac{S_u}{S_0}\] 
+
+\[ d = \frac{S_d}{S_0}\]
+
+### Standard Binomial Tree
+Picking u and d based on forward prices. where $\sigma$ is the annual volatility. $\sigma^2 h$ is the variance over a period of length h.
+
+\[S_tu = F_{t,t+h}e^{\sigma \sqrt{h}} = S_te^{r -\sigma \sqrt{h}}e^{\sigma \sqrt{h}}\]
+
+\[S_tu = F_{t,t+h} \color{red}{e^{-\sigma \sqrt{h}}}\color{black} = S_te^{r -\sigma \sqrt{h}} \color{red}{e^{-\sigma \sqrt{h}}}\]
+
+\[ u  = e^{(r - \delta)h + \sigma \sqrt{h}}\]
+
+\[ d  = e^{(r - \delta)h - \sigma \sqrt{h}}\]
+
+and
+
+\[p^* = \frac{1}{1 + e^{\sigma \sqrt{h}}}\]
+
+
+## Multiple-Period Binomial Option Pricing
+
+![Multiperiod Binomial Tree]("Multiperiod Binomial.png")
+
+### Node by Node
+
+Start with $V_{uu}$, $V_{ud/du}$, and $V_{dd}$ to solve for $V_u$ and $V_d$, then solve for $V_0$
+
+### Direct Approach
+
+\[\text{Pr(reaching node with k up jumps)} = {n \choose k}(p^*)^k(1-p^*)^{n-k} \]
+
+the lower node is represented by k = 0 and the upper node is k = n
+
+### Replicating Portfolio Approach
+
+Calculate $V_u$ and $V_d$, use that to solve for $V_0$
+
+# Black-Scholes Option Pricing Model
+When the number of steps in the binomial model becomes large, the continuously compounded returns become normal and stock prices become lognormal. Thus, our focus in this section is the lognormal distribution and how it is used to model stock prices.
+
+- Section 7.1: Modeling Stock Prices with the Lognormal Distribution
+- Section 7.2: Fitting Stock Prices to a Lognormal Distribution.
+- Section 7.3: The Black-Scholes Formula.
+
+## Modeling Stock Prices with the Lognormal Distribution
+
+There are two assumptions used to model a stock price using lognormal distributions
+
+1. A stock's continuously compounded returns follow a normal distribution
+
+2. Stock returns are independent over time.
+
+Stock returns without dividends will look like:
+
+\[S(0)e^{R(0,t)} = e^{\delta t} S(t) \rightarrow R(0,t) = \ln \frac{S(t)}{S(0T)}\]
+
+With continuous dividends:
+
+\[S(0)e^{R(0,t)} = e^{\delta t} S(t) \rightarrow R(0,t) = \ln \frac{S(t)}{S(0T)} + \delta t\]
+
+
+**Distribution**
+
+The stock's continuously compounded capital gain is normally distributed as follows:
+
+$\alpha$ is the continuously compounded expected return on the stock.
+$\delta$ is the continuously compounded dividend yield on the stock.
+$\sigma$ is the volatility of stock.
+
+\[\ln \frac{S(t)}{S(0)} \text{~} N[m = (\alpha - \delta - \frac{1}{2} \sigma ^2)t, v^2 = \sigma ^2 t]\]
+
+The mean of S(t) is: 
+
+\[E[S(t)] = S(0)e^{(\alpha - \delta)t}\]
+
+The variance of S(t) is:
+
+\[Var[S(t)] = (E[S(t)])^2(e^{\sigma ^2 t}-1)\]
+
+The covariance is:
+
+\[E[\frac{S(T)}{S(t)}] \cdot Var[S(t)]\]
+
+where:
+
+\[E[\frac{S(T)}{S(t)}] = e^{(\alpha - \delta)(T-t)}\]
+
+\[Var[S(t)] = (E[S(t)])^2(e^{\sigma^2 t}-1)\]
+
+**Percentiles**
+
+1. Determine the corresponding pth percentile of the standard normal random variable Z.
+
+2. Substitute the resulting value of Z into the expression for S(t).
+
+## Pricing Options for Lognormal Stock
+
+We want the probability that a stock price S(t) will be less than some arbitrary number K. 
+
+\[Pr(S(t) < K = Pr[\frac{S(t)}{S(0)} < \frac{K}{S(0)}] = Pr[\ln \frac{S(t)}{S(0)} < \ln \frac{K}{S(0)}]\]
+
+Recall that $ln \frac{S(t)}{S(0)}$ is normall distributed with mean $m = (\alpha - \delta - \frac{1}{2} \sigma ^2)$ and variance $v^2 = \sigma ^2 t$
+
+let's define $\hat d _2$ as:
+
+\[\hat d_2 = \frac{\ln \frac{S(0)}{K}+ (\alpha - \delta - \frac{1}{2} \sigma ^2)}{\sigma \sqrt{t}}\]
+
+
+Thus:
+
+\[Pr[S(t) < K] = Pr[Z < - \hat d_2]= N(- \hat d_2)\]
+
+and 
+
+\[Pr[S(t) > K] = Pr[Z <  \hat d_2]= N( \hat d_2)\]
+
+**Conditional Expectations**
+
+\[\hat d_1 = \frac{\ln \frac{S(0)}{K}+(\alpha - \delta + \frac{1}{2} \sigma ^2)}{\sigma \sqrt{t}}\]
+
+\[\hat d_2 = \frac{\ln \frac{S(0)}{K}+(\alpha - \delta - \frac{1}{2} \sigma ^2)}{\sigma \sqrt{t}} = \hat d_1 - \sigma \sqrt{t}\]
+
+
+\[E[S(t)| S(t)<K] = \frac{PE[S(t) | S(t) <K]}{Pr[S(t)| S(t)<K]} = \frac{S(0)e^{(\alpha - \delta)t}N(-\hat d_1)}{N(-\hat d_2)} \]
+
+\[E[S(t)| S(t)>K] = \frac{PE[S(t) | S(t) >K]}{Pr[S(t)| S(t)>K]} = \frac{S(0)e^{(\alpha - \delta)t}N(+\hat d_1)}{N(+\hat d_2)} \]^[PE is the partial expectation]
+
+**True Pricing**
+
+The expected payoff of a European call option:
+
+\[E[\text{Call Payoff}] = S(0)e^{(\alpha - \delta)t}N(\hat d_1) - KN(\hat d_2)\]
+
+The expected payoff of a European put opton:
+
+\[E[\text{Put Payoff}] = KN(- \hat d_2) - S(0)e^{(\alpha - \delta)t}N(-\hat d_1)\]
+
+The prices of the calls and puts today can be represented as:
+
+\[C = e^{-\gamma t}E[\text{Call Payoff}]\]
+\[P = e^{-\gamma t}E[\text{Put Payoff}]\]^[$\gamma$ is the continuously compounded expected return on the option and is usually not known.] 
+
+**Risk-Neutral Pricing**
+
+Under the risk-neutral measure, the expected return of the stock and options is the risk-free rate $\alpha = \gamma = r$. For $\hat d_1$ and $\hat d_2$, substitute $\alpha$ for r.
+
+Risk-neutral expected payoff for call and put options:
+
+\[C = S(0)e^{-\delta t}N(d_1) - Ke^{-rt}N(d_2)\]
+
+\[P = Ke^{-rt}N(-d_2) - S(0)e^{-\delta t}N(-d_1)\]
+
+## Estimating Return and Volatility
+
+Assuming that stock returns are normally distributed, we can use historical stock prices to estimate the parameters of the lognormal distribution
+
+1. Calculate teh continuously compounded returns
+
+\[r_i = \ln \frac{S(i)}{S(i-1)} \text{ for } i = 1,2,...n\]
+
+2. Calculate the sample mean of the returns
+
+\[\bar r = \frac{\sum_{i=1}^n r_i}{n}\]
+
+3. Estimate the standard deviation of returns by taking the square root fo the sample variance.
+
+\[\hat \sigma_h = \sqrt{\frac{\sum_{i=1}^n (r_i - \bar r)^2}{n-1}}\]
+
+4. Annualize the estimate of the standard deviation
+
+\[Var[\ln{\frac{S(t+h)}{S(t)}} = \hat \sigma_h^2 \rightarrow \hat \sigma = \frac{\sigma_h}{\sqrt{h}}  \]
+
+5. Annualize the estimate of the expected return.
+
+\[\begin{aligned}
+E[\ln{\frac{S(t+h)}{S(t)}}] &= \bar r \\ 
+(\hat \alpha - \delta - \frac{1}{2}\hat \sigma^2)h &= \bar r \\
+\therefore \hat \alpha &= \frac{\bar r}{h}
+\end{aligned}\]
+
+## Black Scholes
+
+recall from risk-neutral pricing that:
+
+\[C = F^P(S)N(d_1)-F^P(K)N(d_2)\]
+\[P = F^P(K)N(-d_2) - F^P(S)N(-d_1)\]
+
+where:
+
+\[d_1 = \frac{\ln \frac{F^P(S)}{F^P(K)} + \frac{1}{2}\sigma ^2 }{\sigma \sqrt{T}}\]
+\[d_2 = \frac{\ln \frac{F^P(S)}{F^P(K)} - \frac{1}{2}\sigma ^2 }{\sigma \sqrt{T}} = d_1 - \sigma \sqrt{t}\]
+
+for continuous dividends, we can rewrite $d_1$ as:
+
+\[d_1 = \frac{\ln \frac{S(0)}{K}+(\alpha - \delta + \frac{1}{2} \sigma ^2)}{\sigma \sqrt{t}}\]
+
+We can also express the volatility parameter, $\sigma$, as the annualized standard deviation of the natural log of the prepaid forward price:
+
+\[\sigma = \sqrt{\frac{Var[\ln F^P_{t,T}(S)]}{t}} = \sqrt{\frac{Var[\ln S_t]}{t}} \text{ for } 0 < t \leq T\]
+
+## Options on Currencies
+
+\[\$ F^P(\yen1) = (x_0 \frac{\$}{\yen})(\yen1 e^{-r_\yen T})  = \$ x_0e^{-r_\yen T}\]
+
+# Option Greeks and Risk Management
+
+## Greeks
+
+```{r echo=FALSE}
+
+Greeks <- cbind(
+  c("Delta","Gamma","Theta","Vega","Rho","Psi"),
+  c("$\\Delta$","$\\Gamma$","$\\theta$","N/A","$\\rho$","$\\psi$"),
+  c("Change in option price per increase in stock price", "Change in delta per increase in stock price", "Change in option price per increase in the passage of time","Change in option price per increase in volatility","Change in option price per increase in the risk-free rate", "Change in option price per increase in the dividend yield")
+  
+)
+
+colnames(Greeks) <- c("Greek","Symbol","Description"
+  )
+
+
+
+d_Greeks <- knitr::kable(Greeks, "pipe" , escape = FALSE, format = "latex", caption = "Greeks")
+
+kableExtra::kable_styling(d_Greeks, latex_options = c("scale_down", "hold_position"))
+
+```
+
+### Delta
+
+Measures the change in the option's value corresponding to an increase in the stock price.
+
+\[\Delta = \frac{\partial V}{\partial S}\]
+
+* stock increase correlates to increase in call option payoff, likewise stock increase correlates to put option decrease making puts delta negative. Therefore delta must increase when prices increase.
+
+* $0 \leq \Delta_C \leq 1$ and
+ $-1 \leq \Delta_P \leq 0$
+ 
+* Delta can be interpreted as the number of shares of stock that must be purchased to replicate an option. 
+
+### Gamma
+
+Measures the change in the option's delta corresponding to an increase in the stock price.
+
+\[\Gamma = \frac{\partial  \Delta}{\partial S} = \frac{\partial^2 V}{\partial S^2}\]
+
+* The gamma of a call is equal to that of an otherwise equivalent put.
+
+* Since delta for both calls and puts increases as the stock price increases, and gamma measures the change in delta as the stock price increases, it follows that gamma is positive for both calls and puts.
+
+### Theta
+
+The derivative of the option's value corresponding to the passage of time.
+
+\[\theta = \frac{\partial V}{\partial t}\]
+
+* Theta is usually negative. This is because as the time to expiration decreases, options become less valuable.
+
+* Theta can be positive in some special cases. This includes a deep ITM European put or call option on a stock with high dividend yield.
+
+### Vega
+
+Measures the change in the option's value corresponding to an increase in volatility.
+
+\[Vega = \frac{\partial V}{\partial \sigma}\]
+
+* Vega is the only option Greek tat isn't a Greek letter
+
+* The vega of a call is equal to that of an otherwise equivalent put
+
+* Vega is positive for both calls and puts because options increase in value when volatility increases.
+
+### Rho
+
+Measures the change in the option's value corresponding to an increase in the risk-free interest rate.
+
+\[\rho = \frac{\partial V}{\partial r}\]
+
+* Rho is positive for calls and negative for puts. This is because as the risk-free rate increase, the present value of the strike price (i.e., $Ke^{-rT}$) decreases.Based on the Black-Scholes formula, decreasing $Ke^{-rT}$ will increase the value of a call option but decrease the value of a put option.
+
+### Psi
+
+Measures the change in the option's value corresponding to an increase in the dividend yield.
+
+\[\psi = \frac{\partial V}{\partial \delta}\]
+
+* Psi is negative for calls and positive for puts. This is because as the dividend yield increases, the present value of the stock (i.e., $Se^{-\delta T}$) decreases. Based on the Black-Scholes formula, decreasing $Se^{-\delta T}$ will decrease the value of a call option but increase the value of
+
+### Greek Measures for a portfolio
+
+Greeks are additive. For a portfolio with N options on the same stock, where the quantity of each option is $n_i$, we have:
+
+\[\text{Greek}_{Portfolio} = \sum^N_{i=1} n_i \text{Greek}_i\]
+
+## Elasticity and Related Concepts
+
+elasticity is the percentage chagne int he option price per percentage change in the underlying stock price.
+
+\[\Omega = \frac{ \text{\% change in option price}}{ \text{\% change in stock price}} = \frac{ \Delta S}{V}\]
+
+the elasticity for a call must always be greater than one, and for a put must always be less than 0.
+
+\[\Omega_C \geq 1\] \[\Omega_P \leq 0\]
+
+### Expected Return on Option
+
+Consider that \[\text{\% of portfolio in stock} = \Omega \]
+
+and
+
+\[\text{\% in risk free assets} = 1 - \Omega\]
+
+The instantaneous expected return of the option $\gamma$ is the weighted average of the instantaneous expected return of the stock $\alpha$ and the instantaneous expected return of the risk-free assets $r$.
+
+\[\gamma = \Omega \alpha + (1-\Omega)r \]
+
+### Risk Premium
+
+the risk premium is defined as the excess of the expected return of th asset of the risk-free return.
+
+\[\text{Stock's risk premium} = \alpha - r\]
+
+Likewise, the option risk premium would be:
+
+\[\text{Option's risk premium} = \gamma -r\].
+
+We can rewrite the expected return as:
+
+\[\begin{aligned}
+\gamma - r &= \Omega \alpha + (1- \Omega)r -r \\
+\gamma - r &= \Omega(\alpha - r)
+\end{aligned}\]
+
+
+### Volatility
+
+The volatility of an option is the absolute value of the elasticity times the volatility of the underlying stock:
+
+\[\sigma_{Option} = |\Omega| \cdot \sigma_{Stock}\]
+
+### Sharpe Ratio
+
+The Sharpe ratio $\phi$ of an asset is the ratio of its risk premium to its volatility.
+
+\[\phi_{Stock} = \frac{\alpha -r}{\sigma_{Stock}}\]
+
+and 
+
+\[\phi_{Option} = \frac{\gamma -r}{\sigma_{Option}}\]
+
+We can combine the results of the rewritten Risk premium and option sharpe ratio to derive:
+
+\[\phi_{Option} = \frac{\Omega(\alpha - r)}{|\Omega|\sigma_{Stock}} = \frac{\Omega}{|\Omega|}\phi_{Stock}\]
+
+Since $\Omega$ is positive for a call and negative for a put, we have:
+
+\[\phi_C = \phi_{Stock}\] \[\phi_P = -\phi_{Stock}\]
+
+### Portfolio Elasticity and Risk Premium
+
+For a portfolio of options, the elasticity is the percentage change in the portfolio's value divided by the percentage change inthe price of the underlying stock. It can also be the weighted average of the elasticity of the instruments in it:
+
+\[\Omega_{Port} =\frac{\Delta_{Port}S}{V_{Port}} = \sum^n_{i=1}w_i\Omega_i \]
+
+$w_i$ is the percentage of portfolio invested in option i and $\Omega_i$ is the Elasticity of option i.
+
+The risk premium of the portfolio can be calculated as:
+\[\gamma_{Port} - r = \Omega_{Port}(\alpha -r)\]
+
+## The Delta-Gamma-Theta Approximation
+
+let $\epsilon$ be the price change in the underlying stock between time t to t+h.
+
+\[\epsilon = S(t+h) - S(t)\]
+
+the delta-gamma approximation for the new option price is:
+
+\[V(t+h) \approx V(t) + \Delta_t \epsilon + \frac{1}{2}\Gamma_t\epsilon^2\]
+
+The delta-gamma-theta apprximation is more accurate but requires an additional term:
+
+\[V(t+h) \approx V(t) + \Delta_t \epsilon + \frac{1}{2}\Gamma_t\epsilon^2 + \theta_t h\]
+
+## Delta-Gamma Hedging
+
+**Delta-Hedging:** the easiest way is through buying or selling some stock. The delta of a share of stock is 1 because:
+
+\[\Delta_{Stock} = \frac{\partial S}{\partial S} = 1\]
+
+To calculate the profit on a delta-hedged portfolio, we consider the profit of each component:
+
+* Profit on the options
+* Profit on the stock
+* Profit on the bond
+
+The profit on stocks and options are marked-to-market.
+
+One problem with delta-hedging is tht delta itself changes as the stock price changes. Thus the portfolio would constantly need to be rebalanced or re-hedged so it remains delta neutral.
+
+**Break-Even Delta-Hedged Portfolio**
+
+According to the McDonald text, if the price of the underlying stock chnages by one standard deviation over a short period of time, then a delta-hedged portfolio does not produce profits or losses. Assuming the Black-Scholes framework, given the current stock price, S, the two stock prices after a period h for which the market-maker would break even are:
+
+\[S \pm S \sigma \sqrt{h}\]
+
+**Market-Maker Profit for an Option Writer**
+
+\[\text{Profit} = \underbrace{[+V(t)e^{rh} - V(t+h)]}_\text{Profit on Option} + \underbrace{[-\Delta_tS(t)e^{rh} + \Delta_t S(t+h)]}_\text{Profit on Stock}\]
+
+Using the delta-gamma-theta approximation
+
+\[\text{Profit} \approx -\frac{1}{2}\Gamma_t\epsilon^2 - \theta_th + (e^{rh} -1)[V(t) - \Delta_tS(t)] \]
+
+## Hedging Multiple Greeks
+
+All other Greeks of the underlying stock are zero. To hedge multiple Greeks, simply set the sum of Greeks you are hedging to zero. Market-maker will need to use other options to hedge other greeks.
+
+## Actuarial-Specific Risk Management
+
+Variable annuities are a variable savings product with variable accumulation amount. The payment amounts are not known in advanced. Insurance companies will often provide a minimum guarantee with variable annuities to make them more attractive.Here are for types:
+
+1. **Guaranteed minimum death benefit** guarantees a minimum amount will be paid to a beneficiary when the policyholder dies.
+
+K = initial amount invested. $S_T$ = the account value at time T when the policyholder dies. We can see that the Guaranteed minimum death benefit is just an embeded put option.
+
+\[\max(S_t,K) = S_t + \max(K-S_T, 0)\]
+
+$T_x$ is the future lifetime continuous random variable for a policyholder aged x. The probability-weighted average of the values of the European put option is:
+
+\[E[P(T_x)] = \int^\infty_0 P(t)f_{T_x}(t)dt \]
+
+**Earnings-Enhanced Death Benefit** pays the beneficiary an amount based on the increase in the account value over the original amount invested.
+
+The average price of the benefit is the probability-weighted average of the European call option:
+
+\[E[C(T_x)] = \int^\infty_0 C(t) f_{T_X}(t)dt\]
+
+2. **Guaranteed minimum accumulation benefit** guarantees a minimum value for the underlying account after some period of time, even if the account value is less.Also can be referred to as a guaranteed minimum maturity benefit.
+
+Let $T^*_X$ be the future lifetime of a policy with a guarantee period ending m years from now.$P(m)$ = the put price with a time to expriation of m. The expected guarantee is the price of the put option multiplied by the probability of policy survivorship past time m.
+
+\[ = Pr(T^*_X \geq m) x P(m)\]
+
+Guarantee Value Formulas in more complicated contracts can vary by:
+
+* Performance of the underlying assets
+* Promised rate of return
+* Age of policyholder
+
+The underlying assets of the variable annuity can consist of a wide range of underlying investments. This makes $S_T$ a random bled of varying investments whose returns are uncertain. Further adding to complexity is if the policyholder may change their investments at any given time. If the policy holder can recoup at least their acocunt value, than there is nothing stopping them from changing their assets completely into equities. The variable annuity writer would prefer the policyholder move all his investment into the risk-free rate investment as that would minimize insurer loss.
+
+Any time that the guarantee value is less than the account value, the policy holder may just terminate the policy as the guarantee is essentially worthless. 
+
+
+3. **Guaranteed minimum withdrawal benefit** guarantees that upon the policyholder reaching a certain age, a minimum withdrawal amount over a specified period will be provided.
+
+4. **guaranteed minimum income benefit** guarantees the purchase price of a traditional annuity at a future time. Thus, a policyholder can guarantee the minimum amount of income he or she will receive.
+
+**Mortgage Guaranty Insurance**
+
+Is purchased by  mortgage lenders as protection from borrower defaults. It is secured by physical property such as a home. Mortgage insurance allows for less qualified borrowers to take out mortgages. Lets lenders manage their credit risk. Credit risk is spread out so that liquidity, i.e., how much credit is availabe, is increased.
+
+Mortgage Guarnanty Insurance usually provide coverage for:
+
+* Outstanding loan balance
+* Missed interest payments
+* Property taxes, property insurance, and property maintenance costs, including past due payments
+* Condominium or property management fees
+* Cost of any repairs to make the property saleable
+* Legal costs of settling the foreclosure
+
+All things except for the outstanding loan ballance is rolled into **settlement costs**.
+
+Let B = outstanding loan balance, C = total settlement costs, and R = the amount recovered from the sale of the property (less selling fees). Payoff to lender will be:
+
+\[\max(B+C-R,0)\]
+
+This looks similar to the payoff of a put option with $K = B+C$ and $S = R$. For the uninsured postion, the loss to the mortgage lender is the same as the equation above but with $C = C^*$ where $C^*$ is the lender's total settlement cost.
+
+**Other Types of Insurance Guarantees**
+
+Embedded options are also used in guaranteed replacement cost coverage on property and inflation indexing of pension benefits.
+
+The guaranteed replacement cost coverage is an optional benefit that can cover the cost of replacing a physical piece of property when the cost is more than the amount in the insurance policy. The replacement cost with guaranteed replacement would be $C = \min(C,I) + \max(C -I,0)$.Where $\max(C-I,0)$ is just the call option with strike I and underlying asset C.
+
+inflation indexing of pension benefits.
+
+Let $P_0$ be the first pension payment and $P_t$ be the pension payment at time t. $I_t$ is CPI at time t and $I_0$ is the original CPI value at time 0.
+
+\[P_t = \max(P_0 \frac{I_t}{I_0}, P_{t-1})\]
+
+## Use of Derivatives to Manage Risk in Insurance and Annuity Products.
+
+In general, derivatives are used to accomplish the following:
+
+* Transfer risk
+* Modify the characteristics of an asset portfolio
+* Protect or control a firm's surplus
+
+An action used to reduce risk is called hedging with a hedge being an asset or derivative used for that purpose.
+
+**Static Hedging of Variable Annuity Guarantee Risk**
+
+If a guarantee value is linked to an underlying asset or index, then puts and calls with the same underlying asset, strike price, and approximately the same time to expiration can be used to hedge the guarantee. For more complex guarantees, they may require exotic options "non-standard" options to hedge.
+
+**Dynamic Hedging of Variable Annuity Guarantee Risk**
+
+Unlike static strategies, *dynamic hedging strategies* involve the frequent buying and selling of assets or derivatives to match the value of the guarantee.
+
+**Hedging of Catastrophic Risk**
+
+Because weather related events and large scale catastrphe's tend to affect within a wide-region. They are considered non-diversable risks. Traditionally re-insurance has been used to mitigate these risks. However recent other strategies make the use of *weather derivatives* and *catastrophe bonds*
+
+# General Options Others
+
+## Asian Options
+
+An *Asian option* has a payoff that depends on the average stock price over a period of time. They are considered *path-dependent* because the average stock price depends ont he path of prices leading up to the final price.
+
+**Arithmetic Average vs Geometric Average**
+
+Arithmetic average of N stock prices:
+
+\[A(S) = \frac{1}{N}\sum^N_{t=1}S(t) = \frac{S(1) + S(2)+...+ S(N)}{N}\]
+
+Geometric average of N stock prices:
+
+\[G(S) = \bigg( \prod^N_{t=1}S(t) \bigg) ^\frac{1}{N}\]
+
+Note that $G(S) \leq A(S)$.
+
+**Average Price vs Average Strike**
+
+\[\text{Average price Asian call's payoff}= \max[0,\bar S-K]\]
+\[\text{Average price Asian put's payoff}= \max[0,K-\bar S]\]
+
+\[\text{Average strike Asian call's payoff} = \max[0, S(T) - \bar S]\]
+\[\text{Average strike Asian put's payoff} = \max[0,\bar S - S(T)]\]
+
+* The value of an average price Asian option is less than or equal to the value of an otherwise equivalent European option.
+* For average price options, as the frequency of sampling (N) increases, the option's value decreases.
+* For average strike options, as the frequency of sampling (N) increases, the option's value increases.
+
+## Barrier Options
+
+Three types of barrier options:
+
+**1. Knock-in Options:**
+
+A Knock-in Option goes into existence if the barrier is reached. If the barrier is below the initial stock price it's called *down-and-in* option. If its above the initial stock price then it's called an *up-and-in* option.
+
+**2. Knock-Out Option:**
+
+A knock-out option goes out of existence if the barrier is reached. If the barrier is below the initial stock price, the knock-out option is called a *down-and-out* option. 
+
+**3. Rebate Option:**
+
+A rebate option pays a fixed amount if the barrier is reached. If the barrier is below the initial stock price, it's called a *down rebate*, if it's above it's called an *up rebate*.
+
+In Summary
+
+| | Knock-in | Knock-out | Rebate |
+|:-----------:|:----------------:|:-----------------:|:-------------:|
+| $S_0 <$ Barrier | up-and-in | up-and-out | up rebate | 
+| $S_0 <$ Barrier | down-and-in | down-and-out | down rebate|
+
+
+**Parity  Relationships for Barrier Options**
+
+\[\text{Knock-in option} + \text{Knock-out option} = \text{Ordinary option}\]
+
+\[\text{Barrier option} \leq \text{Ordinary option}\]
+
+Two cases where a barrier option is equivalent to the ordinary option
+
+1. Consider where $S(0) \leq \text{barrier} \leq K$, then: Up-and-in call = Ordinary Call, up-and-out call = 0.
+2. Consider a barrier put where $K \leq \text{barrier} \leq S(0)$, then: Down-and-in put = Ordinary put, and down-and-out put = 0.
+
+## Compound Option
+
+* Compound call option allows the owner to buy another option at the strike price.
+* Compound put option allows the owner to sell another option at the strike price.
+* A compound call can be either a call on call or a call on put, likewise a compound put can be either a put on call or put on put.
+
+Suppose we buy a compound call at time 0. The compound call has a strike price of x and expires at time $t_1$. The underlying option has a strike price of K and expires at time T.
+
+![compound call]("compound call.png")
+
+The value of the underlying option at $t_1$: 
+
+\[\text{Underlying option's value at }t_1 = V[S(t_1), K, T-t_1]\]
+
+Payoff of compound call at time $t_1$: 
+
+\[\text{European call's payoff} = \max[0, S(T)- K]\]
+
+\[\text{Compound call's payoff at time }t_1 = \max[0, V[S(t_1), K, T-t_1] - x]\]
+
+
+The compound put is similar to the compound call but with:
+
+\[\text{Underlying option's value at }t_1 = V[S(t_1), K, T-t_1]\]
+
+\[\text{European puts payoff} = \max[0, K - S(T)]\]
+
+\[\text{Compound put's payoff at time }t_1 = \max[0, x-V[S(t_1), K, T-t_1]]\]
+
+### Put-Call Parity for Compound Options
+
+Recall when an underlying asset is a stock, put-call parity can be expressed as:
+
+\[\text{Call on Stock} - \text{Put on Stock} = F^P(S) - Ke^{-rT}\]
+
+Instead of the stock as the underlying asset, we now have calls or puts.
+
+\[\text{Call on Call} - \text{Put on Call} = C_{Eur} - xe^{-rt_1}\]
+
+likewise:
+
+\[\text{Call on Put} - \text{Put on Put} = P_{Eur} - xe^{-rt_1}\]
+
+## Gap Option
+
+A gap option has a strike price and a trigger price. The strike price $K_1$ determines the amount of the option's nonzero payoff. The trigger price $K_2$ determines whether or not the option will have a nonzero payoff.
+
+### Gap Call
+
+* If the stock price at expiration is less than or equal to the trigger price, the option pays nothing.
+* If the stock price at expiration exceeds the trigger price, the option pays the excess of the stock price at expiration over the strike price.
+
+\[\text{Payoff}_\text{gap call} = \begin{cases} 0\text{ if } S(T) \leq K_2  \\S(T) - K_1 \text{ if } S(T)  > K_2 \end{cases}  \]
+
+![Gap call]("gap call.png")
+
+### Gap Put
+
+* If the stock price at expiration is less than the trigger price, the option pays the excess of the strike price over the stock price at expiration.
+* If the stock price at expiration is greater or equal to the trigger price, the option pays nothing.
+
+\[\text{Payoff}_\text{gap put} = \begin{cases} K_1 - S(T)\text{ if } S(T) < K_2  \\0 \text{ if } S(T)  \geq K_2 \end{cases}  \]
+
+![Gap put]("gap put.png")
+
+### Black-Scholes Formula for Gap Options.
+
+\[\text{Gap Call} = S(0)e^{-\delta T} \cdot N(d_1) - K_1 e^{-rT} \cdot N(d_2) \]
+\[\text{Gap Put} = K_1e^{-r T} \cdot N(-d_2) - S(0) e^{-\delta T} \cdot N(-d_1) \]
+
+where 
+
+\[d_1 = \frac{\ln \frac{S(0)}{K_2}+(r - \delta + \frac{1}{2} \sigma ^2)T}{\sigma \sqrt{t}}\]
+
+\[d_2 = d_1 - \sigma \sqrt{T}\]
+
+### Important relationships for Gap Options
+
+A gap call with strike price $K_1$ and trigger price $K_2$ is related to an otherwise equivalent ordinary call with strike price $K_2$ as follows:
+
+\[\text{Gap Call}(K_1, K_2) = C_{Eur}(K_2) + (K_2 - K_1)e^{-rT}N(d_2)\]
+
+where $d_1$ and $d_2$ are based on $K_2$.
+
+likewise for puts
+
+\[\text{Gap Put}(K_1, K_2) = P_{Eur}(K_2) + (K_1 - K_2)e^{-rT}N(-d_2)\]
+
+The put-call parity equation for gap options are as follows:
+
+\[\text{Gap Call} - \text{Gap Put} = S(0)e^{-\delta T} - K_1e^{-rT}\]
+
+## Exchange Option
+
+Under the Black-Scholes framework
+
+\[C(A,B) = F^P(A) \cdot N(d_1) - F^P(B)\cdot N(d_2)\]
+\[P(A,B) = F^P(B) \cdot N(-d_2) - F^P(A) \cdot N(-d_1)\]
+
+where:
+
+\[d_1 = \frac{\ln \frac{F^P(A)}{F^P(B)} + \frac12 \sigma ^2 T}{\sigma \sqrt{T}}\]
+\[d_2 = d_1 - \sigma \sqrt{T}\]
+
+The volatility parameter is the annualized standard deviation of the returns between the two assets. Let $\sigma_A$ be the volatility of the return of A, $\sigma_B$ be the volatility of the return of B, and $\rho$ be the correlation between the returns of A and B.
+
+\[\sigma = \sqrt{\sigma ^2 _A + \sigma ^2_B - 2 \rho \sigma_A \sigma_B}\]
+
+### Key Manipulations
+
+These should be fairly intuitive
+
+\[\max[A,B] = \max[0, B-A]+A\]
+\[\max[A,B] = \max[A-B,0]+B\]
+\[\max[cA,cB] = c \cdot \max[A,B] \text{ if } c>0\]
+\[\max[cA,cB] = c \cdot \min[A,B] \text{ if } c<0\]
+\[\max[A,B] + \min[A,B] = A+B\]
+
+## Other Exotic Options
+
+### Forward Start Option
+
+Essentially a prepaid forward on an option
+
+the time-0 value of a forward start call option using Black-Scholes is:
+
+\[V_0 = F^P_{0,t}[S(t)][e^{- \delta t}N(d_1)- Xe^{-r(T-t)}N(d_2)]\]
+
+For a put option it is:
+
+\[V_0 = F^P_{0,t}[S(t)][Xe^{-r(T-t)}N(-d_2)- e^{- \delta t}N(-d_1)]\]
+
+where:
+
+\[d_1 = \frac{\ln \frac1X + (r - \delta + \frac12 \sigma^2)(T-t)}{\sigma \sqrt{T-t}}\]
+
+\[d_2 = d_1 - \sigma \sqrt{T-t}\]
+
+and X is a percentage of the stock price at time t.
+
+### Chooser Option
+
+A chooser option is an option that allows the owner to choose at a specified future time whether the option will be a European call option or a European put option.
+
+let t = the choice date and T = the option's expiration date. The value of the chooser option at time t is:
+
+\[V_t = \max[C(S(T),K,T-t), P(S(t),K,T-t)]\]
+
+at time 0 the value of the chooser option is: 
+
+\[V_0 = e^{-\delta(T-t)}\cdot P(S(0), Ke^{-(r-\delta)(T-t)},t) + C(S(0),K,T)\]
+
+or
+
+\[V_0 = e^{-\delta(T-t)}\cdot C(S(0), Ke^{-(r-\delta)(T-t)},t) + P(S(0),K,T)\]
+
+### Lookback Options
+
+A lookback option is an option whose payoff at expiration depends on the maximum or minimum of hte stock price over the life of the option. The table summarizes 4 types of lookback options:
+
+| Type | Option's Payoff at Expiration|
+|:---------------:|:--------------------------:|
+| Standard Lookback Call| $S(T)- \min(S)$|
+| Standard Lookback Put | $\max(S) - S(T)$|
+| Extrema Lookback Call| $\max[\max(S) - K,0]$|
+| Extrema Lookback Put | $\max[K - \min(S),0]$ |
+
+### Shout Options
+
+A shout option is an option that gives the owner the right to lock in a minimum payoff exactly once during the life of the option, at a time that the owner chooses.
+
+\[\text{Payoff}_\text{shout call} = \begin{cases} \max[S(T) - K, S^* - K, 0]\text{ if the shout is exercised }  \\ 
+  \max[S(T) - K, 0] \text{ if the shout is not exercised} \end{cases}  \]
+  
+\[\text{Payoff}_\text{shout put} = \begin{cases} \max[K -S(T), K- S^* , 0]\text{ if the shout is exercised }  \\ 
+  \max[K -S(T), 0] \text{ if the shout is not exercised} \end{cases}  \]
+  
+### Rainbow Options
+
+A rainbow option is an option whose payoff depends on two or more risky assets.
+
+# Risk and Return of a Single Asset
+
+The return of a non-dividend paying security can be expressed as:
+
+\[R_{t+1} = \frac{P_{t+1}-P_t}{P_t}\]
+
+including dividends, the returns become:
+
+\[R_{t+1} = \frac{D_{t+1}+P_{t+1}-P_t}{P_t}\]
+
+Where $R_t$ is the return as a percentage and $P_t$ is the price of a security at time t. $D_t$ are dividends payed.
+
+the expected return is:
+
+\[E[R] = \sum^n_{i=1}p_i \cdot R_i\]
+
+Variance and Standard Deviation:
+
+\[\begin{aligned}
+Var[R] &= E[(R - E[R])^2] \\
+&= \sum^n_{i=1}p_i\cdot(R_i - E[R])^2
+\end{aligned}\]
+
+\[\sigma = SD[R] = \sqrt{Var[R]}\]
+
+**Annual Realized Returns**
+
+Calculate the returns after every dividend period and multiply:
+
+\[R_{\text{annual}} = (1+R_{Q1})(1+R_{Q2})(1+R_{Q3})(1+R_{Q4})-1\]
+
+**Average Annual Returns**
+
+\[\bar R = \frac1T (R_1 +R_2+...+R_T)\]
+
+Variance of realized returns becomes 
+
+\[Var[R] = \frac{1}{T-1}\sum^T_{t=1}(R_t-\bar R)^2\]
+
+\[\begin{aligned}
+\text{Standard Error} &= \sqrt{Var(\bar R)} \\
+&= \frac{SD(R_i)}{\sqrt N} \\
+&= \frac{\text{SD(Individual Risk)}}{\sqrt{\text{Number of observations}}}
+\end{aligned}\]
+
+## Expected Return of a Portfolio
+
+Similar to regular expected return. But with the weighted average fo returns on individual assets:
+
+\[R_P = \sum^n_{i=1}x_i \cdot R_i\]
+
+The weight:
+
+\[x_i = \frac{\text{Value of Investment }i}{\text{Total value of portfolio}}\]
+
+and \[E[R_P] = E \bigg[ \sum^n_{i=1} x_i \cdot R_i \bigg] = \sum^n_{i=1} x_i \cdot E[R_i]\]
+
+### Volatility of a Two-Stock Portfolio
+
+Covariance measures the extent to which two variables move together. Positive covariance means that they move in tandem. Negative covariance means they move opposite of each other. 0 covariance means there is no linear relationship between the two variables.
+
+\[Cov[R_i, R_j] =E[(R_i - E[R_i])(R_j - E[R_j])] = \frac{1}{T-1}\sum^T_{t=1}(R_{i,t}-R_i)(R_{j,t}-R_j)\]
+
+While covariance measrues the direction. we use correlation to measure the strength and direction of the linear relationship between two variables.
+
+\[\rho_{i,j} = \frac{Cov[R_i,R_j]}{\sigma_i \cdot \sigma_j}\]
+
+Covariance can be rewritten using correlation as:
+
+\[Cov[R_i, R_j] = \rho_{i,j}\sigma_i\sigma_j\]
+
+### Variance of a Two-Stock Portfolio
+
+The return of a two stock portfolio:
+
+\[R_p = x_1R_1+x_2R_2\]
+
+\[\begin{aligned}
+Var[R_p] &= Var[x_1R_1 + x_2R_2] \\
+&= x^2_1Var[R_1] + x^2_2Var[R_2] + 2x_1x_2Cov[R_1,R_2] \\
+\sigma^2_p &= x^2_1 \sigma^2_1 + x^2_2 \sigma^2_2 + 2x_1x_2 \rho_{1,2}\sigma_1\sigma_2
+\end{aligned}\]
+
+### Volatility of a Large Portfolio
+
+We can expres the covariance of stock returns as:
+
+\[\begin{aligned}\
+Var[R_P] &= Cov[R_P,R_P] \\
+&=\sum^n_{i=1} x_i \cdot Cov[R_i,R_P] \\ 
+&= \sum^n_{i=1} \sum^n_{j=1} x_i \cdot x_j \cdot Cov[R_i, R_j]
+\end{aligned}\]
+
+Thus we can express the covariance as a covariance matrix:
+
+\[\begin{bmatrix} Cov_{1,1} & Cov_{1,2}  & \dots  & Cov_{1,n} \\  Cov_{2,1} & Cov_{2,2}  & \dots  & Cov_{2,n} \\  \vdots & \vdots  & \ddots & \vdots \\  Cov_{n,1} & Cov_{n,2}  & \dots  & Cov_{n,n} \end{bmatrix}\]
+
+## Types of Risk
+
+**1. Systematic risk:** also called common, market, or nondiversifiable risk. It is a risk that cannot be avoided. it is inherent in an entire market and affects the market as a whole. Fluctuations in a stock's return that are due to market-wide news (such as interest rates, economic cycles, widespread natural disasters) represent systematic risk.
+
+**2. Nonsystematic risk:** AKA firm-specific, independent, idiosyncratic, unique, or diversifiable risk. itis a risk inherent to a specific company or industry. Flucations in a stock's return that are due to firm-specific news (such as failure of a drug trial and airliner crash) represent nonsystematic risk. These events will directly affect their respective companies or industries, but have no effect on stocks that are far removed from these companies or industries.
+
+**3. Diversification:** reduces a portfolio's total risk by averaging out nonsystematic fluctations. Nonsystematic risks can be reduced through diversification by forming a portfolio of assets that are not highly correlated with one another.
+
+The investor can eliminate nonsystematic risk "for free" by diversifying their portfolios. the risk premium for nonsystematic risk is zero. Investors will not be compensated for holding nonsystematic risk. Diversification does not reduce systematic risk, the risk premium of a security is determined by its systematic risk and does not depend on its nonsystematic risk. 
+
+## Diversification with an Equally Weighted Portfolio.
+
+Take the covariance matrix we had mentioned above. Consider that each stock is weighted $x_i = \frac1n$
+
+Using the variance of a large portfolio, we can express an equally weighted portfolio's variance as:
+
+\[\begin{aligned} Var[R_P]  = &  \sum^n_{i=1} \sum^n_{j=1}x_ix_jCov[R_i,R_j] \\  = & \, n\cdot \frac{1}{n}\cdot \frac{1}{n}(\text{Average variance of the individual stocks}) \\ & \,\,+(n^2-n)\cdot \frac{1}{n}\cdot \frac{1}{n}(\text{Average covariance between the stocks}) \\  = &\, \frac{1}{n}(\text{Average variance of the individual stocks}) \\ & \,\,+\left(1-\frac{1}{n}\right)(\text{Average covariance between the stocks})\end{aligned}\]
+
+![Portfolio Volatility]("portfolio volatility with increasing stocks.png")
+
+* Diversification effect is mostly significant initially. The decrease in volatility when going from 1 to 2 stocks is much larger than the decrease when going from 30 to 31 stocks.
+
+* Not all risk can be eliminated. Only nonsystematic risk will be diversified when we combine stocks into a portfolio.
+
+### Independent Risk
+
+If stocks in the portfolio are independent, the variance of a portfolio becomes:
+
+\[\begin{aligned} Var[R_P]  &=\left(\dfrac{1}{n}\right)(\text{Average Variance})+\left(1-\dfrac{1}{n}\right)(0)\\&=\left(\dfrac{1}{n}\right)(\text{Average Variance})\end{aligned}\]
+
+and the volatility becomes:
+
+\[\begin{aligned} \sigma_P & = \sqrt{Var[R_P]} \\ & = \sqrt{\left(\dfrac{1}{n}\right)(\text{Average Variance})} \\ & = \dfrac{SD[\text{Individual risk}]}{\sqrt{n}}\end{aligned}\]
+
+
+## Diversification with General Portfolio
+
+For a portfolio with arbitrary weights:
+
+\[\begin{aligned} Var[R_P] & =  Cov[R_P , R_P] \\ & = Cov\left [ \sum^n_{i=1} x_i\cdot R_i , R_P \right ] \\ & =  \sum^n_{i=1} x_i\cdot Cov[R_i,R_P] \\ & =  \sum^n_{i=1} x_i\cdot \sigma_i \cdot \sigma_P\cdot \rho_{i,P} \end{aligned}\]
+
+\[\sigma_P = \sum^n_{i=1} x_i \cdot \sigma_i \cdot \rho_{i,P}\]
+
+The formula above states that each security contributes to the portfolio volatility according to its total risk scaled by its correlation with the portfolio. The lower the correlation between the security and the portfolio, the lower the portfolio risk Because correlation is always beetween -1 and +1, teh volatility of the portfolio is always less than or equal to the weighted average volatility of the individual stocks.
+
+\[\sum^n_{i=1} x_i\cdot  \sigma_i\cdot \rho_{i,P}\le\sum^n_{i=1} x_i\cdot \sigma_i\]
+
+This proves that volatility can be reduced through diversification.
+
+## Mean Variance Analysis
+
+Mean-Variance analysis is a fundamental implmentation of modern portfolio theory. It asserts that investors can evaluate the risk-return characteristics of investment opportunities based on the expected returns, variances, and correlations of the assets.
+
+Here are the underlying assumptions
+
+1. All investors are risk-averse. Less risk is for same returns is better.
+
+2. The expected returns, variances, and covariances of all assets are known.
+
+3. To determine optimal portfolios, investors only need to know the expected returns, variances, and covriances of returns.
+
+4. There are no transactions costs or taxes.
+
+## Efficient Portfolios of Risky Assets
+
+A portfolio is efficent if the portfolio offers the highest level of expected return for a given level of volatility. A portfolio is inefficient if it is possible to find another portfolio that produces a higher expected return for a given volatility.
+
+### The Effect of Correlation.
+
+If the correlation between two stocks is 1, there is no combination of stocks that provides diversification. If the correlation is -1 there exists a 0 risk portfolio.
+
+![Efficient Portfolios]("Effect of Correlation.png")
+
+**Short Sales** 
+
+Investors with a higher risk tolerance can shortsell shares of one company and buy shares of another to achieve higher than expected returns.
+
+Adding more stocks that are not perfectly correlated yields superior diversification and a better efficient frontier.
+
+## Combining Risky Assets with a Risk-Free Asset
+
+The expected return for a portfolio that includes a risky portfolio and a risk-free aset is the weighted average of the expected returns of the risky portfolio and risk-free asset:
+
+\[\begin{aligned}
+E[R_{xP}] &= xE[R_p]+(1-x)r_f \\
+& = r_f + x(E[R_P] - r_f)
+\end{aligned}\]
+
+recall that we can express the volatility of a portfolio as $\sigma_{xP} = x \cdot \sigma_P$
+
+Substituting x in the equation above we can get.
+
+\[\begin{aligned} E[R_{xP}] & = r_f + \dfrac{\sigma_{xP}}{\sigma_P} \left (E[R_P]- r_f\right)\\&=r_f+\sigma_{xP}\cdot \dfrac{E[R_P]- r_f}{\sigma_P} \end{aligned}\]
+
+This equation relates teh portfolio's expected return, $E[R_{xP}]$  to the portfolio's volatility $\sigma_{xP}$. This is known as the portfolio's capital allocation line (CAL). The CAL describes the expected return and volatility combinations available from combining risky portfolio with a risk-free asset. It's slope represents the addtiional return  for each unit of risk and is equivalent to the Sharpe ratio.
+
+![Capital Allocation Line]("CAL.png")
+
+Aggressive investors will typically take on more risk but have higher expected returns, whereas a conservative investor may be closer to the axis with lower risk, but producing lower returns.
+
+### Optimal Portfolio Choice
+
+The optimal portfolio of risky securities for an investor can be found by using CAL and the efficient frontier.It is the portfolio whose assets allocation are tangent to the efficient frontier and CAL. This portfolio has the highest Sharpe ratio.
+
+![Tangent Portfolio]("Tangent Portfolio.png")
+
+## Capital Market Line (CML)
+
+Modern portfolio theory takes on the following assumptions:
+
+* Investors have homogeneous expectations.
+* As a result all investors have the same efficient frontier of risky portfolios and same optimal risky portfolio and CAL.
+* This homogeneity results in what must be the **market portfolio** which consists of all securities that are tradable in the capital market.
+
+![Capital Market Line]("CML.png")
+
+The market portfolio is the optimal risky portfolio (i.e., efficient/tangent portfolio) given homogeneous expectations.
+
+### Market Portfolio
+
+The market portfolio is a portfolio containing all tradeable securities in equal weight to their market capitilzation. It is a value-weighted protfolio and is passive since little trading is required for rebalancing. The weight of a security i in the market portfolio is:
+
+\[x_i=\dfrac{MV_i}{\sum_{j=1}^nMV_j}\]
+
+## Adding a New Investment
+
+Three things to consider.
+
+1. The Sharpe ratio of the new investment
+2. The Sharpe ratio of the existing portfolio
+3. The correlation between the new investment's return and the existing portfolio's returns.
+
+The rule is that we should add the new investment to the portfolio if the following is satisfied.
+
+\[\dfrac{E[R_{\text{New}}]-r_f}{\sigma_{\text{New}}}>\rho_{\text{New},P}\cdot \dfrac{E[R_{P}]-r_f}{\sigma_{P}}\]
+
+If the Sharpe ratio of the new investment is greater than the product of the existing Sharpe ratio of the portfolio and correlation between the returns of the investment and portfolio.
+
+# Capital Asset Pricing Model
+
+**Cost of capital** refers to the rate of return that the providers of apital require in order for them to contribute their capital to the firm. 
+
+## Beta
+
+Beta is the measure of systematic risk by calculating the sensitivity of the asset's return to the market.
+
+\[\beta = \frac{\text{Change in an Asset's Return}}{\text{Change in the Market Return}}\]
+
+On average, the beta for a stock is around 1. This means that a stock price tends to move about 1% for every 1% move in the overall market.
+
+**Cyclical Industries** are types of industries which are more sensitive to economic shocks, for example technology and luxury goods. This industry tends to have higher beta.
+
+**Non-cyclical industries** tend to have lower betas. These industries are mor stable and highly regulated.
+
+In general:
+
+If $\beta = 1$, then the asset has the same systematic risk as the market. If $\beta > 1$, the asset has more risk and will fluctuate more than the market. And $\beta < 1$ means the asset has less risk than the market.
+
+Beta in statistical terms:
+
+\[\begin{aligned}
+\beta_i &= \frac{\text{Covariance of asset i's return and the market return}}{\text{Variance of the market return}} \\
+&= \frac{Cov[R_i,R_{mkt}]}{\sigma^2_{mkt}} 
+\end{aligned}\]
+
+correlation between the returns on asset i and the market returns.
+
+\[\rho_{i,Mkt}=\dfrac{Cov[R_i,R_{Mkt}]}{\sigma_i\cdot\sigma_{Mkt}}  \]
+
+Thus we have:
+
+\[ Cov[R_i,R_{Mkt}]=\rho_{i,Mkt}\cdot \sigma_i\cdot\sigma_{Mkt}\]
+
+combining:
+
+$\beta_{i}=\dfrac{\rho_{i,Mkt}\cdot \sigma_i\cdot\sigma_{Mkt}}{\sigma_{Mkt}^2}=\rho_{i,Mkt}\cdot\dfrac{\sigma_i}{\sigma_{Mkt}}$
+
+Beta can be estimated by using linear regression:
+
+\[R_i - r_f = \alpha_i + \beta (R_{mkt} - r_f) + \epsilon_i\]
+
+\[\begin{aligned}
+\alpha_i &= \text{the intercept term of the regression} \\
+\beta (R_{mkt} - r_f) &= \text{the sensitivity of the stock to market risk} \\
+\epsilon_i &= \text{the error or residual term}
+\end{aligned}\]
+
+![Beta Linear Regression]("Beta as a line.png")
+
+## Capital Asset Pricing Model
+
+CAPM is used to calculate the required return or the expected return of a security using the market portfolio as a benchmark for systematic risk.A security's expected return can be decomposed into two components:
+
+1. A risk free component
+2. A component received for taking market ("systematic") risk
+
+The CAPM Equation is:
+
+\[r_i = E[R_i] = r_f + \beta_i (E[R_{mkt}] - r_f)\]
+
+where
+\[\begin{aligned}
+r_i &= \text{Required return or cost of capital for investment i} \\
+E[R_i] &= \text{Expected return for investment i} \\
+r_f &= \text{Risk-free rate} \\
+\beta_i &= \text{Beta for investment i} \\
+E[R_{mkt}] &= \text{Expected market return}
+\end{aligned}\]
+
+We can think of
+
+* $E[R_{mkt}] - r$ as the market risk premium / expected excess return of the market
+* $E[R_i] - r_f$ or $\beta_i (E[R_{mkt}] - r_f)$ as the risk premium for security i / expected excess return of security i.
+
+**Assumptions of CAPM**
+
+1. Investors can buy and sell all securities at competitive market prices. There are no taxes or transaction costs. Investors can borrow and lend at the risk-free interest rate.
+
+2. Investors hold only efficient portfolios of traded securities.
+
+3. Investors have homogeneous expectations regarding the volatilities, correlations, and expected returns of securities.
+
+As a result of these assumptions, the market portfolio is the efficient portfolio.
+
+## The Security Market Line
+
+This line is a graphical representation of CAPM. It plots beta against the market risk premium.
+
+![Security Market Line]("SML.png")
+
+Notice that the SML is different from CML in that CML uses total risk wehereas SML uses systematic risk (i.e. beta). 
+
+**SML and Alpha**
+
+A security's alpha is the difference between the security's expected return and the required return (as predicted by CAPM). Alpha measures how far above or below the security's average return is from it's SML.If the market portfolio is efficient, than we would expect alpha to be 0.
+
+Generally:
+
+* If $E[R_i] > r_i$, investors can improve upon the market portfolio by buying more stocks with positive alphas.
+* If $E[R_i] < r_i$, investors can improve upon the market protfolio by selling stocks with negative alphas.
+
+Doing the above will improve the Sharpe ratio of their portfolio. Subsequently their corresponding alphas will shrink towards 0.
+
+**Adding New Investment**
+
+Recall that the equation to add a new investment:
+
+\[\dfrac{E[R_{\text{New}}]-r_f}{\sigma_{\text{New}}}>\rho_{\text{New},P}\cdot \dfrac{E[R_{P}]-r_f}{\sigma_{P}}\]
+
+If we rearrange and substitute \[\beta_{\text{New},P}=\rho_{\text{New},P}\cdot \dfrac{\sigma_{\text{New}}}{\sigma_{P}}\] we can get:
+
+\[\begin{aligned}E[R_{\text{New}}]-r_f&>\beta_{\text{New},P}\cdot (E[R_{P}]-r_f)\\E[R_{\text{New}}]&>r_f+\beta_{\text{New},P}\cdot (E[R_{P}]-r_f)\end{aligned}\]
+
+Which basically tells us that we should add assets to our portfolio if the expected return of the new assets exceed the risk free rate plus the beta of the new asset and portfolio times the risk premium of the portfolio.
+
+
+## Market Risk Premium
+
+Two approaches are used to estimate the market risk premium:
+
+**1. The Historical Risk Premium**
+
+Calculated as the historical average excess return of the market over the risk-free interest rate. This approach requires that the historical stock returns and the risk-free interest rate have the same time frame.
+
+Cons: Large standard errors of estimates. Using historical data means looking back which may not represent future expectations.
+
+**2. A Fundamental Approach**
+
+Uses an expected growht model with dividends.
+
+\[P_0=\dfrac{Div_1}{E[R_{Mkt}]-g}\Rightarrow E[R_{Mkt}]=\underbrace{\dfrac{Div_1}{P_0}}_{\text{Dividend yield}}+\underbrace{g}_{\text{Growth rate}}\]
+
+where:
+
+\[\begin{aligned}
+Div_1 &= \text{Dividend paid at time 1} \\ 
+P_0 &= \text{Current Price}
+\end{aligned}\]
+
+Cons: This approach is not suitable for individual firms. The assumption of constant expected growth is more appropriate for overall markets.
+
+## The Debt Cost of Capital
+
+There are two methods to estiamting the debt cost of capital
+
+**1. Adjustment from Debt Yield**
+
+Consider a one-year zero-coupon bond with a yield to maturity of y. If we invest 1 we will return (1+y) in one year. However it is possible for the bond to default. With a probability of defaulting p, we will receive (1+y-L) where L is the expected loss per 1 of debt. 
+
+\[\begin{aligned}r_d & =(1-p)(y)+(p)(y-L) \\ & = y - pL \\ & = \text{Yield to maturity}- \text{Pr}(\text{Default})\cdot \text{Expected loss rate}\end{aligned}\]
+
+**2. CAPM using Debt Betas**
+
+Estimating debt cost of capital using the CAPM:
+
+\[r_d = r_f + \beta_d \cdot \text{Market risk premium}\]
+
+It is difficult to get the beta estimates for individual debt securities because bank loans and many corporate bonds are traded much less frequently than stocks, so it is hard to obtain the necessary data. Thus, estimates based on the debt's rating may be used instead.
+
+The average beta for debt tends to be low because the interest and principal payments are not heavily influenced by market fluctuations. However, the beta for debt does increase as the credit rating decreases. 
+
+## Required Return on All-Equity Project
+
+CAPM can be used to estimate teh required return on a project, where beta is based on the project's beta. What we do is estimate the project's beta from "comparable firms" which are engaging in similar business and with similar risks.A project that is financed purely with equity is said to be unlevered. Otherwise it is levered.
+
+**Levered Firms as Comparables**
+
+If the firm has debt, we need to calculate the asset or unlevered cost of capital.
+
+\[r_U = w_E \cdot r_E + w_D \cdot r_D\]
+
+where:
+
+\[\begin{aligned} r_U & = \text{Asset or unlevered cost of capital}  \\ w_E & = \text{Fraction of firm financed by equity} \\ r_E & = \text{Equity cost of capital} \\ w_D & = \text{Fraction of firm financed by debt} \\ r_D & = \text{Debt cost of capital} \end{aligned}\]
+
+E and D represent the total market value of equity and debt of the comparable firm, the weights are calculated as
+
+\[wE = \frac{E}{E+D}\]
+
+\[w_D = \frac{D}{E+D}\]
+
+similarly the asset or unlevered beta can be calculated as
+
+\[\beta_U = w_E\cdot \beta_E + w_D\cdot \beta_D\]
+
+Enterprise value: is the risk of the firm's underlying business operations that is separate from its cash holdings. It's enterprise value is combined market value of the firm's equity and debt, less any excess cash. To determine the enterprise value, we use the firm's net debt instead of debt:
+
+\[\text{Net debt} = \text{Debt} + \text{Excess cash and short-term investments}\]
+
+Let V = enterprise value, E = Equity, D = Debt, and C = excess cash.
+
+\[V = E + D - C\]
+
+The beta of the firm's underlying business enterprise is:
+
+\[\begin{aligned} \beta_U & = w_E\cdot \beta_E+w_D\cdot \beta_D +w_C\cdot \beta_C \\ & = \dfrac{E}{E+D-C}\cdot\beta_E+\dfrac{D}{E+D-C}\cdot\beta_D-\dfrac{C}{E+D-C}\cdot\beta_C \end{aligned}]\]
+
+if the firms cash and debt investments have similar risk, $\beta_c$ can be combined with $\beta_D$ to get:
+
+\[\beta_U = \dfrac{E}{E+D^*}\cdot\beta_E+\dfrac{D^*}{E+D^*}\cdot\beta_D\]
+
+## Required Return on a Leveraged Project
+
+In many countries, teh interest paid on debt is tax-deductible. The firm will benefit from the tax deduction, and it reduces the firm's debt cost of capital and leaves more money to pay equity holders. We can consider this as the effective after-tax cost of debt $r_D(1-\tau_C)$ where $\tau_C$ is the corporate tax rate.
+
+We can calculate the project's cost of capital as the weighted average of the firm's equity cost of capital and the effective after-tax cost of debt, which is known as the *weighted-average cost of capital* (WACC):
+
+\[r_\text{WACC} = w_e \cdot r_E + w_D \cdot r_D\cdot(1-\tau_C)\]
+
+WACC is based on the firm's after-tax cost of debt while the unlevered cost of capital is based on the firm's pretax cost of debt. Unlevered cost of capital is also known as asset cost of capital or pretax WACC. Unlevered cost of caopital is used to evaluate an all-equity financed project with the same risk as the firm. WACC is used to evaluate a project with the same risk and same financing as the firm.
+
+The relationship between the two is as follows:
+
+\[\begin{aligned}r_{WACC}&= w_E\cdot r_E + w_D\cdot r_D\cdot(1-\tau_C)\\&=w_E\cdot r_E + w_D\cdot r_D-w_D\cdot r_D\cdot \tau_C\\\therefore r_{WACC}&=r_U-w_D\cdot r_D \cdot \tau_C\end{aligned}\]
+
+## Misc
+
+Beta tends to represent the average risk for a firm. However frequently different projects pose different risks and should be evaluated differently. Operating leverage is the relative proportion of fixed costs to total costs. This can also affect beta estimates. In general, the higher the degree of operating leverage, the higher the project beta.
+
+**Final Thoughts on using CAPM**
+
+Approximations used to estimate the cost of capital are likely to be more accurate than other approximations. CAPM is practical and easy to implement, and prone to less estimation error. CAPM imposes a disciplined process on managers for identifying the cost of capital. Even if the CAPM model is not perfectly accurate, it requires managers to focus on market risk rather than firm-specific risk. 
+
+# Factor Models
+
+single-factor model; the expected return of an asset i depends only on the asset's exposure to a single factor: \[E[R_i] = r_f + \beta_i^{eff}(E[R_{eff}] - r_f)\]
+
+where $R_{eff}$ is the return of the efficient portfolio.
+
+CAPM assumes the market portfolio is the efficient portfolio. As a result, the expected return of an asset under the CAPM is:
+
+\[E[R_i] = r_f + \beta_i(E[R_{mkt}] -r_f)\]
+
+multi-factor model; considers a collection of well-diversified portfolios to calculate the expected return of an asset. AKA Arbitrage Pricing Theory (APT).
+
+* The multi-factor model can input more factors, however it is up to the analyst to determine what those factors should be. This leads to more flexibilty than CAPM.
+
+* Well-diversified portfolios can be used to eliminate non-systematic risk.
+
+Given these assumptions, the APT combines a collection of well-diversified portfolios to form an efficient portfolio. These protfolios are called factor portfolios. For N factor portfolios with returns $R_{F1},...., R_{FN}$. The APT equation is:
+
+\[\begin{aligned} E[R_i]&=r_f +\beta^{F1}_i \left( E\left[ R_{F1}\right]-r_f \right) +\cdots +\beta^{FN}_i \left( E\left[ R_{FN}\right]-r_f \right) \\ & = r_f +\sum^N_{n=1} \beta^{Fn}_i \left( E\left[ R_{Fn}\right]-r_f \right)\end{aligned}\]
+
+where $\beta_i^{FN}$ are the factor betas of asset i that measures the sensitivity of the asset to a particular factor.
+
+We can simplify this equation even further by borrowing funds at the risk-free rate (a short position) and buying investing in the factor portfolio. This is called a *self-financing portfolio*. If all factor portfolios are self-financing (by borrowing funds or shorting stocks) we can rewrite the equation as
+
+\[E[R_i] = r_f + \sum^N_{i=1} \beta_i^{F_n}E[R_{Fn}]\]
+
+**Fama-French-Carhart**
+
+The Fama-French-Carhart (FFC) factor specification is the most commonly used multi-factor model. This model considers 4 factors: market, market capitalization, book-to market ratios, and momentum. Each factor can be thought of as self financing. The expected return is:
+
+\[\begin{aligned} E[R_i]=&r_f +\beta^{Mkt}_i \cdot \left(E\left[ R_{Mkt}\right]-r_f\right) + \beta^{SMB}_i \cdot E\left[ R_{SMB}\right]\\ & +\beta^{HML}_i \cdot E\left[ R_{HML}\right] + \beta^{PR1YR}_i \cdot E\left[ R_{PR1YR}\right]\end{aligned}\]
+
+where:
+
+\[\begin{aligned} Mkt & = \text{Market portfolio} \\ SMB & = \text{Small-minus-big portfolio} \\ HML & = \text{High-minus-low portfolio} \\ PR1YR & = \text{Prior 1-year momentum portfolio} \end{aligned}\]
+
+Self-financing market portfolio - constructed by taking a long position in the market portfolio and financing this position with a short position in the risk-free asset. The expected return is the difference between the two positions.
+
+\[+E[R_{mkt}] - r_f\]
+
+Small-minus-big (SMB) portfolio - accounts for the differences in company size based on market capitalizations. This portfolio buys smaller firms ad finances itself by short selling bigger firms. 
+
+\[E[R_{SMB}] = +E[R_{Small}]-E[R_{Big}]\]
+
+High-minus-low (HML) Portfolio - accounts for the differences in returns on value stocks and growth stocks. This portfolio buys high book-to-market stocks and finances itself by short selling low book-to-market stocks.
+
+\[E[R_{HML}] = +E[R_{HBM}] - E[R_{LBM}]\]
+
+Prior 1-year momentum (PR1YR) Portfolio - accounts for momentum, which is the tendency of an asset return to be positively correlated with the asset return from the previous year. This portfolio buys the top 30% of stocks and finances itself by short selling the bottom 30% stocks.L and W represent losers and winners respectively.
+
+\[E[R_{PR1YR}] = +E[R_W]- E[R_L]\]
+
+Multi factor models have an advantage over single-factor models because it is easier to identify a collection of well-diversified portfolios that capture systematic risk than just a single efficient portfolio. However they  have a relative disadvantage, where we need to estimate the expected return of each factor portfolio rather than just the expected return of a single efficient portfolio.
+
+# Efficient Market Hypothesis
+
+An efficient market is a market in which security prices adjust rapidly to reflect any new information. If markets are efficient, Superior returns cannot be attained and thus passive strategies are best. If markets are inneficient, securities can be priced incorrectly, thus active strategies can outperform passive strategies.
+
+## Forms of Market Efficiency
+
+![EMH Forms]("EMH Forms.png")
+
+**Weak-Form EMH**
+
+Assumes that current security prices reflect all past market data. Investors cannot predict future price changes by extrapolating prices or pattersn of prices from the past. In other words, price changes are random. Weak-form EMH assert that it is impossible to consistently attain superior profits by analyzing past returns.
+
+**Semi-Strong-Form EMH**
+
+Assumes that current security prices fully reflect all publicly available information, including past market data. This hypothesis asserrts that it is impossible to consistently attain superior profits by analyzing public information because the information is already fully built into the security price.
+
+**Strong-Form EMH**
+
+Assumes that security prices fully reflect all information, including public and private information. This hypothesis asserts that there are only lucky and unlucky investors, but no one (not even company insiders) can consistently attain superior profits based on any information. Thus passive investment strategies would work best since information does not matter.
+
+### Empirical Evidence Supporting EMH
+
+**1. Kendall**
+
+In 1953, instead of finding regular cycles in stock prices, it was discovered that prices followed a random walk model. Therefore, in the random walk mode, past stock prices have no bearing on future prices.
+
+![Kendall]("Kendall.png")
+
+**2. Brealey, Meyers, and Allen**
+
+Returns of consecutive days were studied on 4 stocks between 1991-2014. It was found that there was no distinct pattern, no bias towards any quadrant, the autocorrelation coefficients were very close to 0, implying that there is no relationship between price returns on consecutive days.
+
+![Brealey, Meyers, and Allen]("BMA.png")
+
+**3. Poterba and Summers**
+
+In 1998, Poterba and Summers explored the random walk model and examed the proportionate variances of returns. In theory, the variance of returns should increase proportionally to the intervals measured.
+
+* In comparisons of short time periods of differing lengths, the variance of the longer period was slightly larger than the theory suggested. This supports a short-term momentum in stock prices.
+
+* In comparisons of long time periods of differing lengths, the variance of the longer period was slightly smaller than the theory suggested. This indacated stock prices tend to reverse.
+
+Despite the above, the vast majority of evidence supports the weak form of the EMH.
+
+**Semi-Strong Form EMH**
+
+There should be no pattern in the stock prices for a period of time after the rlease of new information regarding a company. To test the semi-strong form of EMH, we look at stock prices after major news releases. We measure the impact of of the price change due to new information by subtracting the expected stock return
+
+\[\text{Abnormal Stock Return} = \text{Actual Stock Return} - \text{Expected Stock Return}\]
+
+\[\text{Expected Stock Return} = \alpha + \beta \times(\text{Actual Market Return})\]
+
+Keown and Pinkerton in 1998 performed a study on 17,000 firms that were targets for takeovers. What they found was that for each firm, the there was an abnormal return before the announcement. At the time of the announcment, the stock price instantaneously jumped. Finally after the announcement the abnormal returns dropped back to 0. This is consistent with the semi-strong form of the EMH. An investor late to receive the information cannot "buy-in" and make a profit.
+
+![Abnormal Returns]("Semi-Strong EMH support.png")
+
+**Strong-Form EMH**
+
+In order to test this, investors must evaluate all information regarding a company that can be acquired from a "painstaking analysi." Under the strong form of the EMH, professional portfolio managers should not be able to consistently realize superior returns to individual investors and the market. Many studies have shown that profeessional managers only beat the indexes 40% of the time, and the top performing fund managers in one year only have a 50% chance to bea ttheir reference index the following year.
+
+These types of findings have pushed for more passive investment strategies through investing in an index fund, resulting in significantly lower fees and elimination of possible underperformance.
+
+### Empirical Evidence Against the EMH: Market Anomalies
+
+While the EMH reflects reality well, it often does not predict anomalies where an investor can profit from it and achieve greater than the risk-adjusted opportunity cost of capital. Some cautions about market anomalies:
+
+* Anomalies found in past data cannot be assumed to persist into the future.
+* Data mining can yield false market anomalies because if you dig deep enough into a large darta set, you eventually find unusual patterns
+* For many anomalies, unless an investor uses a computing algorithm to engage in high-frequency trading, the investor cannot profit from the anomaly.
+
+**Calendar/Time Anomalies**
+
+* January effect: Returns have been higher in January and lower in December than other months. 
+
+* Monday effect: Returns have been lower on Monday and higher on Friday than on other days of the week.
+
+* Time-of-Day effect: Returns are more volatile close to the opening and closing hours of the market. Also trading volumes are higher.
+
+**Underreaction or Overreaction Anomalies**
+
+Although the semi-strong EMH implies that all public information is calculated into a stock's current price. There are some anomalies that point to investors reacting disproportaionately to new information.
+
+* New-Issue/IPO puzzle: Overreaction to new issues push up stock prices initially. However within a few years, the returns fall below those of a comparable portfolio.
+
+* Earnings announcement puzzle: A study was performed to analyze stock performance after unexpectedly good and bad earnings were announced. Companies with top earnings tend to perform 1% better in the following 6 months compared to their worst counterparts. Evidently, although an adjustment usually happens prior to and after earnings are announced, investors underreacted to the earnings announcement.
+
+* Momentum effect vs. reversal effect: The weak form of the EMH uses the random walk model. However many studies have identified momentum and reversal effects suggesting that stock prices are not purely random or unrelated to past data. This just means that rising prices continue to rise and falling prices continue to fall as investers underreact to new information. It also suggets a negative correlation and reversion to the mean when investors overreact to new information.
+
+**Other Anomalies**
+
+* Siamese twins: Two stocks with claims to a common cash flow would be exposed to identical risks. Intuitively, they should have similar price, but they do not.
+
+* Political cycle effect: For a given political administration, its first year and last year yield higher returns than the years in between, possibly because the market is anticipating new policies.
+
+* Stock split effect: A stock split tends to yield higher returns before and after the company announces the stock split. 
+
+* Neglected firm effect: This refers to lesser known firms yielding abnormally high returns. Market analysts are less likely to study very small companies than larger companies. Thus, these "neglected" firms tend to be very small companies.
+
+* Super Bowl effect: When an NFC team wins the stock market tends to do better. If an AFC team wins, the market is likely to do worse. Although this has statistical basis, it's most likely a result of data mining.
+
+* Value effect: Value stocks (below average price-to-earnings and market-to-book ratios) have consistently outperformed growth stocks. Valuee stocks tend to have positive alphas and thus tend to be above the SML. Growth stocks tend to have low to negative alphas, and thus tend to be at or below the SML.
+
+**Bubbles and Irrational Exuberance**
+
+A bubble is fueld by investors irrational exuberance, and the market value of assets significantly deviate from its intrinsic value. Bubbles burst when there are no more investors willing to buy. Huge losses ensue for those who buy or sell too late. Three examples of bubbles are: The Japanese stock and real estate bubble, the dotcom bubble (AKA tech bubble), and The U.S. housing bubble.
+
+## The Efficiency of the Market Portfolio
+
+For most investors, holding the market portfolio guarantees the average return and does not depend on the quality of an investor's information or skill. However, it is possible for investors to profit by taking advantage of non-zero alpha stocks, by buying more positive alpha stocks and selling off negative alpha stocks improving the Sharpe ratio. However in order to buy a positive alpha stock, another investor must sell it. Thus, this implies that not all investors have homogeneous expectations, which contradict one of the CAPM assumptions.
+
+Rational expectations is less rigid than that of homogeneous expectations. If we assume investors have rational expectations, then all investors correctly interpret and use their own information, along with information from the trades of others. The market portfolio can be inefficient, and thus it is possible to beat the market only if a significant number of investors
+
+* Do not have rational expectations (misinterpreted information)
+* Care about aspects of their portfolio other than expected return and volatility
+
+**Trading on News or Recommendations**
+
+Takover offers: When a firm is the target of a takeover, the offer price is significantly higher than its current stock price. The target's stock price will typically jump on announcement but it may not completely jump to the offer price. While this seems profitable, there is still uncertainty as to whether the deal will occur at the offered price (or occur at all). Berk/DeMarzo diagram below illustrates that target stocks do not appear to generate abnormal returns. However, stocks that are ultimately acquired tend to appreciate with positive alphas, while stocks that are not acquired tend to depress and have negative alphas.
+
+![Takeover Response]("Takeover Response.png")
+
+
+**Stock Recommendation**
+
+When a stock recommendation is given at the same time that news about the stock is released, the initial stock price reaction appears correct. However when a recommendation is given without news, the stock price will overreact, then it falls compared to the market. 
+
+![Stock Recommendation]("Stock Recommendation.png")
+
+**The Performance of Fund Managers**
+
+Fund Manager Value Added. The median mutual fund actually destroys value. However there is still positive value added because skilled managers manage more money and add value to the whole industry.
+
+Returns to Investors. Investors might think that they can benefit from investing in funds that yield in proft but evidence shows, on average, they will not. The value added by a fund manager is offset by the mutual fund fees.
+
+\newpage
+
+**Why The Market Portfolio Might Not Be Efficient**
+
+* Proxy Error: The true market portfolio includes every type of tradeable asset in the economy. However, due to the lack of competitive price data, the market proxy cannot include most of these investments. Although the true market portfolio is efficient, by proxy it may be innacurate. 
+
+* Behavioral Biases: Sophisticated investors may hold efficient portfolios, other investors may  be subject to systematic behavioral biases. Since the market portfolio is the combined holdings of both investors, the resulting market portfolio may not be efficient.
+ 
+* Alternative Risk Preferences: Some investors focus on risk characteristics other than the volatility of their portfolio, and may choose inefficient portfolios as a result.
+
+* Non-Tradable Wealth: Investors are exposed to other significant risks outside their portfolio. For example, an investment banker is exposed to the financial sector risk, while a computer programmer is exposed to tech sector risk. Thus they choose to invest less in their respective sectors deviating from the market portfolio.
+
+# Behavioral Finance
+
+## The Behavior of Individual Investors
+
+Most individual investors fail to diversify their portfolios adequately. In addition, may investors invest in stocks of companies that are in the same industry or are geographically close, limiting their diversification.Two explanations for this failure:
+
+1. Investors suffer from *familiarity bias* meaning the investor favors investments in companies they are familiar with.
+2. Investors have *relative wealth concerns* where they care about how their portfolio performs relative to their peers. This leads them to choose underdiversified portfolios in hopes of at least matching th returns of their peers.
+
+Had all investors simply held the market portfolio, there would be very little trading volume. In reality, a great deal of trading occurs which is known as *excessive trading*. This reduces returns because of increased trading costs, and evidence shows that individual investors tend to trade very actively. An explanation for this behavior is that investors suffer from *overconfidence bias* and overestimate their knowledge or expertise and believe they can do a better job in picking winners and losers when, in fact, they cannot. Men tend to underperform women due to this bias, and they also tend to trade more frequently. Furthermore, an individuals desire for intense risk-taking experiences, *sensation seeking*, tend to trade more.
+
+This does not necessarily violate CAPM since individual investors can deviate away from CAPM randomely, thus the aggregate portfolio of all investors is still the market ortfolio. 
+
+## Systematic Trading Bias
+
+**Holding on to Losers and the Disposition Effect**
+
+Investors tend to hold on to investments that have lost value and sell investments that have increased value. This is known as the *disposition effect*. The disposition effect has negative tax consequences. Investors that are more sophisticated are less porone to the disposition effect. In addtion, studies have suggested that the losers that investors continue to hold may underperform the winners they have already sold (in the following year) by 3 - 4%
+
+**Investor Attention, Mood, and Experience**
+
+Investors tend to be influecned by attention-grabbing news or events. Studies have also shown that sunshine has a positive effect on mood and stock returns tend to be higher on sunny days at the stock exchange. Also major sport events tend to have effects on mood, where a loss in the World Cup reduces next days stock returns in the losing country by about 0.5%. Some investors also appera to put inordinate weight on tehir experience compared to empirical evidence.
+
+**Herd Behavior**
+
+Investors actively try to follow each other's behavior which could explain underreaction and overreaction in financial markets. Reasons for why investors have such behavior:
+
+1. Investors believe others may have superior invformation, thus they copy trades hoping to profit from information others may have. This is known as the information cascade effect.
+
+2. Due to relative wealth concerns, investors may choose to follow others to avoid the risk of underperforming compared to their peers.
+
+3. Investment managers may risk damaging their reputations if their actions are far different from those of their peers.
+
+# Investment Risk and Project Analysis
+
+## Variance and Semi-Variance
+
+Variance is the average of the squared deviations aroudn the mean and takes into account returns above and below the mean. It is a symmetric mrisk measure. Recall:
+
+\[Var[R] = E[(R-E[R])^2] = E[R^2] - (E[R]^2)\]
+
+\[\sigma = SD[R] = \sqrt{Var[R]}\]
+
+*Semi-Variance* is an alternative risk measure that measures only one sided risks. In general thsi is only applied to downside risk or *downside semi-variance*
+
+\[\text{Semi-variance,}\sigma^2_{SV} = E[\min(0,R-E[R])^2]\]
+
+Semi-variance is still positive. It is always less than or equal to the variance. Semi-variance can be estimated using the sample semi-variance:
+
+\[\text{Semi-variance,}\sigma^2_{SV} = \frac1n \sum^n_{i=1} \min(0,R_i - E[R])^2\]
+
+similar to variance, the *downside standard deviation* is:
+
+\[\sigma_{SV} = \sqrt{\text{Semi-variance}}\]
+
+# VaR and TVaR
+
+Value-at-Risk(VaR):  is simply its percentile. X is the random variable that represents investment gain
+
+\[Pr[X \leq \pi_\alpha] = \alpha\]
+
+\[\begin{aligned}
+F_X(\pi_\alpha) &= \alpha \\ \pi_\alpha &= F^{-1}_X(\alpha) \end{aligned}\]
+
+![Value at Risk]("VaR.png")
+
+Tail Value-at-Risk (TVaR): is the conditioanl tail expectaiton or expected shortfall.
+
+\[\begin{aligned} \text{TVaR}_\alpha & = E\left[ X \mid X \leq \pi_\alpha\right]  \\ &= \dfrac{\displaystyle \int_{-\infty}^{\pi_\alpha}  x \cdot f\!\left(x\right) \, \text{d}x}{\Pr\!\left[X\leq\pi_\alpha\right]}\\ & = \dfrac{1}{\alpha}\int^{\pi_\alpha}_{-\infty} x\cdot f_X(x)\,\, dx \end{aligned}\]
+
+or for the other tail:
+
+\[\begin{aligned} \text{TVaR}_\alpha & = E\left[ X \mid X> \pi_\alpha\right]   \\ &= \dfrac{\displaystyle \int_{{\pi_\alpha}}^\infty  x \cdot f\!\left(x\right) \, \text{d}x}{\Pr\!\left[X>\pi_\alpha\right]}\\ & = \dfrac{1}{1-\alpha}\int^{\infty}_{\pi_\alpha} x\cdot f_X(x)\,\, dx \end{aligned}\]
+
+## Coherent Risk Measures
+
+Let X and Y be two random variables with risk measures g(X) and g(Y). The 4 characteristics of coherent risk measures are:
+
+1. Translation Invariance: $g(X+c) = g(X) + c$ for $c > 0$
+2. Positive Homogeneity: $g(cX) = cg(X)$ for $c > 0$
+3. Subadditivity: $g(X+Y) \leq g(X) + g(Y)$
+4. Monotonicity:  If $X \leq Y$ then $g(X) \leq g(Y)$.
+
+Most of the time VaR is not coherent while TVaR is. This leads to the increased use of TVaR despite VaR being easier to use and understand. If the loss distributions are normal, than VaR can be shown to be coherent. To summarize:
+
+* Variance and semi-variance do not satisfy any of the 4 characteristics, and thus they are not coherent.
+* VaR typically satisfies all characteristics except subadditivity, thus VaR is generally not coherent unless normally distributed.
+* TVaR satisifies all 4 and is thus coherent.
+
+# Risk Analysis
+
+Net Present Value: the present value of all expeted future cash flows.
+
+\[NPV = \sum^n_{t=0}\frac{CF_t}{(1+i_t)^t}\]
+
+**Break-Even Analysis**
+
+A project breaks even when it's NPV = 0. Generally, by setting NPV = 0 we can calculate the IRR (Internal Rate of Return) needed for breakeven. 
+
+**Sensitivity Analysis**
+
+Involves changing the input variables one at a time to see how sensitive the NPV is to each variable.
+
+Generally you can start with a table and calculate teh NPV respectively:
+
+
+```{r echo=FALSE}
+
+Sensitivity_Cases <- cbind(
+  c("Units sold", "Price per unit \\$", "Tax Rate", "Cost of capital"),
+  c(1000, 300, "40\\%", "15\\%"),
+  c(800,240,"50\\%","20\\%"),
+  c(1200, 360, "30\\%","10\\%")
+)
+
+colnames(Sensitivity_Cases) <- c(" ","Base Case", "Worst Case", "Best Case")
+  
+d_Sensitivity_Cases <- knitr::kable(Sensitivity_Cases, "pipe" , escape = FALSE, format = "latex", caption = "Sensitivity Cases")
+
+Sensitivity_Outcome <- cbind(
+  c("Units sold", "Price per unit \\$", "Tax Rate", "Cost of capital"),
+  c(253275,253275,253275,253275),
+  c(152710, 132597, 189584,190367),
+  c(353840,373953,316966,329597),
+  c(20129,241355,127382,139230)
+)
+
+colnames(Sensitivity_Outcome) <- c("Variable", "NPV (Base Case)", "NPV (Worst Case)", "NPV (Best Case)", "Range")
+
+d_Senstivity_Outcome <- knitr::kable(Sensitivity_Outcome, "pipe", escape = FALSE, format = "latex", caption = "Sensitivty Outcomes")
+
+kableExtra::kable_styling(d_Sensitivity_Cases, latex_options = c("hold_position"))
+
+kableExtra::kable_styling(d_Senstivity_Outcome, latex_options = c("hold_position"))
+
+```
+
+
+**Scenario Analysis**
+
+Similar to sensitivity analysis. However, instead of changing one input variable at a time, we make changes to several variables at a time to model the outcome of different scenarios.
+
+**Monte Carlo Simulation**
+
+Monte Carlo simulation is the estimation of hte probability distribution for a quantitiy of interest (such as NPV). Instead of using a limited number of values for inputs, which is the case with senstiivty and scenario analysese, we define a probability distribution for each input. To derive a probability distribution we run the simulation many times using random values for each input.
+
+General Steps to perform Monte Carlo simulation:
+
+1. Build the model of interest, which is a function of several input variables. Assume a specific probability distribution for each input variable.
+
+2. Simulate random draws from the assumed distribution for each input variable.
+
+3. Given the inputs from step 2, determine the variable of interest.
+
+4. Repeat steps 2 and 3 for many times
+
+5. Using the simulated values of the quantity of interest, we can calculate teh mean, variance, and other measures. We can also graph the simulated values, which help us identify the probability distribution of the quantity of interest.
+
+# Real Options
+
+Real Options are capital budgeting options that give managers the right but not the obligation to make a particular business decision in the future after new informaiton becomes available similar to financial options. Real options are not traded in financial markets.
+
+**Decision Tree**
+
+A decision tree is a graphical approach that illustrates alternative decisions and potential outcomes in an uncertain economy. Just construct a tree of available choices, their cost, and their probabilities.
+
+**Timing Option**
+
+Timing Options give companies the option to delay making an investment with the hope of having better information in the future. Usually there are costs associated with such a decision such as the present value of free cash flows.
+
+Factors that affect the timing of an investment:
+
+1. NPV of the Invesment: Without the option, investments would be made immediately based off a positive NPV. However with the option, we would consider if the NPV of investing would exceed the NPV of waiting. Generally real options add value to the investment. 
+
+2. Volatility: The value of a call option increases with volatility. Since an optin to wait is like a call option, when huge uncertainty exists, the option to wait is more valuable.
+
+3. Dividends: With real options, the counterpart for dividends is the cash flow that is forgone by waiting. Similar to a call option on a stock. It is better for an investor to wait unless the cost of waiting is greater than the value of waiting.
+
+**Sizing Options**
+
+There are two types of sizing options: growth and abandonment options
+
+***Growth Options:*** give the company an option to make additional investments when it is optimistic about the future. A growth option is typically exercised if  future finanical performance is expected to be strong.
+
+***Abandonment Options:*** give the company an option to abandon the project when it is pessimistic about the future. An abandonment option will typically be exercised if the present value of the cash flows from exiting a project exceeds the present value of the cash flows from continuing it. Generally,  to consider abandonment both cash flows from continuing the project and abandoning the project are negative. So abandonment is attractive as an option to cut losses.
+
+# Capital Structure
+
+Capital Strcture refers to teh combination of debt, equity, and other scurities the company uses to finance its business.
+
+## Equity Funding for Private Companies
+
+For Startups, there are several sources a private company obtains capital from:
+
+* Angel Investors: Wealthy investors who invest in new companies for shares of the business. Since it is difficult to value a business in its early stages, angel investors hold convertible notes rather than equity. These convertible notes allow angel investors to convert the note into an equity at discounted prices to what new investors pay when the company finances with equity for the first time.
+
+* Venture Capital Firms: When a company requires more capital than angel investors can provide it can seek funds from venture capital firms. Venture capital firms will generally fund the startup, and then take on an active management role within the new firm. They generally charge an annual management fee as well as taking a share of profit known as carried interest.
+
+* Private Equity Firms: A private equity firm is similar to venture capital, but instead of investing in start-ups they invest the equity of privately held firms. Often, private equity firms buy a publicly traded firm and privatizes it in a leveraged buyout (LBO)
+
+* Institutional Investors. Pension funds, insurance companies, endowments, and foundations are examples of institutional investors. They ahve large sums of money and invest directly into private firms or indirectly through venture capital or private equity firms.
+
+* Corporate Investors: Corporate investors are corporations that invest in private companies. Inaddition to seeking return, they can also invest for strategic purposes.
+
+### Venture Capital Investing
+
+A company raises money through a funding round. It might start with a "seed round", and then later funding rounds the securities are named "Series A", "Series B", etc. Value of the firm before a funding round is the pre-money valuation. The value of the firm after a funding round is the post-money valuation.
+
+**Venture Capital Financing Terms**
+
+* Liquidity Preference. In the event of liquidation, sale, or merger of the company, a minimum amount must be paid to preferred stockholders before any payments are made to common stockholders. The liquidiation preference is calculated as:
+
+\[\text{Liquidiation preference} = \text{Multiplier} \times \text{Initial Investment}\]
+
+* Seniority. Investors in later rounds might demand higher seniority than investors in earlier rounds; when instead those investors rae given equal priority, they are deemed *pari passu* (equal footing).
+
+* Participation Rights. This allows preferred stockholders to get both liquidty preference and any payments to common shareholders as if the stocks have been converted.
+
+* Anti-dilution protection. A "down round" is said to have occured when a compnay raises funds at a lower price than in previous funding rounds. Anti-diulution allows the preferred stockholder to convert their shares to a common stock at a cheaper price. This helps increase their ownership percentatge in a down round.
+
+* Board membership. An investor may attempt to arrange the appointment of one or more of the firm's board of directors.
+
+**Exiting an Investment in a Private Company**
+
+Two ways an investor can exit from a private company:
+
+* Acquisition. A large corporation purchases a successful start-up comapny allowing all investors to cash-out.
+
+* Public offering. Taking the company public through an IPO. Investors can sell or hold their shares to the general public.
+
+## Initial Public Offering
+
+Advantages of selling shares to the public
+
+* Greater liquidity
+* Better Access to capital
+
+Main Disadvantages of selling shares to the public:
+
+* Dispersed equity holdings
+* Complaince is costly and time-consuming
+
+### Type of Offering
+
+1. Primary offerings:  These are new shares sold to raise new capital
+
+2. Secondary offerings. These are existing shares which are sold by current shareholders, thus closing their position in the company.
+
+Mechanisms to sell shares.
+
+* Best-efforts: Underwriter does not guarantee all shares will be sold. Shares will simply be sold at the best possible price. Usually has an all-or-none clause where the deal will be cancelled if any shares remain unsold. Usually this is used for smaller IPOs.
+
+* Firm commitment: The most common appraoch. THe underwriter guarantees that all shares will be sold at the offer price. The underwriter purchases shares at a discount and then attempts to resell them at teh offer price. If the shares sell for less, the underwriter covers the costs.
+
+* Acuction IPOs: Shares are sold through an auction system and are sold directly to the public. Investors place bids and the resulting share pirce is the highest price such that the number of bids at or above that price equal the number of shares offered. All winning bidders pay the same price. 
+
+### Mechanics of an IPO
+
+These are the following steps to launching an IPO.
+
+Usually a group of underwriters typically manage an IPO. The lead underwriter handling most the process. The smaller underwriters, called a syndicate, receive advice from teh lead underwriter. Underwriters are important becase they  Market the IPO, Assist in required filings, Actively participate in determining the offer price, and ensure the stock's liquidity after the IPO.
+
+Companies must file a registration statement with the SEC which provides a Preliminary prospectus/red herring. This contains all the required information needed by potential investors in the stock. This goes out earlier to outside investors before the stock is offered. It also provides a final prospectus, which includes details of the IPO such as teh quantity of shares available and the offer price.
+
+Valuations are done by the underwriter. They typically estimate the present value of future cash flows, or by estimating values of comparable companies. During the initial price estimation, a road show takes place where the underwriter and companies senior management meet with the underwriter's largest clients to attempt and survey the market opinion on the valuation range.
+
+Customers will inform the underwriter of their intersts by suggesting how many shares they want to buy. The underwriters undergo a process called book building where they adjust the share price to customer demand so that the IPO is most likely to succeed. these commitments are non-binding but are often honored to maintain future business relationships.
+
+The company will pay the IPO underwriters an underwriting spread, which is a percentage of the issue price. When underwriters provide a firm commitment, they often intentionally underprice the IPO. This increases the probability all the sahres will be sold at the offer price, which reduces the risk of loss for the underwriter. Afterwards, the underwriters can protect themselves more against losses by using over-allotment allocaiton or greenshoe provision. This gives the underwriter the ability to market more shares than is listed in the prospectus.
+
+* If the issue is a success and the price rises above the IPO offer price, the underwriters will exercise the greenshoe provision so they have all the needed shares to deliver.
+
+* If the issue is not a success and the price falls below the IPO offer price, the underwriters will not exercise the greenshoe provision. Instead, they will buy shares in the open market at reduced price, which can be used to deliver shares to the over-allotment sold. 
+
+After the completion of an IPO, the lead underwriter will make a market for the stock, increasing it's liquidity, and assign an analyst to the stock. Pre-existing shareholders have a 180-day lockup post IPO which means they cannot sell their shares.
+
+### IPO Puzzles
+
+4 puzzling characteristics of an IPO:
+
+1. The average IPO seems to be priced too low.
+
+2. New issues appear cyclical.
+
+3. The transaction costs of an IPO are high.
+
+4. Long run performance after an IPO is poor on average.
+
+# Debt Financing
+
+## Corporate Debt
+
+Securities that companies issue when issuing debt are called corporate bonds and fall into two main categories.
+
+**Public Debt**
+
+Trades on public exchanges. The bond agreement takes the form of an indenture, which is a legal agreement between teh bond issuer and a trust company. The 4 common types of corporate debt are:
+
+* Notes (Unsecured)
+* Debentures (Unsecured)
+* Mortgage bonds (Secured)
+* Asset-backed bonds (Secured)
+
+The new debt that has lower seniority than existing debenture issues is called a subordinated debenture.
+
+International bonds:
+
+* Domestic bonds
+* Foreign bonds
+* Eurobonds
+* Global bonds
+
+Private debt is negotiated directly with a bank or small group of investors. It's cheaper to issue since there are no registration costs.
+
+These fall into Term Loans and Private Placement
+
+**Other Types of Debt**
+
+* Sovereign  Debt: issued by the national governemtn. In the US, these are called Treasury securities and there are 4 types:
+
+1. Treasury bills
+2. Treasury notes
+3. Treasury bonds.
+4. Treasury inflation-protected securities (TIPS)
+
+* Municipal bonds: issued by state and local governments.
+
+1. Revenue bonds
+2. General obligation bonds
+
+An asset-backed security is a security whose cash flows are backed by the cash flows of its underlying securities. The biggest sector of the ABS market is the mortgage-backed security (MBS) sector. An MBS has its cash flows backed by home mortgages. Because mortgages can be repaid early, teh holders of an MBS face prepayment risk. Other asset-backed securities can be using consumer loans, credit cards receivables, and automobile loans.
+
+A private ABS can be backed by another ABS. This new ABS is known as collateralized debt obligation (CDO)
+
+# Capital Structure Theory
+
+## Perfect Capital Market
+
+### Modigliani-Miller Proposition I (Without Taxes)
+
+According th MM Proposition I, under perfect capital markets, the value of a firm is unaffected by its capital structure. Perfect capital markets satisfy the following assumptions:
+
+1. Capital markets are perfectly competitive. Investors and firms can trade the same set of securities at competitive market prices equal to the present value of their future cash flows.
+
+2. Capital markets are frictionless. No taxes, expesnes or other costs associated with trading securities
+
+3. Financing and investment decisions are independent of each other. A firm's financing decisions do not change the cash flows generated by its investments, nor do they reveal new information about them. 
+
+### Modigliani-Miller Proposition II (Without taxes)
+
+Recall WACC 
+
+\[r_{WACC}=w_E\cdot r_E + w_D\cdot r_D\cdot(1-\tau_C) \approx \frac{E}{E+D}r_E + \frac{D}{E+D}r_D \text{ when } \tau_C = 0\]
+
+Assuming perfect capital market and no taxes, WACC is the weighted average of the levered equity cost of capital and debt cost of capital, where the weights are portions of the firm financed with equity and debt. Assuming that MM Propoisiton I is true, we can say that the levered equity of a firm is equal the the market value of the unlevered equity. Thus we can rearrange the WACC equation to show to be:
+
+\[r_E=r_U+\dfrac{D}{E}\cdot \left(r_U-r_D\right)\]
+
+Modigliani-Miller Proposition II states that the cost of capital of levered equity increases with the firm's debt-to-equity ratio. As seen by the equation above.
+
+If a firm issues more than two types of securites, the WACC formula can be represented as such:
+
+\[r_U = r_{WACC} = \sum w_i\cdot r_i\]
+
+**Levered and Unlevered Betas**
+
+The unlevered beta (also known as the asset beta) can be calculated as the weighted average of the equity beta and debt beta:
+
+\[\beta_U = w_E\cdot \beta_E+w_D\cdot \beta_D\]
+
+which can also be written as so
+
+\[\beta_E =\beta_U+\dfrac{D}{E}\cdot \left( \beta_U-\beta_D\right)\]
+
+
+## Taxes and Financial Distress Costs
+
+### Modigliani-Miller Propositions (With Taxes)
+
+The use of debt results in tax savings for the firm, which adds to the value of the firm. The Levered Value $V_L$ is greater than that of an unlevered firm $V_U$ by an amount equal to the present value of the stream of future interest tax shields that the firm will recieve:
+
+\[V_L = V_U + PV(\text{Interest tax shield)}\]
+
+where the Interest tax shield is defined as:
+
+\[\text{Interest tax shield} = \text{Corporate tax rate} \cdot \text{Interest Payment}\]
+
+**Interest Tax Shield with Permanent Debt**
+
+Consider a firm borrows debt D and keeps it permanently. This means the firm will make interest payments forever and as a result the interest tax hield will continue forever. Thus we can think if the interest tax shield as a perpetuity. Let $\tau_C$ be the marignal tax rate and $r_D$ be the cost of debt. Then the interest payment each year is $r_D \cdot D$. The interest tax shield as a perpetuity is: 
+
+\[\begin{aligned} PV(\text{Interest tax shield}) &= \dfrac{\text{Interest tax shield}}{r_D} \\&= \dfrac{\tau_C\cdot \text{Interest payment}}{r_D}\\&=\dfrac{\tau_C\cdot r_D\cdot D}{r_D}\\ &= \tau_C\cdot D \end{aligned}\]
+
+**WACC with Taxes**
+
+\[\begin{aligned} r_{WACC} &= w_E\cdot r_E + w_D\cdot r_D\cdot (1-\tau_C) \\ 
+&= \underbrace{w_E\cdot r_E + w_D\cdot r_D}_{\text{Pre-tax WACC}} -  \underbrace{w_D\cdot r_D \cdot \tau_C}_{\text{Reduction due to interest tax shield}} \end{aligned}\]
+
+Note that:
+
+* The WACC is lower than the pre-tax WACC
+* The higher the firm's leverage, the greater the reduction due to the interst tax shield, and the lower the firm's WACC is. As a result, the value of the firm increases.
+* Taking it to the extreme, the value ofa firm is maximized if its capital structure is 100% debt.
+
+**The Interest Tax Shield with a Target Debt-Equity Ratio**
+
+Instead of perpetually constant debt, a firm may target a certain debt ratio. Thus in order to caluclate the interest shield:
+
+1. Calculate the value of the unlevered firm, $V_U$, by discounting cash flows at the unlevered cost of capital (Pre-tax WACC).
+
+\[r_U = w_E\cdot r_E + w_D \cdot r_D\]
+
+2. Calculate the value of the levered firm, $V_L$, by discounting cash flows at the WACC (after-tax WACC): 
+
+\[r_{WACC}=w_E\cdot r_E+w_D\cdot r_D\cdot (1-\tau_C)\]
+
+3. Subract $V_U$ from $V_L$ to obtain the value of the interest tax shield.
+
+\[PV(\text{Interest tax shield}) = V_L - V_U\]
+
+### Financial Distress Costs
+
+A firm prefers to maximize its debt financing to maximize the firm's value, however there are downsides. A firm that fails to make its required payments to debt holders is said to default on its debt. After a firm defaults, the debt holders have claims to the firm's assets through a legal process called bankruptcy. There are two forms of bankruptcy in the U.S.
+
+1. Chapter 7 liquidation: A trustee supervises the liquidation of the firm's assets through an auction. The proceeds from the liquidation are used to apy the firm's creditors, and the firm ceases to exist.
+
+2. Chapter 11 reorganization: The firm's existing management is given the opportunity to propose a reorganization plan. While developing the plan, management continues to operate the business. The plan specifies the treatment of each creditor of the firm. The creditors must vote to accept the plan, and it must be approved by the bankruptcy court. If the plan is unaceptable, the frim may be forced to file for Chapter 7 liquidation.
+
+**Financial Distress Costs**
+
+The present value of financical distress costs have 3 components:
+
+1. The costs of financial distress and bankruptcy, in the event they occur
+
+2. The probability of financial distress and bankruptcy occuring
+
+3. The appropriate discount rate for the distress costs
+
+**Direct Costs:** Include fees to oustide professionals like legal and accounting experts, consultants, appraisers, auctioneers, and investment bankers. Direct costs are likely to be higerh for firms with more complicated business operations because it may be more difficult to reach an agreement regarding the final disposition of the firm's assets. Many aspects of the bankruptcy process are independent the size of the firm. The direct costs are typically higher, in percentage for smaller firms.
+
+Alternatives to bankruptcy are:
+
+1. Workout - the company works out an agreement
+2. Prepackaged bankruptcy (prepack) - The company will first create a reorganization plan with the agreement of its p[rimary creditors, and then file Chapter 11 reorganziation.
+
+**Indirect Costs:** are difficult to measure and are often much larger than direct costs.
+
+1. Loss of customers - customers don't want to buy products from firms in financial distress
+
+2. Loss of suppliers - suppliers may be unwilling to provide a distressed firm with inventory if they fear that they will not be paid.
+
+3. Loss of employees - distressed firms may have difficulty hiring new employees. Existing employees may quit and retaining key employees become costly.
+
+4. Loss of recivables - Distressed firms may have difficulty collecting money owed to them. As customers may have less incentive to pay a firm going out of business.
+
+5. Fire sale of assets - Distressed firms may attempt to sell assets quickly to raise cash. However the sale of assets would be at a lower price than optimal
+
+6. Inefficient liquidiation - Management may use bankruptcy protection to delay the liquidation of a firm that should be shut down. If negative-NPV decisions are made while in bankruptcy, the firm may lose a significant amount of value.
+
+7. Cost to reditors - Creditors may also incur their own (indirect) costs of financial distress. The loss to creditors on their investment in the firm may push them into financial distress.
+
+Typically firms with steady cash flows can use high levels of debt and have low probability of defaulting. Firms with volatile cash flows must have low levels of debt in order to have low probabilty of default.
+
+The appropriate discount rate for distress costs will depend on the firms market risk. Higher the beta, the more likely it is to be in distress, and thus the more negative the beta of its distress cost will be. Present value of distress costs has a negative impact on the firm's value.
+
+## Agency Cost and Asymmetric Information
+
+Capital structure can change managers incetives and investment decisions which affect the firm's cash flows, which affect the firm's value. Changes tha tlead to negative NPV will be costly for the firm.
+
+*Agency costs* refer to the costs that arise due to conflicts of intrest among stakeholders. These conflicts stem from an unequal sharing of the costs and benefits of certain actions.
+
+### Agency Costs of Leverage
+
+If a firm uses leverage, a conflict of interest exists if investment decisions have different implications for equity holders and debt holders. A manager may also take actions that benefit equity holders but harm debt holders. These conflicts are most likely to occur when the risk of financial distress is high.
+
+* Excessive risk-taking and asset substitution. A compnay replacing its low-risk assets with high-risk investments will experience what we refer to as the asset substitution problem. Shareholders prefer high-risk investments becasue of the potential for higher returns. Debt holders prefer less risk because their returns are fixed. 
+
+* Debt overhang or underinvestment. In the event of default, debt holders ge paid before share holders. Hence, shareholders may be unwilling to finance new, positive NPV projects because these projects could go to debt holders. Failure to invest subsequently is costly for debt holders and the firm.
+
+* Cashing out. Shareholders have an incentive to liquidate assets at prices below their market values and distribute the proceeds as dividends. This hurts debt holders as the combined value of the firm's equity and bonds falls by the amount of cash paid out.
+
+**Debt Overhang**
+
+To estimate debt overhang, there is a simple approximation. Equity holders will benefit from a new investment requiring investment I only if: 
+
+\[\dfrac{NPV}{I}>\dfrac{\beta_DD}{\beta_EE}\]
+
+Managers have interests that may differ from shareholders and debt holders intersts:
+
+* Empire building: they may focus on building the firm bigger for better pay, prestige, and perks, rather pursuing optimal decisions for the firm.
+
+* Mangerial entrenchment: Managers will have job security and thus will take advantage of it and run the firm in ways that benefit themselves rather than investors. 
+
+Leverage can provide incentives for managers to run a firm more efficiently and effectively due to:
+
+* Increased ownership concentration
+* Reduced wasteful investment
+* Reduced managerial entrenchment and increased commitment.
+
+### Costs of Asymmetric Information
+
+Asymmetric information occurs when managers have more information about the firm than investors.
+
+According to lemons principle, when managers have private information about the value of the firm, investors will discount the price they are willing to pay for new equity issue due to adverse selection.
+
+managers consider how their acutions will be perceived by investors in selecting financing methods for new investments:
+
+* Issuing equity is typically viewed as negative signal as managers tend to issue equity when the believe that the firm's stock is overvalued
+* Issuing more debt is typically viewed as positive as the company is taking on commitment to make timely interest and principal arrangements.
+
+The pecking order hypothesis asserts that managers prefer to make financing choises that send positive rather than negative signals to outside investors. From top to bottom the preferences are:
+
+* Internally generated equity
+* Debt
+* External Equity
+
+### Trade-Off Theory
+
+Trade-off Theory seeks to balance teh value-enhancing effects of debt on a firm's capital structure with the value-reducing effects.
+
+\[\begin{aligned} V_L=&V_U+PV(\text{Interest tax shield})-PV(\text{Financial distress costs}) \\ &\,-PV(\text{Agency costs of debt})+PV(\text{Agency benefits of debt})\end{aligned}\]
+
+![Trade-Off Theory]("Trade-Off Theory.png")
+
+The point at which the firm's value is maximized is described as the firm's optimal capital structure. R&D intensive firms will have low levels of free cash flow and thus they maintain low levels of debt. Low-Growth, Mature firms will have stable cash flows and assets and benefit from high debt.
+
+

@@ -1,0 +1,144 @@
+\contentsline {section}{\numberline {1}Introduction to Derivatives}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Defining Derivatives}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Underlying Assets}{3}{subsubsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.2}Buying and Selling Assets}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Round-trip transaction cost}{4}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}Ways to Buy or Sell}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Accounting vs.\nobreakspace {}Economic Profits}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Short-Selling Assets}{4}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Short-Selling}{4}{subsubsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.6}Payoff and Profit}{5}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Payoff \& Profit for a Nondividend-Paying Stock}{5}{subsubsection.1.6.1}%
+\contentsline {paragraph}{\numberline {1.6.1.1}Short Positions}{5}{paragraph.1.6.1.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}Payoff \& Profit for Zero-coupon Bond}{7}{subsubsection.1.6.2}%
+\contentsline {section}{\numberline {2}Forward Contract Basics}{7}{section.2}%
+\contentsline {subsubsection}{\numberline {2.0.1}Long \& Short (Forward Contracts)}{7}{subsubsection.2.0.1}%
+\contentsline {subsection}{\numberline {2.1}Payoff \& Profit (forward contracts)}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Four Ways of Buying a Stock}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Pricing a Forward and Prepaid Forward Contract}{8}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Pricing a Prepaid Forward Contract}{8}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}A Nondividend-Paying Stock }{8}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}A Dividend-Paying Stock}{8}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Pricing a Forward Contract}{9}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Forward Premium}{9}{subsubsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.4}Synthetic Forwards}{10}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Exploiting Arbitrage}{11}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Futures Contract Basics}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Features of Futures Contracts}{12}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Introduction to Options}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Call Options}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Put Options}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Option Moneyness}{18}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Option Strategies}{19}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Options as Insurance}{19}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Call and Put Options as Insurance}{19}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Buying Insurance}{19}{subsubsection.5.1.2}%
+\contentsline {paragraph}{\numberline {5.1.2.1}Floor}{19}{paragraph.5.1.2.1}%
+\contentsline {paragraph}{\numberline {5.1.2.2}Cap}{19}{paragraph.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Selling Insurance}{19}{subsubsection.5.1.3}%
+\contentsline {paragraph}{\numberline {5.1.3.1}Covered Call}{19}{paragraph.5.1.3.1}%
+\contentsline {paragraph}{\numberline {5.1.3.2}Covered Put}{19}{paragraph.5.1.3.2}%
+\contentsline {subsection}{\numberline {5.2}Graphing Payoff Diagrams}{19}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}From First Principles}{19}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Graphing all Calls and Puts (Shortcut)}{20}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Combining Options}{21}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Put-Call Parity Equation}{28}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Synthetic Positions}{29}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Exploiting Arbitrage}{30}{subsubsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.6}Put-Call Parity on Other Assets}{31}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Put-Call Parity for Bonds}{31}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Generalized Put-Call Parity for Exchange Options}{31}{subsubsection.5.6.2}%
+\contentsline {paragraph}{\numberline {5.6.2.1}Exchange Option Duality}{31}{paragraph.5.6.2.1}%
+\contentsline {paragraph}{\numberline {5.6.2.2}Put-Call Parity for Exchange Options}{31}{paragraph.5.6.2.2}%
+\contentsline {paragraph}{\numberline {5.6.2.3}Scaling Exchange Options}{32}{paragraph.5.6.2.3}%
+\contentsline {paragraph}{\numberline {5.6.2.4}Put-Call Parity for Currency Options}{32}{paragraph.5.6.2.4}%
+\contentsline {subsection}{\numberline {5.7}Comparing Options}{32}{subsection.5.7}%
+\contentsline {subsubsection}{\numberline {5.7.1}Lower Bound of Option Prices}{33}{subsubsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.2}Upper bound of Option Prices}{33}{subsubsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.3}Summary of Option Prices}{33}{subsubsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.8}Early Excercising American Options}{33}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Strike Price Effects}{35}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.10}Time Until Expiration}{36}{subsection.5.10}%
+\contentsline {section}{\numberline {6}Binomial Option Pricing}{36}{section.6}%
+\contentsline {subsubsection}{\numberline {6.0.1}Replicating Portfolios}{36}{subsubsection.6.0.1}%
+\contentsline {subsubsection}{\numberline {6.0.2}Risk-Neutral Valuation}{37}{subsubsection.6.0.2}%
+\contentsline {paragraph}{\numberline {6.0.2.1}No-Arbitrage Condition}{37}{paragraph.6.0.2.1}%
+\contentsline {subsection}{\numberline {6.1}Constructing a Binomial Tree}{37}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}General Method}{38}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Standard Binomial Tree}{38}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Multiple-Period Binomial Option Pricing}{38}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Node by Node}{39}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Direct Approach}{39}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Replicating Portfolio Approach}{39}{subsubsection.6.2.3}%
+\contentsline {section}{\numberline {7}Black-Scholes Option Pricing Model}{39}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Modeling Stock Prices with the Lognormal Distribution}{39}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Pricing Options for Lognormal Stock}{40}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Estimating Return and Volatility}{41}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Black Scholes}{42}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Options on Currencies}{42}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Option Greeks and Risk Management}{43}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Greeks}{43}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Delta}{43}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Gamma}{43}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}Theta}{43}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.4}Vega}{44}{subsubsection.8.1.4}%
+\contentsline {subsubsection}{\numberline {8.1.5}Rho}{44}{subsubsection.8.1.5}%
+\contentsline {subsubsection}{\numberline {8.1.6}Psi}{44}{subsubsection.8.1.6}%
+\contentsline {subsubsection}{\numberline {8.1.7}Greek Measures for a portfolio}{44}{subsubsection.8.1.7}%
+\contentsline {subsection}{\numberline {8.2}Elasticity and Related Concepts}{44}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Expected Return on Option}{45}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Risk Premium}{45}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Volatility}{45}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}Sharpe Ratio}{45}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.5}Portfolio Elasticity and Risk Premium}{46}{subsubsection.8.2.5}%
+\contentsline {subsection}{\numberline {8.3}The Delta-Gamma\_Theta Approximation}{46}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Delta-Gamma Hedging}{46}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Hedging Multiple Greeks}{47}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Actuarial-Specific Risk Management}{47}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Use of Derivatives to Manage Risk in Insurance and Annuity Products.}{49}{subsection.8.7}%
+\contentsline {section}{\numberline {9}General Options Others}{49}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Asian Options}{49}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Barrier Options}{50}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Compound Option}{51}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Put-Call Parity for Compound Options}{52}{subsubsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.4}Gap Option}{52}{subsection.9.4}%
+\contentsline {subsubsection}{\numberline {9.4.1}Gap Call}{52}{subsubsection.9.4.1}%
+\contentsline {subsubsection}{\numberline {9.4.2}Gap Put}{52}{subsubsection.9.4.2}%
+\contentsline {subsubsection}{\numberline {9.4.3}Black-Scholes Formula for Gap Options.}{53}{subsubsection.9.4.3}%
+\contentsline {subsubsection}{\numberline {9.4.4}Important relationships for Gap Options}{53}{subsubsection.9.4.4}%
+\contentsline {subsection}{\numberline {9.5}Exchange Option}{53}{subsection.9.5}%
+\contentsline {subsubsection}{\numberline {9.5.1}Key Manipulations}{54}{subsubsection.9.5.1}%
+\contentsline {subsection}{\numberline {9.6}Other Exotic Options}{54}{subsection.9.6}%
+\contentsline {subsubsection}{\numberline {9.6.1}Forward Start Option}{54}{subsubsection.9.6.1}%
+\contentsline {subsubsection}{\numberline {9.6.2}Chooser Option}{55}{subsubsection.9.6.2}%
+\contentsline {subsubsection}{\numberline {9.6.3}Lookback Options}{55}{subsubsection.9.6.3}%
+\contentsline {subsubsection}{\numberline {9.6.4}Shout Options}{55}{subsubsection.9.6.4}%
+\contentsline {subsubsection}{\numberline {9.6.5}Rainbow Options}{55}{subsubsection.9.6.5}%
+\contentsline {section}{\numberline {10}Risk and Return of a Single Asset}{55}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Expected Return of a Portfolio}{56}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Volatility of a Two-Stock Portfolio}{57}{subsubsection.10.1.1}%
+\contentsline {subsubsection}{\numberline {10.1.2}Variance of a Two-Stock Portfolio}{57}{subsubsection.10.1.2}%
+\contentsline {subsubsection}{\numberline {10.1.3}Volatility of a Large Portfolio}{57}{subsubsection.10.1.3}%
+\contentsline {subsection}{\numberline {10.2}Types of Risk}{58}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Diversification with an Equally Weighted Portfolio.}{58}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}Independent Risk}{58}{subsubsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.4}Diversification with General Portfolio}{59}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Mean Variance Analysis}{60}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Efficient Portfolios of Risky Assets}{60}{subsection.10.6}%
+\contentsline {subsubsection}{\numberline {10.6.1}The Effect of Correlation.}{60}{subsubsection.10.6.1}%
+\contentsline {subsection}{\numberline {10.7}Combining Risky Assets with a Risk-Free Asset}{61}{subsection.10.7}%
+\contentsline {subsubsection}{\numberline {10.7.1}Optimal Portfolio Choice}{62}{subsubsection.10.7.1}%
+\contentsline {subsection}{\numberline {10.8}Capital Market Line (CML)}{62}{subsection.10.8}%
+\contentsline {subsubsection}{\numberline {10.8.1}Market Portfolio}{62}{subsubsection.10.8.1}%
+\contentsline {subsection}{\numberline {10.9}Adding a New Investment}{62}{subsection.10.9}%
+\contentsline {section}{\numberline {11}Capital Asset Pricing Model}{63}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Beta}{63}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Capital Asset Pricing Model}{64}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}The Security Market Line}{65}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Market Risk Premium}{66}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}The Debt Cost of Capital}{67}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Required Return on All-Equity Project}{67}{subsection.11.6}%
+\contentsline {subsection}{\numberline {11.7}Required Return on a Leveraged Project}{68}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.8}Misc}{69}{subsection.11.8}%
+\contentsline {section}{\numberline {12}Efficient Market Hypothesis}{70}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Forms of Market Efficiency}{70}{subsection.12.1}%
